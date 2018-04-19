@@ -61,6 +61,7 @@ CREATE TABLE IF NOT EXISTS `info_users` (
   `user_id` INT(11) NOT NULL,
   `created_at` DATETIME,
   `updated_at` DATETIME,
+  `deleted_at` DATETIME,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 ```
