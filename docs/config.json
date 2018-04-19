@@ -1,0 +1,11 @@
+{
+  "title": "Lemurro - Документация",
+  "author": "Dmitrii Shcherbakov",
+  "format": "html",
+  "html": {
+    "breadcrumbs": true,
+    "breadcrumb_separator": " > ",
+    "float": false,
+    "auto_toc": false
+  }
+}
