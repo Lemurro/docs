@@ -14,3 +14,6 @@ composer global require daux/daux.io
 ```bash
 daux generate
 ```
+
+# Запуск
+[https://lemurro.github.io/docs](https://lemurro.github.io/docs)
