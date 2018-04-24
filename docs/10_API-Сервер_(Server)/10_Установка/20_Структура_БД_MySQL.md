@@ -59,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 CREATE TABLE IF NOT EXISTS `info_users` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `user_id` INT(11) NOT NULL,
+  `roles` TEXT,
   `created_at` DATETIME,
   `updated_at` DATETIME,
   `deleted_at` DATETIME,
