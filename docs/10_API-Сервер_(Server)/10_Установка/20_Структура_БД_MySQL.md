@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `auth_codes` (
   `auth_id` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
   `code` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
   `user_id` INT(11) NOT NULL,
+  `attempts` TINYINT(3) NOT NULL DEFAULT '0',
   `created_at` DATETIME,
   PRIMARY KEY (`id`),
   UNIQUE KEY (`auth_id`)
