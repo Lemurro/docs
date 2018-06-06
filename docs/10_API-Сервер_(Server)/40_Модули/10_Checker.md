@@ -9,45 +9,54 @@
 В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:
 ```php
 $checker_checks = [
-    'auth' => $request->server()->get('HTTP_X_SESSION_ID'),
+    'auth' => $this->di['session_id'],
 ];
-$checker_result = (new Checker($di))->run($checker_checks);
+$checker_result = (new Checker($this->di))->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
-    $response->json($checker_result);
+    $this->response->setData($checker_result);
 } else {
     // Проверка успешно пройдена
+    // $this->response->setData($result);
 }
+
+$this->response->send();
 ```
 
 Также есть возможность напрямую проверить актуальность сессии:
 ```php
-$result_session_check = (new Session())->check($request->server()->get('HTTP_X_SESSION_ID'));
+$result_session_check = (new Session())->check($this->di['session_id']);
 if (isset($result_session_check['errors'])) {
     // Сессия устарела
-    $response->json($result_session_check);
+    $this->response->setData($checker_result);
 } else {
     // Проверка успешно пройдена
+    // $this->response->setData($result);
 }
+
+$this->response->send();
 ```
 
 ## Проверка ролей
 В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:
 ```php
 $checker_checks = [
-    'auth' => $request->server()->get('HTTP_X_SESSION_ID'),
+    'auth' => $this->di['session_id'],
     'role' => [
         'page'   => 'example',
         'access' => 'create-update',
     ],
 ];
-$checker_result = (new Checker($di))->run($checker_checks);
+$checker_result = (new Checker($this->di))->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
-    $response->json($checker_result);
+    $this->response->setData($checker_result);
 } else {
     // Проверка успешно пройдена
+    // $this->response->setData($result);
 }
+
+$this->response->send();
 ```
 Данная проверка посмотрит может ли данный пользователь добавлять и изменять записи `create-update` в разделе `example`
 
@@ -75,7 +84,7 @@ const GUIDE_PAGES = [
 
 В самом начале проверяется роль администратора, если пользователь администратор, тогда сразу возвращается ответ об успешной проверке
 
-Если нужно сразу проверить только на роль администратора, просто загляните в `$this->di->user['admin']` хранит в себе `boolean` значение
+Если нужно сразу проверить только на роль администратора, просто загляните в `$this->di['user']['admin']` хранит в себе `boolean` значение
 
 ## Создание собственной проверки
 Для создания собственной проверки необходимо создать класс в каталоге серверной части `/app/Checker`
@@ -111,7 +120,7 @@ class Simple extends Action
      */
     public function run($data)
     {
-        if ($this->di->user['auth_id'] == $data['auth_id']) {
+        if ($this->di['user']['auth_id'] == $data['auth_id']) {
             return [];
         } else {
             return [
@@ -131,19 +140,22 @@ class Simple extends Action
 Для использования класса доработаем список правил:
 ```php
 $checker_checks = [
-    'auth'   => $request->server()->get('HTTP_X_SESSION_ID'),
+    'auth'   => $this->di['session_id'],
     'simple' => [
         'class'   => 'Simple',
         'auth_id' => 'atomcms@ya.ru',
     ],
 ];
-$checker_result = (new Checker($di))->run($checker_checks);
+$checker_result = (new Checker($this->di))->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
-    $response->json($checker_result);
+    $this->response->setData($checker_result);
 } else {
     // Проверка успешно пройдена
+    // $this->response->setData($result);
 }
+
+$this->response->send();
 ```
 1. `simple` - Имя вашей проверки может быть любым, оно не используется и носит справочный характер.
 2. `class` - Обязательное поле, указывает название вашего класса в каталоге серверной части `/app/Checker`
