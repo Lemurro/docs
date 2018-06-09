@@ -97,14 +97,14 @@ const GUIDE_PAGES = [
  * @author  Дмитрий Щербаков <atomcms@ya.ru>
  */
 
-namespace Lemurro\Checker;
+namespace Lemurro\Api\App\Checker;
 
-use LemurroCore\Abstracts\Action;
+use Lemurro\Api\Core\Abstracts\Action;
 
 /**
  * Class Simple
  *
- * @package Lemurro\Checker
+ * @package Lemurro\Api\App\Checker
  */
 class Simple extends Action
 {
