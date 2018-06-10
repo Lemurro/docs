@@ -35,7 +35,7 @@ TPL;
 ```
 Отправить письмо:
 ```php
-$this->di['mailer']->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
+$this->dic['mailer']->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
     '[VARIABLE_1]' => 'текст',
     '[VARIABLE_2]' => 'премудростях отправки писем',
 ], [

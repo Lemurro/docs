@@ -9,9 +9,9 @@
 В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:
 ```php
 $checker_checks = [
-    'auth' => $this->di['session_id'],
+    'auth' => $this->dic['session_id'],
 ];
-$checker_result = (new Checker($this->di))->run($checker_checks);
+$checker_result = (new Checker($this->dic))->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
     $this->response->setData($checker_result);
@@ -25,7 +25,7 @@ $this->response->send();
 
 Также есть возможность напрямую проверить актуальность сессии:
 ```php
-$result_session_check = (new Session())->check($this->di['session_id']);
+$result_session_check = (new Session())->check($this->dic['session_id']);
 if (isset($result_session_check['errors'])) {
     // Сессия устарела
     $this->response->setData($checker_result);
@@ -41,13 +41,13 @@ $this->response->send();
 В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:
 ```php
 $checker_checks = [
-    'auth' => $this->di['session_id'],
+    'auth' => $this->dic['session_id'],
     'role' => [
         'page'   => 'example',
         'access' => 'create-update',
     ],
 ];
-$checker_result = (new Checker($this->di))->run($checker_checks);
+$checker_result = (new Checker($this->dic))->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
     $this->response->setData($checker_result);
@@ -84,7 +84,7 @@ const GUIDE_PAGES = [
 
 В самом начале проверяется роль администратора, если пользователь администратор, тогда сразу возвращается ответ об успешной проверке
 
-Если нужно сразу проверить только на роль администратора, просто загляните в `$this->di['user']['admin']` хранит в себе `boolean` значение
+Если нужно сразу проверить только на роль администратора, просто загляните в `$this->dic['user']['admin']` хранит в себе `boolean` значение
 
 ## Создание собственной проверки
 Для создания собственной проверки необходимо создать класс в каталоге серверной части `/app/Checker`
@@ -120,7 +120,7 @@ class Simple extends Action
      */
     public function run($data)
     {
-        if ($this->di['user']['auth_id'] == $data['auth_id']) {
+        if ($this->dic['user']['auth_id'] == $data['auth_id']) {
             return [];
         } else {
             return [
@@ -140,13 +140,13 @@ class Simple extends Action
 Для использования класса доработаем список правил:
 ```php
 $checker_checks = [
-    'auth'   => $this->di['session_id'],
+    'auth'   => $this->dic['session_id'],
     'simple' => [
         'class'   => 'Simple',
         'auth_id' => 'atomcms@ya.ru',
     ],
 ];
-$checker_result = (new Checker($this->di))->run($checker_checks);
+$checker_result = (new Checker($this->dic))->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
     $this->response->setData($checker_result);
