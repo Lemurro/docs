@@ -1,11 +1,14 @@
 # SMS
 Для отправки sms воспользуйтесь кодом:
 ```php
+/** @var \Lemurro\Api\Core\SMS\SMS $sms */
+$sms = $this->dic['sms'];
+
 // Отправка через указанный шлюз
-$this->dic['sms']->send('71234567890', 'Сообщение', 'p1sms');
+$sms->send('71234567890', 'Сообщение', 'p1sms');
 
 // Отправка через шлюз по умолчанию (SettingsSMS::DEFAULT_GATEWAY)
-$this->dic['sms']->send('71234567890', 'Сообщение');
+$sms->send('71234567890', 'Сообщение');
 ```
 
 Уже настроена работа с двумя сервисами [sms.ru](http://sms.ru) и [p1sms.ru](http://p1sms.ru)

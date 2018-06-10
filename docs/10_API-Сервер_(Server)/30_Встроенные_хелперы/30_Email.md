@@ -35,7 +35,9 @@ TPL;
 ```
 Отправить письмо:
 ```php
-$this->dic['mailer']->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
+/** @var \Lemurro\Api\Core\Mailer $mailer */
+$mailer = $this->dic['mailer'];
+$mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
     '[VARIABLE_1]' => 'текст',
     '[VARIABLE_2]' => 'премудростях отправки писем',
 ], [
