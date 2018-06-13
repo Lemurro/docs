@@ -9,3 +9,5 @@
 - **$uri** - получает значение из запроса (`$this->request->getRequestUri()`)
 - **$short_root** - Короткий путь до корня (`SettingsGeneral::SHORT_ROOT_PATH`)
 - **$title** - заголовок страницы
+- **$index** - путь до шаблона страницы (`$this->request->get('_controller')`)
+- **$data** - массив значений полученных от маршрутизатора (`array_merge($this->request->attributes->all(), $this->request->query->all())`)
