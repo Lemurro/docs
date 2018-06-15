@@ -102,7 +102,9 @@
 TPL;
 </code></pre>
 <p>Отправить письмо:</p>
-<pre><code class="language-php">$this-&gt;di['mailer']-&gt;send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
+<pre><code class="language-php">/** @var \Lemurro\Api\Core\Mailer $mailer */
+$mailer = $this-&gt;dic['mailer'];
+$mailer-&gt;send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
     '[VARIABLE_1]' =&gt; 'текст',
     '[VARIABLE_2]' =&gt; 'премудростях отправки писем',
 ], [

@@ -75,13 +75,19 @@
 <p>Логирование в файл <code>/logs/main.log</code></p>
 <p>Минимальный уровень сбора логов <code>DEBUG</code></p>
 <p>Для записи в лог используйте код:</p>
-<pre><code class="language-php">$this-&gt;di['log']-&gt;warning('Внимание');
-$this-&gt;di['log']-&gt;info('Уведомление');
+<pre><code class="language-php">/** @var \Monolog\Logger $log */
+$log = $this-&gt;dic['log'];
+$log-&gt;warning('Внимание');
+$log-&gt;info('Уведомление');
 </code></pre>
 <p>Полный список всех уровней смотрите в документации <a href="https://github.com/Seldaek/monolog/blob/HEAD/doc/01-usage.md#log-levels" class="Link--external">Monolog</a></p>
 <h1 id="page_DataChangeLogs">DataChangeLogs</h1>
 <p>Логирование изменения данных в БД</p>
-<pre><code class="language-php">$this-&gt;di['datachangelog']-&gt;insert($table_name, $action_type, $id, $data = []);
+<pre><code class="language-php">use Lemurro\Api\Core\DataChangeLogs\Insert as DataChangeLogInsert;
+
+/** @var DataChangeLogInsert $datachangelog */
+$datachangelog = $this-&gt;dic['datachangelog'];
+$datachangelog-&gt;insert($table_name, $action_type, $id, $data = []);
 </code></pre>
 <ul>
 <li>
@@ -94,7 +100,11 @@ $this-&gt;di['log']-&gt;info('Уведомление');
 <code>$data</code> <em>Не обязательно</em> - Массив данных, хранится будет в виде json-строки</li>
 </ul>
 <p>Пример:</p>
-<pre><code class="language-php">$this-&gt;di['datachangelog']-&gt;insert('users', 'save', 3, [
+<pre><code class="language-php">use Lemurro\Api\Core\DataChangeLogs\Insert as DataChangeLogInsert;
+
+/** @var DataChangeLogInsert $datachangelog */
+$datachangelog = $this-&gt;dic['datachangelog'];
+$datachangelog-&gt;insert('users', 'save', 3, [
     'field1' =&gt; 'value1',
     'field2' =&gt; 'value2',
     'field3' =&gt; 'value3',

@@ -72,13 +72,13 @@
     <div class="s-content">
         <p>Для маршрутизации используется symfony-компонент <a href="https://github.com/symfony/routing" class="Link--external">symfony/routing</a></p>
 <p>Все маршруты приложения описываются в файле <code>/app/routes.yaml</code></p>
-<p>Также есть маршруты встроенные в ядро <code>/vendor/lemurro/core/src/coreroutes.yaml</code> с уже готовым функционалом</p>
+<p>Также есть маршруты встроенные в ядро <code>/vendor/lemurro/api-core/src/coreroutes.yaml</code> с уже готовым функционалом</p>
 <h1 id="page_-">Пример маршрута</h1>
 <h2 id="page_--2">В файле <code>/app/Routes.php</code></h2>
 <p>Размещаем код:</p>
 <pre><code class="language-yaml">single:
   path: /single
-  controller: 'Lemurro\Single\ControllerIndex'
+  controller: 'Lemurro\Api\App\Single\ControllerIndex'
   methods: [GET, OPTIONS]
 </code></pre>
 <ul>
@@ -96,14 +96,14 @@
  * @author  Дмитрий Щербаков &lt;atomcms@ya.ru&gt;
  */
 
-namespace Lemurro\Single;
+namespace Lemurro\Api\App\Single;
 
-use LemurroCore\Abstracts\Controller;
+use Lemurro\Api\Core\Abstracts\Controller;
 
 /**
  * Class ControllerIndex
  *
- * @package Lemurro\Single
+ * @package Lemurro\Api\App\Single
  */
 class ControllerIndex extends Controller
 {
@@ -115,7 +115,7 @@ class ControllerIndex extends Controller
      */
     public function start()
     {
-        $result = (new ActionIndex($this-&gt;di))-&gt;run();
+        $result = (new ActionIndex($this-&gt;dic))-&gt;run();
         $this-&gt;response-&gt;setData($result);
         $this-&gt;response-&gt;send();
     }
@@ -132,14 +132,14 @@ class ControllerIndex extends Controller
  * @author  Дмитрий Щербаков &lt;atomcms@ya.ru&gt;
  */
 
-namespace Lemurro\Single;
+namespace Lemurro\Api\App\Single;
 
-use LemurroCore\Abstracts\Action;
+use Lemurro\Api\Core\Abstracts\Action;
 
 /**
  * Class ActionIndex
  *
- * @package Lemurro\Single
+ * @package Lemurro\Api\App\Single
  */
 class ActionIndex extends Action
 {

@@ -77,9 +77,9 @@
 <h2 id="page_--">Проверка актуальности сессии</h2>
 <p>В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:</p>
 <pre><code class="language-php">$checker_checks = [
-    'auth' =&gt; $this-&gt;di['session_id'],
+    'auth' =&gt; $this-&gt;dic['session_id'],
 ];
-$checker_result = (new Checker($this-&gt;di))-&gt;run($checker_checks);
+$checker_result = (new Checker($this-&gt;dic))-&gt;run($checker_checks);
 if (count($checker_result) &gt; 0) {
     // При проверке возникли ошибки, вернём их
     $this-&gt;response-&gt;setData($checker_result);
@@ -91,7 +91,7 @@ if (count($checker_result) &gt; 0) {
 $this-&gt;response-&gt;send();
 </code></pre>
 <p>Также есть возможность напрямую проверить актуальность сессии:</p>
-<pre><code class="language-php">$result_session_check = (new Session())-&gt;check($this-&gt;di['session_id']);
+<pre><code class="language-php">$result_session_check = (new Session())-&gt;check($this-&gt;dic['session_id']);
 if (isset($result_session_check['errors'])) {
     // Сессия устарела
     $this-&gt;response-&gt;setData($checker_result);
@@ -105,13 +105,13 @@ $this-&gt;response-&gt;send();
 <h2 id="page_-">Проверка ролей</h2>
 <p>В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:</p>
 <pre><code class="language-php">$checker_checks = [
-    'auth' =&gt; $this-&gt;di['session_id'],
+    'auth' =&gt; $this-&gt;dic['session_id'],
     'role' =&gt; [
         'page'   =&gt; 'example',
         'access' =&gt; 'create-update',
     ],
 ];
-$checker_result = (new Checker($this-&gt;di))-&gt;run($checker_checks);
+$checker_result = (new Checker($this-&gt;dic))-&gt;run($checker_checks);
 if (count($checker_result) &gt; 0) {
     // При проверке возникли ошибки, вернём их
     $this-&gt;response-&gt;setData($checker_result);
@@ -143,7 +143,7 @@ const GUIDE_PAGES = [
 ];
 </code></pre>
 <p>В самом начале проверяется роль администратора, если пользователь администратор, тогда сразу возвращается ответ об успешной проверке</p>
-<p>Если нужно сразу проверить только на роль администратора, просто загляните в <code>$this-&gt;di['user']['admin']</code> хранит в себе <code>boolean</code> значение</p>
+<p>Если нужно сразу проверить только на роль администратора, просто загляните в <code>$this-&gt;dic['user']['admin']</code> хранит в себе <code>boolean</code> значение</p>
 <h2 id="page_---2">Создание собственной проверки</h2>
 <p>Для создания собственной проверки необходимо создать класс в каталоге серверной части <code>/app/Checker</code></p>
 <pre><code class="language-php">&lt;?php
@@ -154,14 +154,14 @@ const GUIDE_PAGES = [
  * @author  Дмитрий Щербаков &lt;atomcms@ya.ru&gt;
  */
 
-namespace Lemurro\Checker;
+namespace Lemurro\Api\App\Checker;
 
-use LemurroCore\Abstracts\Action;
+use Lemurro\Api\Core\Abstracts\Action;
 
 /**
  * Class Simple
  *
- * @package Lemurro\Checker
+ * @package Lemurro\Api\App\Checker
  */
 class Simple extends Action
 {
@@ -177,7 +177,7 @@ class Simple extends Action
      */
     public function run($data)
     {
-        if ($this-&gt;di['user']['auth_id'] == $data['auth_id']) {
+        if ($this-&gt;dic['user']['auth_id'] == $data['auth_id']) {
             return [];
         } else {
             return [
@@ -196,13 +196,13 @@ class Simple extends Action
 </code></pre>
 <p>Для использования класса доработаем список правил:</p>
 <pre><code class="language-php">$checker_checks = [
-    'auth'   =&gt; $this-&gt;di['session_id'],
+    'auth'   =&gt; $this-&gt;dic['session_id'],
     'simple' =&gt; [
         'class'   =&gt; 'Simple',
         'auth_id' =&gt; 'atomcms@ya.ru',
     ],
 ];
-$checker_result = (new Checker($this-&gt;di))-&gt;run($checker_checks);
+$checker_result = (new Checker($this-&gt;dic))-&gt;run($checker_checks);
 if (count($checker_result) &gt; 0) {
     // При проверке возникли ошибки, вернём их
     $this-&gt;response-&gt;setData($checker_result);

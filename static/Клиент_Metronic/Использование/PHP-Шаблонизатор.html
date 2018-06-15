@@ -93,6 +93,10 @@
 <strong>$short_root</strong> - Короткий путь до корня (<code>SettingsGeneral::SHORT_ROOT_PATH</code>)</li>
 <li>
 <strong>$title</strong> - заголовок страницы</li>
+<li>
+<strong>$index</strong> - путь до шаблона страницы (<code>$this-&gt;request-&gt;get('_controller')</code>)</li>
+<li>
+<strong>$data</strong> - массив значений полученных от маршрутизатора (<code>array_merge($this-&gt;request-&gt;attributes-&gt;all(), $this-&gt;request-&gt;query-&gt;all())</code>)</li>
 </ul>
     </div>
 

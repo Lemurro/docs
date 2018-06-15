@@ -72,11 +72,14 @@
     <div class="s-content">
         <h1 id="page_SMS">SMS</h1>
 <p>Для отправки sms воспользуйтесь кодом:</p>
-<pre><code class="language-php">// Отправка через указанный шлюз
-$this-&gt;di['sms']-&gt;send('71234567890', 'Сообщение', 'p1sms');
+<pre><code class="language-php">/** @var \Lemurro\Api\Core\SMS\SMS $sms */
+$sms = $this-&gt;dic['sms'];
+
+// Отправка через указанный шлюз
+$sms-&gt;send('71234567890', 'Сообщение', 'p1sms');
 
 // Отправка через шлюз по умолчанию (SettingsSMS::DEFAULT_GATEWAY)
-$this-&gt;di['sms']-&gt;send('71234567890', 'Сообщение');
+$sms-&gt;send('71234567890', 'Сообщение');
 </code></pre>
 <p>Уже настроена работа с двумя сервисами <a href="http://sms.ru" class="Link--external">sms.ru</a> и <a href="http://p1sms.ru" class="Link--external">p1sms.ru</a></p>
     </div>
