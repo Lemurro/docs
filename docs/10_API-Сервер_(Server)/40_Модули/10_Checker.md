@@ -9,7 +9,7 @@
 В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:
 ```php
 $checker_checks = [
-    'auth' => $this->dic['session_id'],
+    'auth' => '',
 ];
 $checker_result = (new Checker($this->dic))->run($checker_checks);
 if (count($checker_result) > 0) {
@@ -41,7 +41,7 @@ $this->response->send();
 В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:
 ```php
 $checker_checks = [
-    'auth' => $this->dic['session_id'],
+    'auth' => '',
     'role' => [
         'page'   => 'example',
         'access' => 'create-update',
