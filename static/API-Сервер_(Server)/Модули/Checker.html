@@ -77,7 +77,7 @@
 <h2 id="page_--">Проверка актуальности сессии</h2>
 <p>В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:</p>
 <pre><code class="language-php">$checker_checks = [
-    'auth' =&gt; $this-&gt;dic['session_id'],
+    'auth' =&gt; '',
 ];
 $checker_result = (new Checker($this-&gt;dic))-&gt;run($checker_checks);
 if (count($checker_result) &gt; 0) {
@@ -105,7 +105,7 @@ $this-&gt;response-&gt;send();
 <h2 id="page_-">Проверка ролей</h2>
 <p>В месте вашего кода (обычно это в начале запуска контроллера) разместить следующий код:</p>
 <pre><code class="language-php">$checker_checks = [
-    'auth' =&gt; $this-&gt;dic['session_id'],
+    'auth' =&gt; '',
     'role' =&gt; [
         'page'   =&gt; 'example',
         'access' =&gt; 'create-update',
