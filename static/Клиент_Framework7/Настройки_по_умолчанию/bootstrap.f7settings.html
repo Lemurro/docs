@@ -113,16 +113,15 @@
 </li>
 <li>
 <p><strong>on</strong> <em>default: <code>object</code></em> - Обратите внимание, если вы будете добавлять новые события, вам необходимо будет не забыть в вашем объекте также привести код для <code>pageInit</code>:</p>
-<pre><code class="language-javascript"></code></pre>
+<pre><code class="language-javascript">{
+    pageInit: function (event) {
+        app.panel.close();
+        bootstrap._initPage(event.name);
+    }
+}
+</code></pre>
 </li>
 </ul>
-<p>{
-pageInit: function (event) {
-app.panel.close();
-bootstrap._initPage(event.name);
-}
-}</p>
-<pre><code></code></pre>
     </div>
 
         <nav>

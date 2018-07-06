@@ -17,9 +17,9 @@
   В функцию передаётся массив данных полученных от точки API-сервера `/user` (по методу GET)
 
   ```javascript
-function (data) {
-    var template = Template7.compile($$('#js-tpl-user__info').html());
+  function (data) {
+      var template = Template7.compile($$('#js-tpl-user__info').html());
 
-    $$('#js-user_info').html(template(data));
-}
-```
+      $$('#js-user_info').html(template(data));
+  }
+  ```

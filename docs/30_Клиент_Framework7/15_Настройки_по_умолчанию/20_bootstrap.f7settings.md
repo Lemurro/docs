@@ -23,10 +23,10 @@
 
 - **on** *default: `object`* - Обратите внимание, если вы будете добавлять новые события, вам необходимо будет не забыть в вашем объекте также привести код для `pageInit`:
   ```javascript
-{
-    pageInit: function (event) {
-        app.panel.close();
-        bootstrap._initPage(event.name);
-    }
-}
-```
+  {
+      pageInit: function (event) {
+          app.panel.close();
+          bootstrap._initPage(event.name);
+      }
+  }
+  ```

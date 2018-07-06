@@ -96,15 +96,14 @@
 <li>
 <p><strong>onLoad</strong> <em>default: <code>function</code></em> - callback-функция, которая вызывается после загрузки каждой страницы, до вызова функции <code>init()</code> самой страницы</p>
 <p>В функцию передаётся массив данных полученных от точки API-сервера <code>/user</code> (по методу GET)</p>
-<pre><code class="language-javascript"></code></pre>
+<pre><code class="language-javascript">function (data) {
+    var template = Template7.compile($$('#js-tpl-user__info').html());
+
+    $$('#js-user_info').html(template(data));
+}
+</code></pre>
 </li>
 </ul>
-<p>function (data) {
-var template = Template7.compile($$('#js-tpl-user__info').html());</p>
-<pre><code>$$('#js-user_info').html(template(data));
-</code></pre>
-<p>}</p>
-<pre><code></code></pre>
     </div>
 
         <nav>
