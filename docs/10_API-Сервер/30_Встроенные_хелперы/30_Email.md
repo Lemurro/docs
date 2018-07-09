@@ -46,3 +46,13 @@ $mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
     'somefile' => 'assets/img/logo.png',
 ]);
 ```
+
+## Встроенный шаблон SIMPLE_MESSAGE
+В системе уже есть простой шаблон для писем, когда нужно отправить всего лишь одну строку
+```php
+/** @var \Lemurro\Api\Core\Mailer $mailer */
+$mailer = $this->dic['mailer'];
+$mailer->send('SIMPLE_MESSAGE', 'Простое письмо', ['atomcms@ya.ru'], [
+    '[CONTENT]' => 'Текст в виде одной строки',
+]);
+```
