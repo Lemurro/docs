@@ -115,8 +115,7 @@ class ControllerIndex extends Controller
      */
     public function start()
     {
-        $result = (new ActionIndex($this-&gt;dic))-&gt;run();
-        $this-&gt;response-&gt;setData($result);
+        $this-&gt;response-&gt;setData((new ActionIndex($this-&gt;dic))-&gt;run());
         $this-&gt;response-&gt;send();
     }
 }
