@@ -74,7 +74,7 @@
 <p>Все маршруты приложения описываются в файле <code>/app/routes.yaml</code></p>
 <p>Также есть маршруты встроенные в ядро <code>/vendor/lemurro/api-core/src/coreroutes.yaml</code> с уже готовым функционалом</p>
 <h1 id="page_-">Пример маршрута</h1>
-<h2 id="page_--2">В файле <code>/app/Routes.php</code></h2>
+<h2 id="page_--2">В файле <code>/app/routes.yaml</code></h2>
 <p>Размещаем код:</p>
 <pre><code class="language-yaml">single:
   path: /single
@@ -84,6 +84,14 @@
 <ul>
 <li>Обратите внимание на обязательность метода <code>OPTIONS</code> т.к. все запросы к API выполняются через AJAX</li>
 </ul>
+<p>Если у вас планируется очень много маршрутов, тогда имеет смысл создать каталог <code>/app/Routes</code> и в нём создавать yaml-файлы с маршрутами</p>
+<p>Затем просто их все подключить в файле <code>/app/routes.yaml</code></p>
+<pre><code class="language-yaml">app_route_first:
+   resource: 'app/Routes/first.yaml'
+
+app_route_second:
+   resource: 'app/Routes/second.yaml'
+</code></pre>
 <h2 id="page_--2">В каталоге <code>/app</code></h2>
 <p>Создаем каталог нашего маршрута <code>Single</code></p>
 <h2 id="page_--2">В каталоге <code>/app/Single</code></h2>
