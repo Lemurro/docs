@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `history_registrations` (
 CREATE TABLE IF NOT EXISTS `sessions` (
   `id` BIGINT(22) NOT NULL AUTO_INCREMENT,
   `session` VARCHAR(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ip` VARCHAR(255) COLLATE utf8_unicode_ci NULL,
   `user_id` INT(11) NOT NULL,
   `created_at` DATETIME,
   `checked_at` DATETIME,
