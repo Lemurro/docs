@@ -70,18 +70,60 @@
                     </div>
 
     <div class="s-content">
-        <h1 id="page_SMS">SMS</h1>
-<p>Для отправки sms воспользуйтесь кодом:</p>
+        <p>Для отправки sms воспользуйтесь кодом:</p>
 <pre><code class="language-php">/** @var \Lemurro\Api\Core\SMS\SMS $sms */
 $sms = $this-&gt;dic['sms'];
 
-// Отправка через указанный шлюз
-$sms-&gt;send('71234567890', 'Сообщение', 'p1sms');
+// Отправка через другой шлюз
+$other_gateway = new OtherGatewaySMS();
+$sms-&gt;send('71234567890', 'Сообщение', $other_gateway);
 
-// Отправка через шлюз по умолчанию (SettingsSMS::DEFAULT_GATEWAY)
+// Отправка через шлюз по умолчанию (sms.ru)
 $sms-&gt;send('71234567890', 'Сообщение');
 </code></pre>
-<p>Уже настроена работа с двумя сервисами <a href="http://sms.ru" class="Link--external">sms.ru</a> и <a href="http://p1sms.ru" class="Link--external">p1sms.ru</a></p>
+<p>По умолчанию настроена работа с сервисом <a href="http://sms.ru" class="Link--external">sms.ru</a></p>
+<h2 id="page_---sms">Свой шлюз отправки sms</h2>
+<pre><code class="language-php">&lt;?php
+class OtherGatewaySMS
+{
+    /**
+     * Отправка sms
+     *
+     * @param string $phone   Номер телефона получателя
+     * @param string $message Сообщение
+     *
+     * @return array
+     */
+    public function send($phone, $message)
+    {
+        // Код отправки sms, обработки ответа и возврата результата
+    }
+}
+</code></pre>
+<ol>
+<li>Обязательно наличие публичного метода <code>send</code>
+</li>
+<li>Метод <code>send</code> принимает 2 параметра <code>$phone</code> и <code>$message</code>
+</li>
+<li>В случае успешной отправки возвращается массив</li>
+</ol>
+<pre><code class="language-php">return [
+    'success' =&gt; true,
+    'message' =&gt; 'Сообщение об успешной отправке со служебной информацией (не обязательно)',
+];
+</code></pre>
+<ol start="4">
+<li>В случае ошибки отправки возвращается массив</li>
+</ol>
+<pre><code class="language-php">return [
+    'success' =&gt; false,
+    'message' =&gt; 'Текст ошибки',
+];
+</code></pre>
+<ol start="5">
+<li>Текст из <code>message</code> будет помещён в лог результата отправки <code>logs/sms.log</code>
+</li>
+</ol>
     </div>
 
         <nav>
