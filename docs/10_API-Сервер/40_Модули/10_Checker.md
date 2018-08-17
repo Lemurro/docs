@@ -11,7 +11,7 @@
 $checker_checks = [
     'auth' => '',
 ];
-$checker_result = (new Checker($this->dic))->run($checker_checks);
+$checker_result = $this->dic['checker']->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
     $this->response->setData($checker_result);
@@ -47,7 +47,7 @@ $checker_checks = [
         'access' => 'create-update',
     ],
 ];
-$checker_result = (new Checker($this->dic))->run($checker_checks);
+$checker_result = $this->dic['checker']->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
     $this->response->setData($checker_result);
@@ -155,7 +155,7 @@ $checker_checks = [
         'auth_id' => 'atomcms@ya.ru',
     ],
 ];
-$checker_result = (new Checker($this->dic))->run($checker_checks);
+$checker_result = $this->dic['checker']->run($checker_checks);
 if (count($checker_result) > 0) {
     // При проверке возникли ошибки, вернём их
     $this->response->setData($checker_result);
