@@ -79,7 +79,7 @@
 <pre><code class="language-php">$checker_checks = [
     'auth' =&gt; '',
 ];
-$checker_result = (new Checker($this-&gt;dic))-&gt;run($checker_checks);
+$checker_result = $this-&gt;dic['checker']-&gt;run($checker_checks);
 if (count($checker_result) &gt; 0) {
     // При проверке возникли ошибки, вернём их
     $this-&gt;response-&gt;setData($checker_result);
@@ -111,7 +111,7 @@ $this-&gt;response-&gt;send();
         'access' =&gt; 'create-update',
     ],
 ];
-$checker_result = (new Checker($this-&gt;dic))-&gt;run($checker_checks);
+$checker_result = $this-&gt;dic['checker']-&gt;run($checker_checks);
 if (count($checker_result) &gt; 0) {
     // При проверке возникли ошибки, вернём их
     $this-&gt;response-&gt;setData($checker_result);
@@ -193,6 +193,9 @@ class Simple extends Action
                         'status' =&gt; '403 Forbidden',
                         'code'   =&gt; 'warning',
                         'title'  =&gt; 'Доступ ограничен',
+                        'meta'   =&gt; [
+                            'redirect' =&gt; true,
+                        ],
                     ],
                 ],
             ];
@@ -209,7 +212,7 @@ class Simple extends Action
         'auth_id' =&gt; 'atomcms@ya.ru',
     ],
 ];
-$checker_result = (new Checker($this-&gt;dic))-&gt;run($checker_checks);
+$checker_result = $this-&gt;dic['checker']-&gt;run($checker_checks);
 if (count($checker_result) &gt; 0) {
     // При проверке возникли ошибки, вернём их
     $this-&gt;response-&gt;setData($checker_result);
