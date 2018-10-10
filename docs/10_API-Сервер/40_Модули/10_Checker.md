@@ -138,6 +138,9 @@ class Simple extends Action
                         'status' => '403 Forbidden',
                         'code'   => 'warning',
                         'title'  => 'Доступ ограничен',
+                        'meta'   => [
+                            'redirect' => true,
+                        ],
                     ],
                 ],
             ];
