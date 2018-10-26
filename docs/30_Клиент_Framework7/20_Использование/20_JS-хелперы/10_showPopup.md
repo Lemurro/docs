@@ -1,12 +1,12 @@
 Быстрый фасад для открытия `popup`
 
-Синтаксис: `helper.showPopup(title, content);`
+Синтаксис: `lemurro.helper.showPopup(title, content);`
 - `title` (string) *Обязательно* - Заголовок окна
 - `content` (string) *Обязательно* - HTML-Содержимое
 
 Пример:
 ```js
-helper.showPopup(
+lemurro.helper.showPopup(
     'Заголовок',
     '<p>Содержимое окна</p><p>Может содержать <strong>любой</strong> html-код</p>'
     );

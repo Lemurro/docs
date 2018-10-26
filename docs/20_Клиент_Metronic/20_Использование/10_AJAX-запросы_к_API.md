@@ -2,22 +2,22 @@
 
 Для GET-запросов используйте
 ```
-bootstrap.lightajax.get(true, pathServerAPI + 'path/to/server', {
+lemurro.lightajax.get(true, pathServerAPI + 'path/to/server', {
     'param1': 'value1',
     'param2': 'value2'
 }, function(result) {
-    bootstrap.lightajax.preloader('hide');
+    lemurro.lightajax.preloader('hide');
 
     if (result.hasOwnProperty('errors')) {
-        bootstrap.showErrors(result.errors);
+        lemurro.showErrors(result.errors);
     } else {
         // Обработка данных полученных с сервера
         console.log(result);
     }
 });
 ```
-Для POST-запросов просто замените слово `get` на `post` в строке `bootstrap.lightajax.get(...`
+Для POST-запросов просто замените слово `get` на `post` в строке `lemurro.lightajax.get(...`
 
-При каждом запросе на сервер отправляется заголовок `X-SESSION-ID` с текущим значением переменной `bootstrap.sessionID`
+При каждом запросе на сервер отправляется заголовок `X-SESSION-ID` с текущим значением переменной `lemurro.sessionID`
 
-Для скрытных запросов, укажите `false` в качестве первого параметра в строке `bootstrap.lightajax.get(false, `. В этом случае прелоадер показываться не будет и нет необходимости его скрывать при успешном завершении запроса (строка: `bootstrap.lightajax.preloader('hide');` в примере выше).
+Для скрытных запросов, укажите `false` в качестве первого параметра в строке `lemurro.lightajax.get(false, `. В этом случае прелоадер показываться не будет и нет необходимости его скрывать при успешном завершении запроса (строка: `lemurro.lightajax.preloader('hide');` в примере выше).

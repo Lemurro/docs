@@ -8,7 +8,7 @@ app.request.get(pathServerAPI + 'path/to/model', {
     app.preloader.hide();
 
     if (result.hasOwnProperty('errors')) {
-        bootstrap.showErrors(result.errors);
+        lemurro.showErrors(result.errors);
     } else {
         // Обработка данных полученных с сервера
     }
@@ -16,4 +16,4 @@ app.request.get(pathServerAPI + 'path/to/model', {
 ```
 Для POST-запросов просто замените слово `get` на `post` в строке `app.request.get(...`
 
-При каждом запросе на сервер отправляется заголовок `X-SESSION-ID` с текущим значением переменной `bootstrap.sessionID`
+При каждом запросе на сервер отправляется заголовок `X-SESSION-ID` с текущим значением переменной `lemurro.sessionID`

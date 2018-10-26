@@ -2,7 +2,7 @@
 
 Подготовлен быстрый фасад использующий библиотеку [SweetAlert2](https://sweetalert2.github.io)
 
-Синтаксис: `helper.showConfirm(title, content, confirmButtonText, cancelButtonText, callbackOpen, callbackPreConfirm, callbackConfirm, callbackCancel);`
+Синтаксис: `lemurro.helper.showConfirm(title, content, confirmButtonText, cancelButtonText, callbackOpen, callbackPreConfirm, callbackConfirm, callbackCancel);`
 - `title` (string) *Обязательно* - Заголовок
 - `content` (string) *Обязательно* - HTML-Содержимое
 - `confirmButtonText` (string) *Обязательно* - Текст кнопки "OK"
@@ -14,7 +14,7 @@
 
 Пример:
 ```js
-helper.showConfirm(
+lemurro.helper.showConfirm(
     'Заголовок',
     '<p>Содержимое окна</p><p>Может содержать <strong>любой</strong> html-код</p>',
     'OK',

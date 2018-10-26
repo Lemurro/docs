@@ -26,7 +26,7 @@
   {
       pageInit: function (event) {
           app.panel.close();
-          bootstrap._initPage(event.name);
+          lemurro._initPage(event.name);
       }
   }
   ```

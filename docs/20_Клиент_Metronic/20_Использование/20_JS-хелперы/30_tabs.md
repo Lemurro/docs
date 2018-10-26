@@ -2,10 +2,10 @@
 
 Активно используется в разделе `Справочники`
 
-# tabs.showTab(tabID)
+# lemurro.tabs.showTab(tabID)
 Покажем указанный таб
 - `tabID` {string} *Обязательно* - Идентификатор нужного таба
 
-# tabs.tabInsertEdit(action)
+# lemurro.tabs.tabInsertEdit(action)
 Скрыть\Показать вторую вкладку
 - `action` {string} *Обязательно* - Действие (show|hide)
