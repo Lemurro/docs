@@ -48,4 +48,4 @@ class OtherGatewaySMS
      'message' => 'Текст ошибки',
  ];
  ```
-5. Текст из `message` будет помещён в лог результата отправки `logs/sms.log`
+5. Текст из `message` будет помещён в лог результата отправки `SettingsGeneral::LOGS_PATH/sms.log`
