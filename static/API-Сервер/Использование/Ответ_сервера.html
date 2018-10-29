@@ -105,7 +105,24 @@
 <li>
 <strong>meta</strong> (массив, необязательно): массив дополнительных данных об ошибке для приложения.</li>
 </ul>
-<p>Часто используемые статусы:</p>
+<h4 id="page_403-Forbidden">403 Forbidden</h4>
+<p>При таком ответе можно также передать параметр <code>redirect</code> в <code>meta</code>, принимает значение <code>true\false</code></p>
+<p>Если параметр не передан, или значение установлено <code>true</code>, тогда при получении такой ошибки клиент направит пользователя на страницу <code>/403</code></p>
+<p>При значении <code>false</code> клиент покажет ошибку и не будет выполнять переход</p>
+<pre><code class="language-php">[
+    'errors' =&gt; [
+        [
+            'status' =&gt; '403 Forbidden',
+            'code'   =&gt; 'warning',
+            'title'  =&gt; 'Доступ ограничен',
+            'meta'   =&gt; [
+                'redirect' =&gt; true,
+            ],
+        ],
+    ],
+]
+</code></pre>
+<h4 id="page_--">Часто используемые статусы</h4>
 <ul>
 <li>303 See Other - «редирект»</li>
 <li>400 Bad Request - «плохой, неверный запрос»</li>
@@ -118,7 +135,7 @@
 </li>
 </ul>
 <p>* <em>Если есть массив <code>errors</code>, тогда не может быть массива <code>data</code></em></p>
-<h2 id="page_section_2">Массив <code>data</code></h2>
+<h2 id="page_section_4">Массив <code>data</code></h2>
 <p>Содержит набор элементов ответа.</p>
 <p>* <em>Если есть массив <code>data</code>, тогда не может быть массива <code>errors</code></em></p>
     </div>
