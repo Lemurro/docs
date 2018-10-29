@@ -80,12 +80,12 @@
     'auth' =&gt; '',
 ];
 $checker_result = $this-&gt;dic['checker']-&gt;run($checker_checks);
-if (count($checker_result) &gt; 0) {
-    // При проверке возникли ошибки, вернём их
-    $this-&gt;response-&gt;setData($checker_result);
-} else {
+if (is_array($checker_result) &amp;&amp; count($checker_result) == 0) {
     // Проверка успешно пройдена
     // $this-&gt;response-&gt;setData($result);
+} else {
+    // При проверке возникли ошибки, вернём их
+    $this-&gt;response-&gt;setData($checker_result);
 }
 
 $this-&gt;response-&gt;send();
@@ -112,12 +112,12 @@ $this-&gt;response-&gt;send();
     ],
 ];
 $checker_result = $this-&gt;dic['checker']-&gt;run($checker_checks);
-if (count($checker_result) &gt; 0) {
-    // При проверке возникли ошибки, вернём их
-    $this-&gt;response-&gt;setData($checker_result);
-} else {
+if (is_array($checker_result) &amp;&amp; count($checker_result) == 0) {
     // Проверка успешно пройдена
     // $this-&gt;response-&gt;setData($result);
+} else {
+    // При проверке возникли ошибки, вернём их
+    $this-&gt;response-&gt;setData($checker_result);
 }
 
 $this-&gt;response-&gt;send();
@@ -213,12 +213,12 @@ class Simple extends Action
     ],
 ];
 $checker_result = $this-&gt;dic['checker']-&gt;run($checker_checks);
-if (count($checker_result) &gt; 0) {
-    // При проверке возникли ошибки, вернём их
-    $this-&gt;response-&gt;setData($checker_result);
-} else {
+if (is_array($checker_result) &amp;&amp; count($checker_result) == 0) {
     // Проверка успешно пройдена
     // $this-&gt;response-&gt;setData($result);
+} else {
+    // При проверке возникли ошибки, вернём их
+    $this-&gt;response-&gt;setData($checker_result);
 }
 
 $this-&gt;response-&gt;send();

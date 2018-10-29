@@ -111,10 +111,10 @@ const GUIDE_ACCESS = [
     ],
 ];
 $checker_result = $this-&gt;dic['checker']-&gt;run($checker_checks);
-if (count($checker_result) &gt; 0) {
-    // Проверка провалилась
-} else {
+if (is_array($checker_result) &amp;&amp; count($checker_result) == 0) {
     // Проверка успешно пройдена
+} else {
+    // Проверка провалилась
 }
 </code></pre>
     </div>

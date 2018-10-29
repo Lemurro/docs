@@ -12,12 +12,12 @@ $checker_checks = [
     'auth' => '',
 ];
 $checker_result = $this->dic['checker']->run($checker_checks);
-if (count($checker_result) > 0) {
-    // При проверке возникли ошибки, вернём их
-    $this->response->setData($checker_result);
-} else {
+if (is_array($checker_result) && count($checker_result) == 0) {
     // Проверка успешно пройдена
     // $this->response->setData($result);
+} else {
+    // При проверке возникли ошибки, вернём их
+    $this->response->setData($checker_result);
 }
 
 $this->response->send();
@@ -48,12 +48,12 @@ $checker_checks = [
     ],
 ];
 $checker_result = $this->dic['checker']->run($checker_checks);
-if (count($checker_result) > 0) {
-    // При проверке возникли ошибки, вернём их
-    $this->response->setData($checker_result);
-} else {
+if (is_array($checker_result) && count($checker_result) == 0) {
     // Проверка успешно пройдена
     // $this->response->setData($result);
+} else {
+    // При проверке возникли ошибки, вернём их
+    $this->response->setData($checker_result);
 }
 
 $this->response->send();
@@ -159,12 +159,12 @@ $checker_checks = [
     ],
 ];
 $checker_result = $this->dic['checker']->run($checker_checks);
-if (count($checker_result) > 0) {
-    // При проверке возникли ошибки, вернём их
-    $this->response->setData($checker_result);
-} else {
+if (is_array($checker_result) && count($checker_result) == 0) {
     // Проверка успешно пройдена
     // $this->response->setData($result);
+} else {
+    // При проверке возникли ошибки, вернём их
+    $this->response->setData($checker_result);
 }
 
 $this->response->send();
