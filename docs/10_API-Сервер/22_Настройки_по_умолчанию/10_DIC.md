@@ -1,3 +1,6 @@
+> **Lemurro 0.x.x**
+
+# DIC
 В качестве DIC используется библиотека [Pimple](https://github.com/silexphp/Pimple)
 
 - **$this->dic['session_id']** - строка, в которой хранится ключ, полученный в запросе от клиента в заголовке `X_SESSION_ID`

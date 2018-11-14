@@ -1,3 +1,5 @@
+> **Lemurro 0.x.x**
+
 # Email
 Для отправки почты используется библиотека [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
@@ -47,7 +49,7 @@ $mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
 ]);
 ```
 
-## Встроенный шаблон SIMPLE_MESSAGE
+### Встроенный шаблон SIMPLE_MESSAGE
 В системе уже есть простой шаблон для писем, когда нужно отправить всего лишь одну строку
 ```php
 /** @var \Lemurro\Api\Core\Mailer $mailer */

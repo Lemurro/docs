@@ -1,3 +1,7 @@
+> **Lemurro 0.x.x**
+
+# AJAX-запросы к API
+
 Для AJAX-запросов используется jQuery-плагин [LightAjax](https://github.com/DimNS/jQuery.LightAjax)
 
 Для GET-запросов используйте

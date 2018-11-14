@@ -1,4 +1,6 @@
-Проверка пользователя на наличие прав
+> **Lemurro 0.x.x**
+
+# Проверка пользователя на наличие прав
 
 Синтаксис: `lemurro.helper.isRole(page, access, callbackSuccess, callbackFail);`
 - `page` (string) *Обязательно* - Раздел

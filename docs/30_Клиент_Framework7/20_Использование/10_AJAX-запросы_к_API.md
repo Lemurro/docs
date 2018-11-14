@@ -1,3 +1,6 @@
+> **Lemurro 0.x.x**
+
+# AJAX-запросы к API
 Для GET-запросов используйте
 ```js
 app.preloader.show();

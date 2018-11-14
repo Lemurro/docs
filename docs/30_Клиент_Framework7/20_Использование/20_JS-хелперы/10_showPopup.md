@@ -1,4 +1,6 @@
-Быстрый фасад для открытия `popup`
+> **Lemurro 0.x.x**
+
+# Быстрый фасад для открытия `popup`
 
 Синтаксис: `lemurro.helper.showPopup(title, content);`
 - `title` (string) *Обязательно* - Заголовок окна

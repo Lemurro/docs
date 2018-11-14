@@ -1,3 +1,6 @@
+> **Lemurro 0.x.x**
+
+# Модальное окно подтверждения выполнения действия
 Для диалоговых окон подтверждения используется [SweetAlert2](https://sweetalert2.github.io), у него более расширенный функционал нежели у диалогов [Framework7](http://framework7.io)
 
 Синтаксис: `lemurro.helper.showConfirm(title, content, confirmButtonText, cancelButtonText, callbackOpen, callbackPreConfirm, callbackConfirm, callbackCancel);`

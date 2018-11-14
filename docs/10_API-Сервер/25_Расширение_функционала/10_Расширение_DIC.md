@@ -1,3 +1,6 @@
+> **Lemurro 0.x.x**
+
+# Расширение DIC
 В качестве DIC используется библиотека [Pimple](https://github.com/silexphp/Pimple)
 
 Если необходимо зарегистрировать новый элемент в DIC

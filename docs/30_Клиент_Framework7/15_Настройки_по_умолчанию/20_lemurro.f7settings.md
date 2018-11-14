@@ -1,3 +1,6 @@
+> **Lemurro 0.x.x**
+
+# Настройка Framework7
 Указанные ниже настройки можно переопределить в файле `/index.html` в переменной `var overrideF7Settings = {};`
 
 - **id** *default: `'ru.bestion.lemurro'`* - идентификатор пакета приложения
