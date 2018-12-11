@@ -75,36 +75,36 @@
 </blockquote>
 <h1 id="page_-">Роли пользователей</h1>
 <p>Для проверки ролей используется модуль <a href="../Модули/Checker.html">Checker</a></p>
-<p>Роли настраиваются в файле <code>/app/Configs/SettingsUserRoles.php</code> части <code>client-metronic</code></p>
+<p>Роли настраиваются в файле <code>/src/js/0-app/10-config.js</code> в части <code>client-metronic</code> в блоке <code>userRoles</code></p>
 <p>Список доступных констант</p>
 <ul>
 <li>
-<strong>LIST</strong> - Список ролей с правами доступа</li>
+<strong>list</strong> - Список ролей с правами доступа</li>
 <li>
-<strong>GUIDE_PAGES</strong> - Справочник названий ролей</li>
-<li>
-<strong>GUIDE_ACCESS</strong> - Справочник названий прав доступа</li>
+<strong>guideAccess</strong> - Справочник названий прав доступа</li>
 </ul>
 <p>Добавим новую роль <code>example</code>, с уникальным правом доступа <code>my-access</code></p>
-<pre><code class="language-php">const LIST = [
-    'example' =&gt; [
-        'read',
-        'create-update',
-        'delete',
-        'my-access',
-    ],
-];
+<pre><code class="language-javascript">// Список ролей с правами доступа
+list: [
+    {
+        name  : 'example',
+        title : 'Example',
+        access: [
+            'read',
+            'create-update',
+            'delete',
+            'my-access'
+        ]
+    }
+],
 
-const GUIDE_PAGES = [
-    'example' =&gt; 'Example',
-];
-
-const GUIDE_ACCESS = [
-    'read'          =&gt; 'Просмотр',
-    'create-update' =&gt; 'Добавление и изменение',
-    'delete'        =&gt; 'Удаление',
-    'my-access'     =&gt; 'Уникальный доступ',
-];
+// Справочник названий прав доступа
+guideAccess: {
+    'read'         : 'Просмотр',
+    'create-update': 'Добавление и изменение',
+    'delete'       : 'Удаление',
+    'my-access'    : 'Уникальный доступ'
+}
 </code></pre>
 <p>Теперь мы можем использовать проверку на наше уникальное право доступа</p>
 <pre><code class="language-php">$checker_checks = [
