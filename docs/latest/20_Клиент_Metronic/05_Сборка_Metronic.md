@@ -43,8 +43,8 @@ $m--root-font: (
 4. Готовая сборка тут `{metronic_root}/default/dist`
 
 ## Копируем необходимые файлы
-1. Содержимое каталога `{metronic_root}/default/dist/demo5/assets/vendors/base` копируем в каталог проекта `/assets/metronic-v5.3.0/base`
-2. Содержимое каталога `{metronic_root}/default/dist/demo5/assets/demo/demo5/base` копируем в каталог проекта `/assets/metronic-v5.3.0/demo5`
+1. Содержимое каталога `{metronic_root}/default/dist/demo5/assets/vendors/base` копируем в каталог проекта `/src/assets/metronic-vx.x.x/base`
+2. Содержимое каталога `{metronic_root}/default/dist/demo5/assets/demo/demo5/base` копируем в каталог проекта `/src/assets/metronic-vx.x.x/demo5`
 
 ## Подключение Metronic
 - Подключаем CSS
