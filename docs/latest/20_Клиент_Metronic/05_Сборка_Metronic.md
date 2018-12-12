@@ -13,6 +13,20 @@ Metronic v5.5.5+
 ## Изменение настроек CSS
 - В файле `{metronic_root}/default/src/sass/framework/_config.scss` меняем основные настройки Metronic, в частности сделаем основным шрифт Roboto
 ```scss
+//== The body element font settings
+$m--root-font: (
+    size: (
+        desktop: 14px,
+        tablet: 14px,
+        mobile: 13px
+    ),
+    weight: 400,
+    color: (
+        light: #333333,
+        dark: #efefef
+    )
+)!default;
+
 //== Font families
 $m--font-families: (
     regular: 'Roboto',
