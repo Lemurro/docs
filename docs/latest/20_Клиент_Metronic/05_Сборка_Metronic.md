@@ -1,9 +1,10 @@
 > **v1.0.0**
 
 # Изменение настроек Metronic и сборка нового билда
+Metronic v5.5.5+
 
 ## Установка инструментов
-1. `cd {metronic_root}\default\tools`
+1. `cd {metronic_root}/default/tools`
 2. `npm install --global npm@latest`
 3. `npm install --global yarn`
 4. `npm install --global gulp-cli`
@@ -36,8 +37,8 @@ $m--root-font: (
 ```
 
 ## Сборка Metronic
-1. В файле `{metronic_root}\default\tools\conf\default.json` есть переменная `demo`, укажите там `demo5` для сборки только определённого шаблона или укажите пустую строку для сборки ВСЕХ шаблонов
-2. `cd {metronic_root}\default\tools`
+1. В файле `{metronic_root}/default/tools/themes/default.conf.json` есть переменная `demo`, укажите там `demo5` для сборки только определённого шаблона или укажите пустую строку для сборки ВСЕХ шаблонов
+2. `cd {metronic_root}/default/tools`
 3. `gulp --prod`
 4. Готовая сборка тут `{metronic_root}/default/dist`
 
