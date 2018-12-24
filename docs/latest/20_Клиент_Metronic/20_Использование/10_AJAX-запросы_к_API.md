@@ -1,11 +1,3 @@
-> **v1.0.0, v1.1.0**
-
-**Список изменений**
-
-Версия | Описание
---- | ---
-1.1.0 | Добавлен заголовок X-UTC-OFFSET
-
 # AJAX-запросы к API
 
 Для AJAX-запросов используется jQuery-плагин [LightAjax](https://github.com/DimNS/jQuery.LightAjax)
