@@ -1,3 +1,5 @@
+> **v1.0.0**
+
 # AJAX-запросы к API
 
 Для AJAX-запросов используется jQuery-плагин [LightAjax](https://github.com/DimNS/jQuery.LightAjax)
