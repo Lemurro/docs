@@ -90,6 +90,7 @@ $checker_checks = [
 namespace Lemurro\Api\App\Checker;
 
 use Lemurro\Api\Core\Abstracts\Action;
+use Lemurro\Api\Core\Helpers\Response;
 
 /**
  * Class Simple
@@ -113,18 +114,7 @@ class Simple extends Action
         if ($this->dic['user']['auth_id'] == $data['auth_id']) {
             return [];
         } else {
-            return [
-                'errors' => [
-                    [
-                        'status' => '403 Forbidden',
-                        'code'   => 'warning',
-                        'title'  => 'Доступ ограничен',
-                        'meta'   => [
-                            'redirect' => true,
-                        ],
-                    ],
-                ],
-            ];
+            return Response::error403(''Доступ ограничен'', true);
         }
     }
 }
