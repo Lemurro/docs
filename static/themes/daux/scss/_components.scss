@@ -88,7 +88,7 @@ Components
             border-radius: 0;
         }
 
-        // Set corners individually because sometimes 
+        // Set corners individually because sometimes
         // a single button can be in a .ButtonGroup
         // and we need :first-child and :last-child to both match
         &:first-child {
@@ -391,6 +391,7 @@ ul.TableOfContents {
         padding-left: 2.25em;
     }
 
+    // stylelint-disable-next-line selector-max-compound-selectors
     li li li li a {
         padding-left: 3em;
     }
