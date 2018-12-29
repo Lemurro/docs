@@ -37,7 +37,9 @@ TPL;
 ```
 Отправить письмо:
 ```php
-/** @var \Lemurro\Api\Core\Mailer $mailer */
+use Lemurro\Api\Core\Mailer;
+
+/** @var Mailer $mailer */
 $mailer = $this->dic['mailer'];
 $mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
     '[VARIABLE_1]' => 'текст',
@@ -52,7 +54,9 @@ $mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
 ### Встроенный шаблон SIMPLE_MESSAGE
 В системе уже есть простой шаблон для писем, когда нужно отправить всего лишь одну строку
 ```php
-/** @var \Lemurro\Api\Core\Mailer $mailer */
+use Lemurro\Api\Core\Mailer;
+
+/** @var Mailer $mailer */
 $mailer = $this->dic['mailer'];
 $mailer->send('SIMPLE_MESSAGE', 'Простое письмо', ['atomcms@ya.ru'], [
     '[CONTENT]' => 'Текст в виде одной строки',

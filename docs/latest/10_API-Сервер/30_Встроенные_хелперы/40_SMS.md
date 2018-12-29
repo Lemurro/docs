@@ -3,7 +3,9 @@
 # SMS
 Для отправки sms воспользуйтесь кодом:
 ```php
-/** @var \Lemurro\Api\Core\SMS\SMS $sms */
+use Lemurro\Api\Core\SMS\SMS;
+
+/** @var SMS $sms */
 $sms = $this->dic['sms'];
 
 // Отправка через другой шлюз
