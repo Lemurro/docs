@@ -2,3 +2,23 @@
 
 # Структура БД MySQL
 Минимально необходимый набор таблиц находится в файле `/database.sql` в проекте API-сервера
+
+## Администратор
+Добавьте первого пользователя с правами администратора:
+```sql
+INSERT INTO `users`
+SET
+  `id`         = 1,
+  `auth_id`    = 'admin@email.tld',
+  `created_at` = '2018-04-24 00:00:00';
+
+INSERT INTO `info_users`
+SET
+  `id`          = 1,
+  `user_id`     = 1,
+  `roles`       = '{"admin":"true"}',
+  `first_name`  = 'Иван',
+  `second_name` = 'Иванович',
+  `last_name`   = 'Иванов',
+  `created_at`  = '2018-04-24 00:00:00';
+```
