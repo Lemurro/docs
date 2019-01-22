@@ -346,14 +346,14 @@ $result = $file_remove-&gt;run(FILE_ID);
 <pre><code class="language-php">use Lemurro\Api\Core\File\FileInfo;
 
 $file_id = 123;
-$file_info = new FileInfo($this-&gt;dic);
+$file_info = new FileInfo();
 $array = $file_info-&gt;getOne($file_id);
 </code></pre>
 <p>Для получения информации о нескольких файлах</p>
 <pre><code class="language-php">use Lemurro\Api\Core\File\FileInfo;
 
 $file_ids = [1, 2, 3];
-$file_info = new FileInfo($this-&gt;dic);
+$file_info = new FileInfo();
 $array = $file_info-&gt;getMany($file_ids);
 </code></pre>
 <h2 id="page_-----2">Проверка прав доступа на файл</h2>
