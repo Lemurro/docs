@@ -35,6 +35,7 @@
 </tr>
 TPL;
 ```
+
 Отправить письмо:
 ```php
 use Lemurro\Api\Core\Mailer;

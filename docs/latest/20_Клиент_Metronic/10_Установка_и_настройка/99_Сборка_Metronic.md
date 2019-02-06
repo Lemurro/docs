@@ -1,7 +1,6 @@
 > **v1.0.0**
 
-# Изменение настроек Metronic и сборка нового билда
-Metronic v5.5.5+
+# Сборка Metronic
 
 ## Установка инструментов
 1. `cd {metronic_root}/default/tools`
@@ -61,12 +60,12 @@ $m--root-font: (
 2. Содержимое каталога `{metronic_root}/default/dist/demo5/assets/demo/demo5/base` копируем в каталог проекта `/src/assets/metronic-vx.x.x/demo5`
 
 ## Подключение Metronic
-- Подключаем CSS
+- Подключаем CSS в файле `/src/html/include/css.html`
 ```html
 <link href="{metronic_root}/base/vendors.bundle.css" rel="stylesheet" type="text/css">
 <link href="{metronic_root}/demo5/style.bundle.css" rel="stylesheet" type="text/css">
 ```
-- Подключаем JS
+- Подключаем JS в файле `/src/html/include/js.html`
 ```html
 <script src="{metronic_root}/base/vendors.bundle.js" type="text/javascript"></script>
 <script src="{metronic_root}/demo5/scripts.bundle.js" type="text/javascript"></script>
