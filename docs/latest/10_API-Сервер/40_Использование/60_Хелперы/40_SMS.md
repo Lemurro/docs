@@ -1,4 +1,10 @@
-> **v1.0.0**
+> **v1.0.0, v1.1.0**
+
+**Список изменений**
+
+Версия | Описание
+--- | ---
+1.1.0 | Для своего шлюза добавлен интерфейс
 
 # SMS
 Для отправки sms воспользуйтесь кодом:
@@ -19,9 +25,13 @@ $sms->send('71234567890', 'Сообщение');
 По умолчанию настроена работа с сервисом [sms.ru](http://sms.ru)
 
 ## Свой шлюз отправки sms
+> **v1.1.0**
+
 ```php
 <?php
-class OtherGatewaySMS
+use Lemurro\Api\Core\Abstracts\GatewaySMS;
+
+class OtherGatewaySMS implements GatewaySMS
 {
     /**
      * Отправка sms
@@ -53,4 +63,27 @@ class OtherGatewaySMS
      'message' => 'Текст ошибки',
  ];
  ```
-5. Текст из `message` будет помещён в лог результата отправки
+5. Текст из `message` будет помещён в лог
+
+> **v1.0.0**
+
+```php
+<?php
+use Lemurro\Api\Core\Abstracts\GatewaySMS;
+
+class OtherGatewaySMS
+{
+    /**
+     * Отправка sms
+     *
+     * @param string $phone   Номер телефона получателя
+     * @param string $message Сообщение
+     *
+     * @return array
+     */
+    public function send($phone, $message)
+    {
+        // Код отправки sms, обработки ответа и возврата результата
+    }
+}
+```
