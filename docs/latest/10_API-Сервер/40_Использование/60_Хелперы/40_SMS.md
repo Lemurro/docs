@@ -9,7 +9,7 @@
 # SMS
 Для отправки sms воспользуйтесь кодом:
 ```php
-use Lemurro\Api\Core\SMS\SMS;
+use Lemurro\Api\Core\Helpers\SMS\SMS;
 
 /** @var SMS $sms */
 $sms = $this->dic['sms'];

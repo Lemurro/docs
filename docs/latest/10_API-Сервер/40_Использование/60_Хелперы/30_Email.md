@@ -38,7 +38,7 @@ TPL;
 
 Отправить письмо:
 ```php
-use Lemurro\Api\Core\Mailer;
+use Lemurro\Api\Core\Helpers\Mailer;
 
 /** @var Mailer $mailer */
 $mailer = $this->dic['mailer'];
@@ -53,7 +53,7 @@ $mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
 ```
 \* По умолчанию в конструкторе класса `Mailer` указаны шапка `EmailTemplates::HEADER` и подвал `EmailTemplates::FOOTER`, вы можете указать другие шапку и подвал, создав новый класс
 ```php
-use Lemurro\Api\Core\Mailer;
+use Lemurro\Api\Core\Helpers\Mailer;
 
 $html_new_header = 'здесь-html-код'; // Смотрите пример здесь api/app/Configs/EmailTemplates.php в константе HEADER
 $html_new_footer = 'здесь-html-код'; // Смотрите пример здесь api/app/Configs/EmailTemplates.php в константе FOOTER
@@ -64,7 +64,7 @@ $mailer = new Mailer($this->dic, $html_new_header, $html_new_footer);
 ### Встроенный шаблон SIMPLE_MESSAGE
 В системе уже есть простой шаблон для писем, когда нужно отправить всего лишь одну строку
 ```php
-use Lemurro\Api\Core\Mailer;
+use Lemurro\Api\Core\Helpers\Mailer;
 
 /** @var Mailer $mailer */
 $mailer = $this->dic['mailer'];
