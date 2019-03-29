@@ -7,3 +7,5 @@
 - **Access-Control-Allow-Origin** = **\***
 - **Access-Control-Allow-Headers** = **X-SESSION-ID**
 - **Access-Control-Allow-Headers** = **X-UTC-OFFSET**
+- **Access-Control-Allow-Headers** = **X-Requested-With**
+- **Access-Control-Allow-Headers** = **X-File-Name**
