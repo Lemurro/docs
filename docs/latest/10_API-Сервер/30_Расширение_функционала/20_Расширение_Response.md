@@ -3,7 +3,7 @@
 # Расширение Response
 Если необходимо что-то изменить в объекте Response, например добавить новые заголовки
 
-Откройте файл `/app/Response.php` и добавьте свой код:
+Откройте файл `/app/Overrides/Response.php` и добавьте свой код:
 ```php
 $response->headers->set('My-Header', 'My value');
 ```
