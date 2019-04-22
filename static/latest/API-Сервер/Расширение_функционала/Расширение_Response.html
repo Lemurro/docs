@@ -75,7 +75,7 @@
 </blockquote>
 <h1 id="page_-Response">Расширение Response</h1>
 <p>Если необходимо что-то изменить в объекте Response, например добавить новые заголовки</p>
-<p>Откройте файл <code>/app/Response.php</code> и добавьте свой код:</p>
+<p>Откройте файл <code>/app/Overrides/Response.php</code> и добавьте свой код:</p>
 <pre><code class="language-php">$response-&gt;headers-&gt;set('My-Header', 'My value');
 </code></pre>
 <p>Если вам нужно будет добавить элементы в заголовок <code>Access-Control-Allow-Headers</code>, обратите внимание, что там уже есть элемент добавленный ядром, поэтому вам необходимо дополнить этот заголовок</p>
