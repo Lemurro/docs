@@ -52,9 +52,9 @@ $mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
     '[VARIABLE_1]' => 'текст',
     '[VARIABLE_2]' => 'премудростях отправки писем',
 ], [
-    'someimage' => 'assets/img/logo.png',
+    'someimage' => 'path/to/file.img',
 ], [
-    'somefile' => 'assets/img/logo.png',
+    'somefile' => 'path/to/file.ext',
 ]);
 ```
 **v1.3.0** \* По умолчанию в конструкторе класса `Mailer` указаны шапка `EmailTemplates::HEADER` и подвал `EmailTemplates::FOOTER`, вы можете указать другие шапку и подвал, создав новый класс
