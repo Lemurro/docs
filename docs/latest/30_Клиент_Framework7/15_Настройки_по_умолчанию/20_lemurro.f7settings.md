@@ -1,15 +1,15 @@
-> **v1.0.0, v1.1.0**
+> **v1.0, v1.1**
 
 **Список изменений**
 
 Версия | Описание
 --- | ---
-1.1.0 | Добавлен конфигурационный файл
+1.1 | Добавлен конфигурационный файл
 
 # Настройка Framework7
 - Указанные ниже настройки можно переопределить в файле:
-  - **v1.1.0**: `/src/js/0-config/100-config.js` в переменной `config.overrideF7Settings`
-  - **v1.0.0**: `/index.html` в переменной `var overrideF7Settings = {};`
+  - **v1.1**: `/src/js/0-config/100-config.js` в переменной `config.overrideF7Settings`
+  - **v1.0**: `/index.html` в переменной `var overrideF7Settings = {};`
 
 - **id** *default: `'ru.bestion.lemurro'`* - идентификатор пакета приложения
 

@@ -1,12 +1,12 @@
-> **v1.0.0, v1.1.0, v1.2.0**
+> **v1.0, v1.1, v1.2**
 
 **Список изменений**
 
 Версия | Описание
 --- | ---
-1.2.0 | Добавлены переменные окружения (env)
+1.2 | Добавлены переменные окружения (env)
 
-# v1.2.0 AJAX-запросы к API
+# v1.2 AJAX-запросы к API
 
 Для AJAX-запросов используется jQuery-плагин [LightAjax](https://github.com/DimNS/jQuery.LightAjax)
 
@@ -34,7 +34,7 @@ lemurro.lightajax.get(true, pathServerAPI + 'path/to/server', {
 
 Для скрытных запросов, укажите `false` в качестве первого параметра в строке `lemurro.lightajax.get(false, `. В этом случае прелоадер показываться не будет и нет необходимости его скрывать при успешном завершении запроса (строка: `lemurro.lightajax.preloader('hide');` в примере выше).
 
-# v1.0.0 AJAX-запросы к API
+# v1.0 AJAX-запросы к API
 
 Для AJAX-запросов используется jQuery-плагин [LightAjax](https://github.com/DimNS/jQuery.LightAjax)
 

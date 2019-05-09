@@ -1,4 +1,4 @@
-> **v1.0.0**
+> **v1.0**
 
 # DIC
 В качестве DIC используется библиотека [Pimple](https://github.com/silexphp/Pimple)
