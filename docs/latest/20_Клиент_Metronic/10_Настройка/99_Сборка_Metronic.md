@@ -1,16 +1,23 @@
-> **v1.0.0**
+> **v1.0.0, v1.5.0**
+
+**Список изменений**
+
+Версия | Описание
+--- | ---
+1.5.0 | Исправления и дополнения
 
 # Сборка Metronic
+В Lemurro используется Metronic v5.5.5 и его Demo5
 
 ## Установка инструментов
-1. `cd {metronic_root}/default/tools`
-2. `npm install --global npm@latest`
-3. `npm install --global yarn`
-4. `npm install --global gulp-cli`
+1. `npm install --global npm@latest`
+2. `npm install --global yarn`
+3. `npm install --global gulp-cli`
+4. `cd {metronic_root}/theme/default/tools`
 5. `yarn install`
 
 ## Изменение настроек CSS
-- В файле `{metronic_root}/default/src/sass/framework/_config.scss` меняем основные настройки Metronic, в частности сделаем основным шрифт Roboto
+- В файле `{metronic_root}/theme/default/src/sass/framework/_config.scss` меняем основные настройки Metronic, в частности сделаем основным шрифт Roboto
 ```scss
 //== The body element font settings
 $m--root-font: (
@@ -32,7 +39,7 @@ $m--font-families: (
     heading: 'Roboto'
 )!default;
 ```
-- В файле `{metronic_root}/default/src/sass/demo/demo5/_framework-config.scss` меняем настройки необходимого нам шаблона
+- В файле `{metronic_root}/theme/default/src/sass/demo/demo5/_framework-config.scss` меняем настройки необходимого нам шаблона
 ```scss
 //== The body element font settings
 $m--root-font: (
@@ -49,24 +56,35 @@ $m--root-font: (
 );
 ```
 
+## Настройка конфига сборщика
+В файле `{metronic_root}/theme/default/tools/themes/default.conf.json`, для сокращения собранного пакета рекомендуются следующие настройки:
+
+Поле | Значение | Описание
+--- | --- | ---
+`config.demo` | `"demo5"` | Название демо, которую будем собирать, чтобы значительно сократить время сборки
+`config.compile.rtl.enabled` | `false` | Отключаем создание css-файла для режима `rtl`
+`config.compile.jsUglify` | `true` | Сжимаем js-файлы
+`config.compile.cssMinify` | `true` | Сжимаем css-файлы
+`build.vendors.base.src.optional` | &bull; `bootstrap-datetime-picker`<br>&bull; `select2`<br>&bull; `inputmask`<br>&bull; `summernote`<br>&bull; `jquery-validation`<br>&bull; `sweetalert2` | В этом блоке можно удалить все библиотеки кроме указанных, они обязательно необходимы, также вы можете не кдалять какие-то другие библиотеки, необходимые вам
+`build.vendors.custom` |  | В этом блоке можно удалить все библиотеки
+
 ## Сборка Metronic
-1. В файле `{metronic_root}/default/tools/themes/default.conf.json` есть переменная `demo`, укажите там `demo5` для сборки только определённого шаблона или укажите пустую строку для сборки ВСЕХ шаблонов
-2. `cd {metronic_root}/default/tools`
-3. `gulp --prod`
-4. Готовая сборка тут `{metronic_root}/default/dist`
+1. `cd {metronic_root}/theme/default/tools`
+2. `gulp --prod`
+3. Готовая сборка тут `{metronic_root}/theme/default/dist`
 
 ## Копируем необходимые файлы
-1. Содержимое каталога `{metronic_root}/default/dist/demo5/assets/vendors/base` копируем в каталог проекта `/src/assets/metronic-vx.x.x/base`
-2. Содержимое каталога `{metronic_root}/default/dist/demo5/assets/demo/demo5/base` копируем в каталог проекта `/src/assets/metronic-vx.x.x/demo5`
+1. Содержимое каталога `{metronic_root}/theme/default/dist/demo5/assets/vendors/base` копируем в каталог проекта `/src/copy-to-build/assets/metronic-vx.x.x/base`
+2. Содержимое каталога `{metronic_root}/theme/default/dist/demo5/assets/demo/demo5/base` копируем в каталог проекта `/src/copy-to-build/assets/metronic-vx.x.x/demo5`
 
 ## Подключение Metronic
 - Подключаем CSS в файле `/src/html/include/css.html`
 ```html
-<link href="{metronic_root}/base/vendors.bundle.css" rel="stylesheet" type="text/css">
-<link href="{metronic_root}/demo5/style.bundle.css" rel="stylesheet" type="text/css">
+<link href="{your_metronic_root}/base/vendors.bundle.css" rel="stylesheet" type="text/css">
+<link href="{your_metronic_root}/demo5/style.bundle.css" rel="stylesheet" type="text/css">
 ```
 - Подключаем JS в файле `/src/html/include/js.html`
 ```html
-<script src="{metronic_root}/base/vendors.bundle.js" type="text/javascript"></script>
-<script src="{metronic_root}/demo5/scripts.bundle.js" type="text/javascript"></script>
+<script src="{your_metronic_root}/base/vendors.bundle.js" type="text/javascript"></script>
+<script src="{your_metronic_root}/demo5/scripts.bundle.js" type="text/javascript"></script>
 ```
