@@ -70,9 +70,8 @@
                     </div>
 
     <div class="s-content">
-        <h1 id="page_--1-4--1-5">Обновление с 1.4 до 1.5</h1>
-<h2 id="page_API-module">API-module</h2>
-<h3 id="page_--">Критически важные изменения</h3>
+        <h1 id="page_API-module">API-module</h1>
+<h2 id="page_--">Критически важные изменения</h2>
 <ul>
 <li>
 <p>Класс <code>Lemurro\Api\Core\Cron\Cron</code> переименован в класс <code>Lemurro\Api\Core\Helpers\Console</code></p>
@@ -90,59 +89,66 @@
 </ul>
 <p>Поэтому в своих проектах создайте клона вашего пользователя с ID=1</p>
 <p>А у пользователя с ID=1 необходимо поставить вот такие параметры</p>
-<pre><code></code></pre>
-</li>
-</ul>
-<p>-- Таблица <code>users</code>
-id      = 1
-auth_id = 'lemurro@lemurro'</p>
-<p>-- Таблица <code>info_users</code>
-id          = 1
-user_id     = 1
-roles       = '{&quot;admin&quot;:&quot;true&quot;}'
-first_name  = 'для'
-second_name = 'cli-скриптов'
-last_name   = 'Пользователь'</p>
-<pre><code>
-- Появилась возможность скачивать только что загруженные (временные) файлы, поэтому необходимо добавить новое поле в таблицу `files_downloads`
-  ```sql
-ALTER TABLE `files_downloads` ADD `type` VARCHAR(255) NOT NULL AFTER `id`;
+<pre><code class="language-sql">UPDATE `users`
+SET `auth_id` = 'lemurro@lemurro'
+WHERE `id` = 1;
 
-UPDATE `files_downloads` SET `type` = 'permanent';
+UPDATE `info_users`
+SET `user_id`     = 1,
+    `roles`       = '{&quot;admin&quot;:&quot;true&quot;}',
+    `first_name`  = 'для',
+    `second_name` = 'cli-скриптов',
+    `last_name`   = 'Пользователь'
+WHERE `id` = 1;
 </code></pre>
-<ul>
-<li>В <code>app/Configs/SettingsFile.php</code> добавлен новый параметр
-<pre><code class="language-php"></code></pre>
+</li>
+<li>
+<p>Появилась возможность скачивать только что загруженные (временные) файлы, поэтому необходимо добавить новое поле в таблицу <code>files_downloads</code></p>
+<pre><code class="language-sql">ALTER TABLE `files_downloads`
+    ADD `type` VARCHAR(255) NOT NULL AFTER `id`;
+
+UPDATE `files_downloads`
+SET `type` = 'permanent';
+</code></pre>
+</li>
+<li>
+<p>В <code>app/Configs/SettingsFile.php</code> добавлен новый параметр</p>
+<pre><code class="language-php">/**
+ * Режим проверки файла: по типу содержимого (type) или по расширению (ext)
+ *
+ * @var string
+ */
+const CHECK_FILE_BY = 'type';
+</code></pre>
 </li>
 </ul>
-<p>/**</p>
+<h2 id="page_---2">Изменения средней важности</h2>
 <ul>
-<li>Режим проверки файла: по типу содержимого (type) или по расширению (ext)</li>
-<li></li>
-<li>@var string
-*/
-const CHECK_FILE_BY = 'type';</li>
+<li>Временная зона &quot;по умолчанию&quot; перенесена в ядро, поэтому строка <code>date_default_timezone_set('UTC');</code> более не актуальна в следующих файлах:
+<ul>
+<li>
+<code>public/index.php</code>;</li>
+<li>
+<code>lemurro-cron.php</code>;</li>
+<li>и в ваших файлах, где вы могли использовать это определение.</li>
 </ul>
-<pre><code>
-### Изменения средней важности
-- Временная зона &quot;по умолчанию&quot; перенесена в ядро, поэтому строка `date_default_timezone_set('UTC');` более не актуальна в следующих файлах:
-  - `public/index.php`;
-  - `lemurro-cron.php`;
-  - и в ваших файлах, где вы могли использовать это определение.
-
-## WEB-module
-
-### Критически важные изменения
-- В каталоге `src` необходимо создать каталог `copy-to-build` и перенести туда каталог `assets` и файл `.htaccess`
-
-- В каталоге `copy-to-build` необходимо поместить файл `favicon.png`
-
-- Добавлена новая gulp-библиотека `gulp-sort` для исправления ошибки с неверным порядком склейки файлов
-  ```bash
-npm install --save-dev gulp-sort@^2.0.0
+</li>
+</ul>
+<h1 id="page_WEB-module">WEB-module</h1>
+<h2 id="page_---2">Критически важные изменения</h2>
+<ul>
+<li>
+<p>В каталоге <code>src</code> необходимо создать каталог <code>copy-to-build</code> и перенести туда каталог <code>assets</code> и файл <code>.htaccess</code></p>
+</li>
+<li>
+<p>В каталоге <code>copy-to-build</code> необходимо поместить файл <code>favicon.png</code></p>
+</li>
+<li>
+<p>Добавлена новая gulp-библиотека <code>gulp-sort</code> для исправления ошибки с неверным порядком склейки файлов</p>
+<pre><code class="language-bash">npm install --save-dev gulp-sort@^2.0.0
 </code></pre>
 <p>Возьмите файл <a href="https://github.com/Lemurro/client-metronic/blob/v1.5.0/gulpfile.js" class="Link--external">gulpfile.js</a> и сравните его со своим, там очень много изменений оптимизации, проще всего будет взять новый файл и добавить в него ваши таски (если есть)</p>
-<ul>
+</li>
 <li>
 <p>Исправлена ошибка при отсутствии даты последнего действия пользователя, в файле <code>src/html/pages/users/tpl_item.html</code> внесите изменения в столбце с датой последнего действия</p>
 <table>
@@ -155,7 +161,7 @@ npm install --save-dev gulp-sort@^2.0.0
 <tbody>
 <tr>
 <td><code>&lt;td class=&quot;align-middle text-nowrap&quot;&gt;</code><br>    <code>{{lemurrolocaltime last_action_date &quot;DD.MM.YYYY HH:mm&quot;}}</code><br><code>&lt;/td&gt;</code></td>
-<td><code>&lt;td class=&quot;align-middle text-nowrap&quot;&gt;</code><br>    <code>{{#if last_action_date}}</code><br>    <code>{{lemurrolocaltime last_action_date &quot;DD.MM.YYYY HH:mm&quot;}}</code><br>    <code>{{else}}</code><br>    <code>отсутствует</code><br>    <code>{{/if}}</code><br><code>&lt;/td&gt;</code></td>
+<td><code>&lt;td class=&quot;align-middle text-nowrap&quot;&gt;</code><br>    <strong><code>{{#if last_action_date}}</code></strong><br>    <code>{{lemurrolocaltime last_action_date &quot;DD.MM.YYYY HH:mm&quot;}}</code><br>    <strong><code>{{else}}</code></strong><br>    <strong><code>отсутствует</code></strong><br>      <strong><code>{{/if}}</code></strong><br><code>&lt;/td&gt;</code></td>
 </tr>
 </tbody>
 </table>
@@ -179,7 +185,7 @@ npm install --save-dev gulp-sort@^2.0.0
 </ul>
 </li>
 <li>
-<p>В файле <code>src/html/pages/users/tpl_item.html</code></p>
+<p>В файле <code>src/html/pages/users/tpl_item.html</code> заблокируем кнопки <code>Войти</code> и <code>Удалить</code> для пользователя с ID=1</p>
 <table>
 <thead>
 <tr>
@@ -190,7 +196,7 @@ npm install --save-dev gulp-sort@^2.0.0
 <tbody>
 <tr>
 <td><code>&lt;li class=&quot;m-nav__item js-login-by-user&quot;&gt;</code><br>    <code>&lt;a href=&quot;javascript:lemurro.users.loginByUser('{{id}}');&quot; class=&quot;btn m-btn--icon&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;fas fa-fw fa-sign-in-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Войти&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/a&gt;</code><br><code>&lt;/li&gt;</code><br><code>&lt;li class=&quot;m-nav__item&quot;&gt;</code><br>    <code>&lt;a href=&quot;javascript:users.remove('{{id}}');&quot; class=&quot;btn m-btn--icon text-danger&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;far fa-fw fa-trash-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Удалить&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/a&gt;</code><br><code>&lt;/li&gt;</code></td>
-<td><code>{{#js_if &quot;this.id !== '1'&quot;}}</code><br><code>&lt;li class=&quot;m-nav__item js-login-by-user&quot;&gt;</code><br>    <code>&lt;a href=&quot;javascript:lemurro.users.loginByUser('{{id}}');&quot; class=&quot;btn m-btn--icon&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;fas fa-fw fa-sign-in-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Войти&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/a&gt;</code><br><code>&lt;/li&gt;</code><br><code>&lt;li class=&quot;m-nav__item&quot;&gt;</code><br>    <code>&lt;a href=&quot;javascript:users.remove('{{id}}');&quot; class=&quot;btn m-btn--icon text-danger&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;far fa-fw fa-trash-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Удалить&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/a&gt;</code><br><code>&lt;/li&gt;</code><br><code>{{else}}</code><br><code>&lt;li class=&quot;m-nav__item&quot;&gt;</code><br>    <code>&lt;span class=&quot;btn m-btn--icon disabled&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;fas fa-fw fa-sign-in-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Войти&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/span&gt;</code><br><code>&lt;/li&gt;</code><br><code>&lt;li class=&quot;m-nav__item&quot;&gt;</code><br>    <code>&lt;span class=&quot;btn m-btn--icon disabled&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;far fa-fw fa-trash-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Удалить&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/span&gt;</code><br><code>&lt;/li&gt;</code><br><code>{{/js_if}}</code></td>
+<td><strong><code>{{#js_if &quot;this.id !== '1'&quot;}}</code></strong><br><code>&lt;li class=&quot;m-nav__item js-login-by-user&quot;&gt;</code><br>    <code>&lt;a href=&quot;javascript:lemurro.users.loginByUser('{{id}}');&quot; class=&quot;btn m-btn--icon&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;fas fa-fw fa-sign-in-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Войти&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/a&gt;</code><br><code>&lt;/li&gt;</code><br><code>&lt;li class=&quot;m-nav__item&quot;&gt;</code><br>    <code>&lt;a href=&quot;javascript:users.remove('{{id}}');&quot; class=&quot;btn m-btn--icon text-danger&quot;&gt;</code><br>        <code>&lt;span&gt;</code><br>            <code>&lt;i class=&quot;far fa-fw fa-trash-alt&quot;&gt;&lt;/i&gt;</code><br>            <code>&lt;span&gt;Удалить&lt;/span&gt;</code><br>        <code>&lt;/span&gt;</code><br>    <code>&lt;/a&gt;</code><br><code>&lt;/li&gt;</code><br><strong><code>{{else}}</code></strong><br><strong><code>&lt;li class=&quot;m-nav__item&quot;&gt;</code></strong><br>    <strong><code>&lt;span class=&quot;btn m-btn--icon disabled&quot;&gt;</code></strong><br>        <strong><code>&lt;span&gt;</code></strong><br>            <strong><code>&lt;i class=&quot;fas fa-fw fa-sign-in-alt&quot;&gt;&lt;/i&gt;</code></strong><br>            <strong><code>&lt;span&gt;Войти&lt;/span&gt;</code></strong><br>        <strong><code>&lt;/span&gt;</code></strong><br>    <strong><code>&lt;/span&gt;</code></strong><br><strong><code>&lt;/li&gt;</code></strong><br><strong><code>&lt;li class=&quot;m-nav__item&quot;&gt;</code></strong><br>    <strong><code>&lt;span class=&quot;btn m-btn--icon disabled&quot;&gt;</code></strong><br>        <strong><code>&lt;span&gt;</code></strong><br>            <strong><code>&lt;i class=&quot;far fa-fw fa-trash-alt&quot;&gt;&lt;/i&gt;</code></strong><br>            <strong><code>&lt;span&gt;Удалить&lt;/span&gt;</code></strong><br>        <strong><code>&lt;/span&gt;</code></strong><br>    <strong><code>&lt;/span&gt;</code></strong><br><strong><code>&lt;/li&gt;</code></strong><br><strong><code>{{/js_if}}</code></strong></td>
 </tr>
 </tbody>
 </table>
@@ -201,13 +207,11 @@ npm install --save-dev gulp-sort@^2.0.0
 <p>Запуск страницы при первом запуске приложения выполняется внутри <code>app.init</code>, чтобы можно было сначала выполнить какие-то действия перед стартом страницы, поэтому вам необходимо добавить вызов <code>callback();</code> он передается в виде единственного параметра в <code>app.init = function (callback) {};</code> в файле <code>src/js/0-app/300-init.js</code></p>
 </li>
 </ul>
-<h3 id="page_---2">Изменения средней важности</h3>
+<h2 id="page_---2">Изменения средней важности</h2>
 <ul>
-<li>
-<p>Добавлен js-хелпер <a href="../latest/Клиент_Metronic_(web)/Использование/JS-хелперы/clearString.html">clearString</a></p>
+<li>Добавлен js-хелпер <a href="../latest/Клиент_Metronic_(web)/Использование/JS-хелперы/clearString.html">clearString</a>
 </li>
-<li>
-<p>В js-хелпере <a href="../latest/Клиент_Metronic_(web)/Использование/JS-хелперы/showConfirm.html">showConfirm</a> изменены настройки по умолчанию:</p>
+<li>В js-хелпере <a href="../latest/Клиент_Metronic_(web)/Использование/JS-хелперы/showConfirm.html">showConfirm</a> изменены настройки по умолчанию:
 <ul>
 <li>
 <code>type: 'question'</code>;</li>
@@ -225,8 +229,7 @@ npm install --save-dev gulp-sort@^2.0.0
 <code>cancelButtonClass: 'btn btn-danger'</code>.</li>
 </ul>
 </li>
-<li>
-<p>В js-модуле <a href="../latest/Клиент_Metronic_(web)/Использование/Загрузка_файлов.html">bindUpload</a>:</p>
+<li>В js-модуле <a href="../latest/Клиент_Metronic_(web)/Использование/Загрузка_файлов.html">bindUpload</a>:
 <ul>
 <li>в ваш <code>callback</code> теперь также передаётся параметр <code>btn</code>;</li>
 <li>добавлен новый параметр <code>options</code>, теперь вы можете, при необходимости, переопределить параметры по умолчанию.</li>
