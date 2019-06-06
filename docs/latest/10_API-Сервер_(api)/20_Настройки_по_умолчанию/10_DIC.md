@@ -21,4 +21,4 @@
 
 - **$this->dic['log']** - объект класса [Monolog](https://github.com/Seldaek/monolog), подробнее можно почитать [здесь](../40_Использование/60_Хелперы/20_Логирование.md)
 
-- **$this->dic['checker']** - объект класса [Lemurro\Api\Core\Checker\Checker](https://github.com/Seldaek/monolog), подробнее можно почитать [здесь](../40_Использование/60_Хелперы/50_Checker.md)
+- **$this->dic['checker']** - объект класса [Lemurro\Api\Core\Checker\Checker](https://github.com/Seldaek/monolog), подробнее можно почитать [здесь](../../50_Модули/10_Права_доступа/10_Введение.md)
