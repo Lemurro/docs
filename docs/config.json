@@ -6,6 +6,10 @@
     "breadcrumbs": true,
     "breadcrumb_separator": " > ",
     "float": false,
-    "auto_toc": false
+    "repo": "Lemurro/lemurro",
+    "auto_toc": false,
+    "links": {
+      "GitHub Repo": "https://github.com/Lemurro/lemurro"
+    }
   }
 }
