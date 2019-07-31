@@ -1,0 +1,313 @@
+<div id="container" style="height: 400px;"></div>
+
+<script src="highcharts-gantt.js"></script>
+
+<script>
+    function versionRoadmap(options) {
+        if (typeof (options) === 'undefined') {
+            options = {};
+        }
+
+        /**
+         * Simple object check.
+         *
+         * @author https://stackoverflow.com/a/34749873/6107711
+         *
+         * @param item
+         *
+         * @return {boolean}
+         */
+        function isObject(item) {
+            return (item && typeof item === 'object' && !Array.isArray(item));
+        }
+
+        /**
+         * Deep merge two objects.
+         *
+         * @author https://stackoverflow.com/a/34749873/6107711
+         *
+         * @param target
+         * @param sources
+         *
+         * @return {object}
+         */
+        function mergeDeep(target, ...sources) {
+            if (!sources.length) {
+                return target;
+            }
+
+            const source = sources.shift();
+
+            if (isObject(target) && isObject(source)) {
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        if (isObject(source[key])) {
+                            if (!target[key]) {
+                                Object.assign(target, {[key]: {}});
+                            }
+
+                            mergeDeep(target[key], source[key]);
+                        } else {
+                            Object.assign(target, {[key]: source[key]});
+                        }
+                    }
+                }
+            }
+
+            return mergeDeep(target, ...sources);
+        }
+
+        var settings = {
+            containerID  : 'container',
+            colors       : {
+                default          : {
+                    bg  : '#eeeeee',
+                    text: '#000000'
+                },
+                maintained       : {
+                    bg  : '#6bb020',
+                    text: '#ffffff'
+                },
+                securityFixesOnly: {
+                    bg  : '#ffc734',
+                    text: '#000000'
+                },
+                outdated         : {
+                    bg  : '#e03c31',
+                    text: '#ffffff'
+                },
+                currentDayLine   : '#333333',
+                xAxisGridLine    : '#cccccc',
+                yAxisGridLine    : '#aaaaaa'
+            },
+            titles       : {
+                chart            : 'My Project Roadmap',
+                maintained       : 'Maintained',
+                securityFixesOnly: 'Security fixes only'
+            },
+            formatDate   : '%Y-%m-%d',
+            formatTooltip: '<strong>{point.title}</strong><br/>From: {point.start:%Y-%m-%d}<br/>To: {point.end:%Y-%m-%d}',
+            roadmaps     : [
+                {
+                    "version": "v1.3",
+                    "dates"  : [
+                        {
+                            "from": "2018-05-15",
+                            "to"  : "2018-09-15"
+                        }, {
+                            "from": "2018-09-15",
+                            "to"  : "2019-03-15"
+                        }
+                    ]
+                }, {
+                    "version": "v1.4",
+                    "dates"  : [
+                        {
+                            "from": "2018-09-15",
+                            "to"  : "2019-05-15"
+                        }, {
+                            "from": "2019-05-15",
+                            "to"  : "2019-09-15"
+                        }
+                    ]
+                }, {
+                    "version": "v1.5",
+                    "dates"  : [
+                        {
+                            "from": "2019-05-15",
+                            "to"  : "2019-08-15"
+                        }, {
+                            "from": "2019-08-15",
+                            "to"  : "2019-12-15"
+                        }
+                    ]
+                }, {
+                    "version": "v1.6",
+                    "dates"  : [
+                        {
+                            "from": "2019-08-15",
+                            "to"  : "2020-01-15"
+                        }, {
+                            "from": "2020-01-15",
+                            "to"  : "2020-05-15"
+                        }
+                    ]
+                }, {
+                    "version": "v1.7",
+                    "dates"  : [
+                        {
+                            "from": "2020-01-15",
+                            "to"  : "2020-06-15"
+                        }, {
+                            "from": "2020-06-15",
+                            "to"  : "2020-10-15"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        settings = mergeDeep(settings, options);
+
+        var now = new Date().getTime();
+
+        var series = settings.roadmaps.map(function (roadmap, i) {
+            var data = roadmap.dates.map(function (item, j) {
+                var type = '!unknown!';
+
+                switch (j) {
+                    case 0:
+                        type = 'maintained';
+                        break;
+
+                    case 1:
+                        type = 'securityFixesOnly';
+                        break;
+                }
+
+                return {
+                    title: (settings.titles.hasOwnProperty(type) ? settings.titles[type] : '!unknown!'),
+                    start: new Date(item.from).getTime(),
+                    end  : new Date(item.to).getTime(),
+                    color: (settings.colors.hasOwnProperty(type) ? settings.colors[type].bg : settings.colors.default.bg),
+                    y    : i
+                };
+            });
+
+            var roadmapColors = 'default';
+
+            if (now >= new Date(roadmap.dates[0].from).getTime() && now <= new Date(roadmap.dates[0].to).getTime()) {
+                roadmapColors = 'maintained';
+            } else if (now >= new Date(roadmap.dates[1].from).getTime() && now <= new Date(roadmap.dates[1].to).getTime()) {
+                roadmapColors = 'securityFixesOnly';
+            } else if (now >= new Date(roadmap.dates[1].to).getTime()) {
+                roadmapColors = 'outdated';
+            }
+
+            return {
+                data  : data,
+                name  : roadmap.version,
+                colors: (settings.colors.hasOwnProperty(roadmapColors) ? settings.colors[roadmapColors] : settings.colors.default)
+            };
+        });
+
+        Highcharts.ganttChart(settings.containerID, {
+            title  : {
+                text: settings.titles.chart
+            },
+            series : series,
+            tooltip: {
+                pointFormat: settings.formatTooltip
+            },
+            xAxis  : [{
+                tickInterval        : 365 * 24 * 3600 * 1000, // one year
+                type                : 'category',
+                lineColor           : 'transparent',
+                tickColor           : settings.colors.yAxisGridLine,
+                gridLineColor       : settings.colors.yAxisGridLine,
+                gridLineWidth       : 1,
+                labels              : {
+                    style: {
+                        fontWeight: 'bold'
+                    }
+                },
+                currentDateIndicator: {
+                    color    : settings.colors.currentDayLine,
+                    dashStyle: 'dash',
+                    width    : 1,
+                    label    : {
+                        format       : settings.formatDate,
+                        align        : 'center',
+                        verticalAlign: 'bottom',
+                        y            : 15
+                    }
+                }
+            }, {
+                visible : false,
+                opposite: false
+            }],
+            yAxis  : {
+                type             : 'category',
+                labels           : {
+                    useHTML  : true,
+                    formatter: function () {
+                        var arr       = this.value.split('||');
+                        var name      = arr[0];
+                        var colorBg   = arr[1];
+                        var colorText = arr[2];
+
+                        return '<div style="background-color: ' + colorBg + ';color: ' + colorText + ';padding: 2px 6px;font-size: 13px;border-radius: 3px;">' + name + '</div>';
+                    }
+                },
+                lineColor        : 'transparent',
+                tickColor        : 'transparent',
+                gridLineColor    : settings.colors.xAxisGridLine,
+                gridLineDashStyle: 'longdash',
+                grid             : {
+                    columns: [{
+                        categories: Highcharts.map(series, function (s) {
+                            return s.name + '||' + s.colors.bg + '||' + s.colors.text;
+                        })
+                    }]
+                }
+            }
+        });
+    }
+
+    versionRoadmap({
+        titles       : {
+            chart            : 'Lemurro Roadmap',
+            maintained       : 'Поддерживается',
+            securityFixesOnly: 'Только исправления безопасности'
+        },
+        formatDate   : '%d.%m.%Y',
+        formatTooltip: '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}',
+        roadmaps     : [
+            {
+                "version": "v1.4",
+                "dates"  : [
+                    {
+                        "from": "2019-04-22",
+                        "to"  : "2019-05-15"
+                    }, {
+                        "from": "2019-05-15",
+                        "to"  : "2019-06-15"
+                    }
+                ]
+            }, {
+                "version": "v1.5",
+                "dates"  : [
+                    {
+                        "from": "2019-05-15",
+                        "to"  : "2019-06-06"
+                    }, {
+                        "from": "2019-06-06",
+                        "to"  : "2019-09-06"
+                    }
+                ]
+            }, {
+                "version": "v1.6",
+                "dates"  : [
+                    {
+                        "from": "2019-06-06",
+                        "to"  : "2019-07-28"
+                    }, {
+                        "from": "2019-07-28",
+                        "to"  : "2019-10-28"
+                    }
+                ]
+            }, {
+                "version": "v1.7",
+                "dates"  : [
+                    {
+                        "from": "2019-07-28",
+                        "to"  : "2020-01-28"
+                    }, {
+                        "from": "2020-01-28",
+                        "to"  : "2020-04-28"
+                    }
+                ]
+            }
+        ]
+    });
+</script>
