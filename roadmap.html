@@ -151,6 +151,9 @@
 
         Highcharts.ganttChart(settings.containerID, {
             series : series,
+            title  : {
+                text: settings.titles.chart
+            },
             tooltip: {
                 pointFormat: settings.formatTooltip
             },
