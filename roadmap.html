@@ -3,7 +3,7 @@
 <script src="highcharts-gantt.js"></script>
 
 <script>
-    function versionRoadmap(options) {
+    function versionRoadmap(roadmaps, options) {
         if (typeof (options) === 'undefined') {
             options = {};
         }
@@ -87,71 +87,29 @@
             },
             formatDate   : '%Y-%m-%d',
             formatTooltip: '<strong>{point.title}</strong><br/>From: {point.start:%Y-%m-%d}<br/>To: {point.end:%Y-%m-%d}',
-            roadmaps     : [
-                {
-                    "version": "v1.3",
-                    "dates"  : [
-                        {
-                            "from": "2018-05-15",
-                            "to"  : "2018-09-15"
-                        }, {
-                            "from": "2018-09-15",
-                            "to"  : "2019-03-15"
-                        }
-                    ]
-                }, {
-                    "version": "v1.4",
-                    "dates"  : [
-                        {
-                            "from": "2018-09-15",
-                            "to"  : "2019-05-15"
-                        }, {
-                            "from": "2019-05-15",
-                            "to"  : "2019-09-15"
-                        }
-                    ]
-                }, {
-                    "version": "v1.5",
-                    "dates"  : [
-                        {
-                            "from": "2019-05-15",
-                            "to"  : "2019-08-15"
-                        }, {
-                            "from": "2019-08-15",
-                            "to"  : "2019-12-15"
-                        }
-                    ]
-                }, {
-                    "version": "v1.6",
-                    "dates"  : [
-                        {
-                            "from": "2019-08-15",
-                            "to"  : "2020-01-15"
-                        }, {
-                            "from": "2020-01-15",
-                            "to"  : "2020-05-15"
-                        }
-                    ]
-                }, {
-                    "version": "v1.7",
-                    "dates"  : [
-                        {
-                            "from": "2020-01-15",
-                            "to"  : "2020-06-15"
-                        }, {
-                            "from": "2020-06-15",
-                            "to"  : "2020-10-15"
-                        }
-                    ]
-                }
-            ]
+            daysOverdue  : 90
         };
 
         settings = mergeDeep(settings, options);
 
         var now = new Date().getTime();
 
-        var series = settings.roadmaps.map(function (roadmap, i) {
+        var actualRoadmaps = roadmaps.filter(function (item) {
+            var result = true;
+            var diff   = now - new Date(item.dates[1].to).getTime();
+
+            if (diff > 0) {
+                var days = diff / 1000 / 60 / 60 / 24;
+
+                if (days > settings.daysOverdue) {
+                    result = false;
+                }
+            }
+
+            return result;
+        });
+
+        var series = actualRoadmaps.map(function (roadmap, i) {
             var data = roadmap.dates.map(function (item, j) {
                 var type = '!unknown!';
 
@@ -192,9 +150,6 @@
         });
 
         Highcharts.ganttChart(settings.containerID, {
-            title  : {
-                text: settings.titles.chart
-            },
             series : series,
             tooltip: {
                 pointFormat: settings.formatTooltip
@@ -254,60 +209,61 @@
         });
     }
 
-    versionRoadmap({
+    var data = [
+        {
+            "version": "v1.4",
+            "dates"  : [
+                {
+                    "from": "2019-04-22",
+                    "to"  : "2019-05-15"
+                }, {
+                    "from": "2019-05-15",
+                    "to"  : "2019-06-15"
+                }
+            ]
+        }, {
+            "version": "v1.5",
+            "dates"  : [
+                {
+                    "from": "2019-05-15",
+                    "to"  : "2019-06-06"
+                }, {
+                    "from": "2019-06-06",
+                    "to"  : "2019-09-06"
+                }
+            ]
+        }, {
+            "version": "v1.6",
+            "dates"  : [
+                {
+                    "from": "2019-06-06",
+                    "to"  : "2019-07-28"
+                }, {
+                    "from": "2019-07-28",
+                    "to"  : "2019-10-28"
+                }
+            ]
+        }, {
+            "version": "v1.7",
+            "dates"  : [
+                {
+                    "from": "2019-07-28",
+                    "to"  : "2020-01-28"
+                }, {
+                    "from": "2020-01-28",
+                    "to"  : "2020-04-28"
+                }
+            ]
+        }
+    ];
+
+    versionRoadmap(data, {
         titles       : {
             chart            : 'Lemurro Roadmap',
             maintained       : 'Поддерживается',
             securityFixesOnly: 'Только исправления безопасности'
         },
         formatDate   : '%d.%m.%Y',
-        formatTooltip: '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}',
-        roadmaps     : [
-            {
-                "version": "v1.4",
-                "dates"  : [
-                    {
-                        "from": "2019-04-22",
-                        "to"  : "2019-05-15"
-                    }, {
-                        "from": "2019-05-15",
-                        "to"  : "2019-06-15"
-                    }
-                ]
-            }, {
-                "version": "v1.5",
-                "dates"  : [
-                    {
-                        "from": "2019-05-15",
-                        "to"  : "2019-06-06"
-                    }, {
-                        "from": "2019-06-06",
-                        "to"  : "2019-09-06"
-                    }
-                ]
-            }, {
-                "version": "v1.6",
-                "dates"  : [
-                    {
-                        "from": "2019-06-06",
-                        "to"  : "2019-07-28"
-                    }, {
-                        "from": "2019-07-28",
-                        "to"  : "2019-10-28"
-                    }
-                ]
-            }, {
-                "version": "v1.7",
-                "dates"  : [
-                    {
-                        "from": "2019-07-28",
-                        "to"  : "2020-01-28"
-                    }, {
-                        "from": "2020-01-28",
-                        "to"  : "2020-04-28"
-                    }
-                ]
-            }
-        ]
+        formatTooltip: '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}'
     });
 </script>
