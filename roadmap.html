@@ -60,9 +60,9 @@
         var settings = {
             containerID  : 'container',
             colors       : {
-                default          : {
-                    bg  : '#eeeeee',
-                    text: '#000000'
+                outdated         : {
+                    bg  : '#e03c31',
+                    text: '#ffffff'
                 },
                 maintained       : {
                     bg  : '#6bb020',
@@ -72,9 +72,9 @@
                     bg  : '#ffc734',
                     text: '#000000'
                 },
-                outdated         : {
-                    bg  : '#e03c31',
-                    text: '#ffffff'
+                future           : {
+                    bg  : '#eeeeee',
+                    text: '#000000'
                 },
                 currentDayLine   : '#333333',
                 xAxisGridLine    : '#cccccc',
@@ -82,8 +82,10 @@
             },
             titles       : {
                 chart            : 'My Project Roadmap',
+                outdated         : 'Outdated',
                 maintained       : 'Maintained',
-                securityFixesOnly: 'Security fixes only'
+                securityFixesOnly: 'Security fixes only',
+                future           : 'Future release'
             },
             formatDate   : '%Y-%m-%d',
             formatTooltip: '<strong>{point.title}</strong><br/>From: {point.start:%Y-%m-%d}<br/>To: {point.end:%Y-%m-%d}',
@@ -127,12 +129,12 @@
                     title: (settings.titles.hasOwnProperty(type) ? settings.titles[type] : '!unknown!'),
                     start: new Date(item.from).getTime(),
                     end  : new Date(item.to).getTime(),
-                    color: (settings.colors.hasOwnProperty(type) ? settings.colors[type].bg : settings.colors.default.bg),
+                    color: (settings.colors.hasOwnProperty(type) ? settings.colors[type].bg : settings.colors.future.bg),
                     y    : i
                 };
             });
 
-            var roadmapColors = 'default';
+            var roadmapColors = 'future';
 
             if (now >= new Date(roadmap.dates[0].from).getTime() && now <= new Date(roadmap.dates[0].to).getTime()) {
                 roadmapColors = 'maintained';
@@ -145,19 +147,33 @@
             return {
                 data  : data,
                 name  : roadmap.version,
-                colors: (settings.colors.hasOwnProperty(roadmapColors) ? settings.colors[roadmapColors] : settings.colors.default)
+                colors: (settings.colors.hasOwnProperty(roadmapColors) ? settings.colors[roadmapColors] : settings.colors.future)
             };
         });
 
+        var subtitlePointStyle = 'display: inline-block;width: 20px;border-radius: 3px;';
+        var subtitle           =
+                '<div style="background-color: ' + settings.colors.outdated.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.outdated + '&nbsp;&nbsp;&nbsp;' +
+                '<div style="background-color: ' + settings.colors.maintained.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.maintained + '&nbsp;&nbsp;&nbsp;' +
+                '<div style="background-color: ' + settings.colors.securityFixesOnly.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.securityFixesOnly + '&nbsp;&nbsp;&nbsp;' +
+                '<div style="background-color: ' + settings.colors.future.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.future + '&nbsp;&nbsp;&nbsp;'
+        ;
+
         Highcharts.ganttChart(settings.containerID, {
-            series : series,
-            title  : {
+            series  : series,
+            title   : {
                 text: settings.titles.chart
             },
-            tooltip: {
+            subtitle: {
+                text   : subtitle,
+                align  : 'left',
+                useHTML: true,
+                x      : 70
+            },
+            tooltip : {
                 pointFormat: settings.formatTooltip
             },
-            xAxis  : [{
+            xAxis   : [{
                 tickInterval        : 365 * 24 * 3600 * 1000, // one year
                 type                : 'category',
                 lineColor           : 'transparent',
@@ -184,7 +200,7 @@
                 visible : false,
                 opposite: false
             }],
-            yAxis  : {
+            yAxis   : {
                 type             : 'category',
                 labels           : {
                     useHTML  : true,
@@ -263,8 +279,10 @@
     versionRoadmap(data, {
         titles       : {
             chart            : 'Lemurro Roadmap',
+            outdated         : 'Устарел',
             maintained       : 'Поддерживается',
-            securityFixesOnly: 'Только исправления безопасности'
+            securityFixesOnly: 'Только исправления безопасности',
+            future           : 'Будущий релиз'
         },
         formatDate   : '%d.%m.%Y',
         formatTooltip: '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}'
