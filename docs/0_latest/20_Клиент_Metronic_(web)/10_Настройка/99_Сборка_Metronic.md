@@ -65,7 +65,7 @@ $m--root-font: (
 `config.compile.rtl.enabled` | `false` | Отключаем создание css-файла для режима `rtl`
 `config.compile.jsUglify` | `true` | Сжимаем js-файлы
 `config.compile.cssMinify` | `true` | Сжимаем css-файлы
-`build.vendors.base.src.optional` | &bull; `bootstrap-datetime-picker`<br>&bull; `select2`<br>&bull; `inputmask`<br>&bull; `summernote`<br>&bull; `jquery-validation`<br>&bull; `sweetalert2` | В этом блоке можно удалить все библиотеки кроме указанных, они обязательно необходимы, также вы можете не кдалять какие-то другие библиотеки, необходимые вам
+`build.vendors.base.src.optional` | &bull; `bootstrap-datetime-picker`<br>&bull; `select2`<br>&bull; `inputmask`<br>&bull; `summernote`<br>&bull; `jquery-validation`<br>&bull; `sweetalert2`<br>&bull; `line-awesome` | В этом блоке можно удалить все библиотеки кроме указанных, они обязательно необходимы, также вы можете не удалять какие-то другие библиотеки, необходимые вам
 `build.vendors.custom` |  | В этом блоке можно удалить все библиотеки
 
 ## Сборка Metronic
