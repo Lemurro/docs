@@ -1,5 +1,3 @@
-> **v1.8**
-
 # Библиотека bootstrap-confirmation
 - [GitHub](https://github.com/mistic100/Bootstrap-Confirmation)
 - [Сайт с документацией](http://bootstrap-confirmation.js.org)

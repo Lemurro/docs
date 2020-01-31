@@ -1,5 +1,3 @@
-> **v1.0**
-
 # Быстрый фасад для открытия `popup`
 
 Синтаксис: `lemurro.helper.showPopup(title, content);`

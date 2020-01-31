@@ -1,5 +1,3 @@
-> **v1.0**
-
 # Расширение DIC
 В качестве DIC используется библиотека [Pimple](https://github.com/silexphp/Pimple)
 

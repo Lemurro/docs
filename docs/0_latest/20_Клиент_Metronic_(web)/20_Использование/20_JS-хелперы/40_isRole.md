@@ -1,5 +1,3 @@
-> **v1.0**
-
 # Проверка пользователя на наличие прав
 
 Синтаксис: `lemurro.helper.isRole(page, access, callbackSuccess, callbackFail);`

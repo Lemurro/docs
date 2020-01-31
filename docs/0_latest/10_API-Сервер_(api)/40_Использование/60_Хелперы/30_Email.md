@@ -1,11 +1,3 @@
-> **v1.0, v1.3**
-
-**Список изменений**
-
-Версия | Описание
---- | ---
-1.3 | - Добавлена возможность указать другие шапку и подвал<br>- Namespace Mailer перенесён в Helpers
-
 # Email
 Для отправки почты используется библиотека [PHPMailer](https://github.com/PHPMailer/PHPMailer)
 
@@ -57,7 +49,7 @@ $mailer->send('EXAMPLE', 'Тестовое письмо', ['atomcms@ya.ru'], [
     'somefile' => 'path/to/file.ext',
 ]);
 ```
-**v1.3** \* По умолчанию в конструкторе класса `Mailer` указаны шапка `EmailTemplates::HEADER` и подвал `EmailTemplates::FOOTER`, вы можете указать другие шапку и подвал, создав новый класс
+\* По умолчанию в конструкторе класса `Mailer` указаны шапка `EmailTemplates::HEADER` и подвал `EmailTemplates::FOOTER`, вы можете указать другие шапку и подвал, создав новый класс
 ```php
 use Lemurro\Api\Core\Helpers\Mailer;
 

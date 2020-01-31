@@ -13,21 +13,23 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- JS -->
+    <script>
+        window.base_url = "../../../";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
     <!-- Font -->
     
     <!-- CSS -->
     <link href='../../../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
-            <!-- Tipue Search -->
-        <link href="../../../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    <!--[if lt IE 9]>
-    <script src="../../../themes/daux/js/html5shiv-3.7.3.min.js"></script>
-    <![endif]-->
-</head>
-<body class=" ">
+            <!-- Search -->
+        <link href="../../../daux_libraries/search.css" rel="stylesheet">
+    </head>
+<body class="">
     <div class="Columns content">
     <aside class="Columns__left Collapsible">
-        <button type="button" class="Button Collapsible__trigger">
+        <button type="button" class="Button Collapsible__trigger" aria-controls="sidebar_content" aria-expanded="false" aria-label="Toggle navigation">
             <span class="Collapsible__trigger__bar"></span>
             <span class="Collapsible__trigger__bar"></span>
             <span class="Collapsible__trigger__bar"></span>
@@ -39,31 +41,33 @@
         <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
             <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
         </svg>
-        <input type="search" id="tipue_search_input" class="Search__field" placeholder="Search..." autocomplete="on"
+        <input type="search" id="search_input" class="Search__field" placeholder="Search..." autocomplete="on"
                results=25 autosave=text_search>
     </div>
 
-        <div class="Collapsible__content">
+        <div class="Collapsible__content" id="sidebar_content">
             <!-- Navigation -->
-            <ul class='Nav'><li class='Nav__item Nav__item--open has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>latest</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Vvedenie.html">Введение</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>API-Сервер (api)</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Nastroyka/Nastroyka.html">Настройка</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Nastroyki_po_umolchaniyu/DIC.html">DIC</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Nastroyki_po_umolchaniyu/Response.html">Response</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Расширение функционала</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Rasshirenie_funktsionala/Rasshirenie_DIC.html">Расширение DIC</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Rasshirenie_funktsionala/Rasshirenie_Response.html">Расширение Response</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Marshrutizatsiya.html">Маршрутизация</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Otvet_servera.html">Ответ сервера</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Vypolnit_do....html">Выполнить до...</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Vypolnit_posle....html">Выполнить после...</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Cron_zadachi.html">Cron-задачи</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Data_i_vremya.html">Дата и время</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Logirovanie.html">Логирование</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Email.html">Email</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/SMS.html">SMS</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Checker.html">Checker</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/LogException.html">LogException</a></li></ul></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Клиент Metronic (web)</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Opisanie.html">Описание</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Logika_zapuska_prilozheniya.html">Логика запуска приложения</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Nastroyka.html">Настройка</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Marshruty.html">Маршруты</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Sborka_proekta.html">Сборка проекта</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Sborka_Metronic.html">Сборка Metronic</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/Ssylki.html">Ссылки</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_peremennye.html">JS-переменные</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/clearFields.html">clearFields</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/clearString.html">clearString</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/tabs.html">tabs</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/isRole.html">isRole</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/decimal.html">decimal</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/localTime.html">localTime</a></li></ul></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/CSS_khelpery.html">CSS-хелперы</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/Template7_khelpery.html">Template7-хелперы</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/TipsTricks.html">Tips&Tricks</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Клиент Framework7 (mobile)</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyka/Nastroyka.html">Настройка</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyka/Sborka_proekta.html">Сборка проекта</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyki_po_umolchaniyu/lemurro.settings.html">lemurro.settings</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyki_po_umolchaniyu/lemurro.f7settings.html">lemurro.f7settings</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/showPopup.html">showPopup</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/popover.html">popover</a></li></ul></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Примеры</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Primery/Spravochnik.html">Справочник</a></li><li class='Nav__item '><a href="../../../latest/Primery/Razdel.html">Раздел</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Модули</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Права доступа</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Moduli/Prava_dostupa/Vvedenie.html">Введение</a></li><li class='Nav__item '><a href="../../../latest/Moduli/Prava_dostupa/Dobavlenie_novoy.html">Добавление новой</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Загрузка файлов</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Moduli/Zagruzka_faylov/Podklyuchenie.html">Подключение</a></li><li class='Nav__item Nav__item--active'><a href="../../../latest/Moduli/Zagruzka_faylov/Sokhranenie_faylov.html">Сохранение файлов</a></li><li class='Nav__item '><a href="../../../latest/Moduli/Zagruzka_faylov/Manipulyatsii_s_faylom.html">Манипуляции с файлом</a></li><li class='Nav__item '><a href="../../../latest/Moduli/Zagruzka_faylov/Proverka_dostupa.html">Проверка доступа</a></li></ul></li></ul></li><li class='Nav__item '><a href="../../../latest/Biblioteki.html">Библиотеки</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>Руководство по обновлению</a><ul class='Nav'><li class='Nav__item '><a href="../../../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.6_do_1.7.html">Обновление с 1.6 до 1.7</a></li><li class='Nav__item '><a href="../../../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.5_do_1.6.html">Обновление с 1.5 до 1.6</a></li><li class='Nav__item '><a href="../../../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.4_do_1.5.html">Обновление с 1.4 до 1.5</a></li></ul></li><li class='Nav__item '><a href="../../../Roadmap.html">Roadmap</a></li></ul>
+            <ul class='Nav'><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>latest</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Vvedenie.html">Введение</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>API-Сервер (api)</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Nastroyka/Nastroyka.html">Настройка</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Nastroyki_po_umolchaniyu/DIC.html">DIC</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Nastroyki_po_umolchaniyu/Response.html">Response</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Расширение функционала</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Rasshirenie_funktsionala/Rasshirenie_DIC.html">Расширение DIC</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Rasshirenie_funktsionala/Rasshirenie_Response.html">Расширение Response</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Marshrutizatsiya.html">Маршрутизация</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Otvet_servera.html">Ответ сервера</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Vypolnit_do....html">Выполнить до...</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Vypolnit_posle....html">Выполнить после...</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/Cron_zadachi.html">Cron-задачи</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Data_i_vremya.html">Дата и время</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Logirovanie.html">Логирование</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Email.html">Email</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/SMS.html">SMS</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/Checker.html">Checker</a></li><li class='Nav__item '><a href="../../../latest/API_Server_(api)/Ispolzovanie/KHelpery/LogException.html">LogException</a></li></ul></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Metronic (web)</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Opisanie.html">Описание</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Logika_zapuska_prilozheniya.html">Логика запуска приложения</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Nastroyka.html">Настройка</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Marshruty.html">Маршруты</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Sborka_proekta.html">Сборка проекта</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Nastroyka/Sborka_Metronic.html">Сборка Metronic</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/Ssylki.html">Ссылки</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_peremennye.html">JS-переменные</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/clearFields.html">clearFields</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/clearString.html">clearString</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/tabs.html">tabs</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/isRole.html">isRole</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/decimal.html">decimal</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/localTime.html">localTime</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/initBootstrapConfirmation.html">initBootstrapConfirmation</a></li></ul></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/CSS_khelpery.html">CSS-хелперы</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/Template7_khelpery.html">Template7-хелперы</a></li><li class='Nav__item '><a href="../../../latest/Klient_Metronic_(web)/Ispolzovanie/TipsTricks.html">Tips&Tricks</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Framework7 (mobile)</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyka/Nastroyka.html">Настройка</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyka/Sborka_proekta.html">Сборка проекта</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyki_po_umolchaniyu/lemurro.settings.html">lemurro.settings</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Nastroyki_po_umolchaniyu/lemurro.f7settings.html">lemurro.f7settings</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/showPopup.html">showPopup</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../../../latest/Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/popover.html">popover</a></li></ul></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Примеры</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Primery/Spravochnik.html">Справочник</a></li><li class='Nav__item '><a href="../../../latest/Primery/Razdel.html">Раздел</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Модули</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Права доступа</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Moduli/Prava_dostupa/Vvedenie.html">Введение</a></li><li class='Nav__item '><a href="../../../latest/Moduli/Prava_dostupa/Dobavlenie_novoy.html">Добавление новой</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Загрузка файлов</a><ul class='Nav'><li class='Nav__item '><a href="../../../latest/Moduli/Zagruzka_faylov/Podklyuchenie.html">Подключение</a></li><li class='Nav__item Nav__item--active'><a href="../../../latest/Moduli/Zagruzka_faylov/Sokhranenie_faylov.html">Сохранение файлов</a></li><li class='Nav__item '><a href="../../../latest/Moduli/Zagruzka_faylov/Manipulyatsii_s_faylom.html">Манипуляции с файлом</a></li><li class='Nav__item '><a href="../../../latest/Moduli/Zagruzka_faylov/Proverka_dostupa.html">Проверка доступа</a></li></ul></li></ul></li><li class='Nav__item '><a href="../../../latest/Biblioteki.html">Библиотеки</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Руководство по обновлению</a><ul class='Nav'><li class='Nav__item '><a href="../../../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.7_do_1.8.html">Обновление с 1.7 до 1.8</a></li><li class='Nav__item '><a href="../../../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.6_do_1.7.html">Обновление с 1.6 до 1.7</a></li><li class='Nav__item '><a href="../../../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.5_do_1.6.html">Обновление с 1.5 до 1.6</a></li><li class='Nav__item '><a href="../../../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.4_do_1.5.html">Обновление с 1.4 до 1.5</a></li></ul></li><li class='Nav__item '><a href="../../../Roadmap.html">Roadmap</a></li></ul>
 
             <div class="Links">
                                     <hr/>
-                                            <a href="https://github.com/Lemurro/lemurro" target="_blank">GitHub Repo</a>
+                                            <a href="https://lemurro.github.io/docs/v1.7" target="_blank">v1.7 docs</a>
+                        <br />
+                                            <a href="https://github.com/Lemurro/lemurro" target="_blank">GitHub</a>
                         <br />
                                                 </div>
 
-                                <div class="CodeToggler">
-                        <hr/>
-                                                    <label class="Checkbox">Show Code Blocks                                <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
-                                <div class="Checkbox__indicator"></div>
-                            </label>
-                                            </div>
-                
+                            <div class="CodeToggler">
+                    <hr/>
+                    <label class="Checkbox">Show Code Blocks                        <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
+                        <div class="Checkbox__indicator"></div>
+                    </label>
+                </div>
+            
                 
                         </div>
     </aside>
-    <div class="Columns__right Columns__right--full">
+    <div class="Columns__right">
         <div class="Columns__right__content">
             <div class="doc_content">
                 <article class="Page">
@@ -73,41 +77,19 @@
                     </div>
 
     <div class="s-content">
-        <blockquote>
-<p><strong>v1.0, v1.3, v1.6</strong></p>
-</blockquote>
-<p><strong>Список изменений</strong></p>
-<table>
-<thead>
-<tr>
-<th>Версия</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.6</td>
-<td>- В классе FileAdd добавлен метод undo()</td>
-</tr>
-<tr>
-<td>1.3</td>
-<td>Namespace File перенесён в Helpers</td>
-</tr>
-</tbody>
-</table>
-<h1 id="page_-----php">Собираем файлы для передачи в php</h1>
+        <h1 id="page_-----php">Собираем файлы для передачи в php</h1>
 <p>Структура массива файлов</p>
-<pre><code class="language-javascript">var files = [
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> files = [
     {
-        file_id  : '[ИД_ФАЙЛА]',
-        action   : 'add',
-        orig_name: '[ИМЯ_ОРИГИНАЛЬНОГО_ФАЙЛА]'
+        <span class="hljs-attr">file_id</span>  : <span class="hljs-string">'[ИД_ФАЙЛА]'</span>,
+        <span class="hljs-attr">action</span>   : <span class="hljs-string">'add'</span>,
+        <span class="hljs-attr">orig_name</span>: <span class="hljs-string">'[ИМЯ_ОРИГИНАЛЬНОГО_ФАЙЛА]'</span>
     }, {
-        file_id: '[ИД_ФАЙЛА]',
-        action : 'remove'
+        <span class="hljs-attr">file_id</span>: <span class="hljs-string">'[ИД_ФАЙЛА]'</span>,
+        <span class="hljs-attr">action</span> : <span class="hljs-string">'remove'</span>
     }, {
-        file_id: '[ИД_ФАЙЛА]',
-        action : 'ЧТО_ТО_ИНОЕ'
+        <span class="hljs-attr">file_id</span>: <span class="hljs-string">'[ИД_ФАЙЛА]'</span>,
+        <span class="hljs-attr">action</span> : <span class="hljs-string">'ЧТО_ТО_ИНОЕ'</span>
     }
 ];
 </code></pre>
@@ -123,18 +105,18 @@
 </li>
 </ul>
 <p>В простом случае это можно сделать так</p>
-<pre><code class="language-javascript">var files = [];
+<pre><code class="hljs javascript"><span class="hljs-keyword">var</span> files = [];
 
-form.find('.js-files__file').each(function () {
-    var elem   = $(this);
-    var action = elem.attr('data-file-action');
-    var file   = {
-        file_id: elem.attr('data-file-id'),
-        action : action
+form.find(<span class="hljs-string">'.js-files__file'</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> elem   = $(<span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">var</span> action = elem.attr(<span class="hljs-string">'data-file-action'</span>);
+    <span class="hljs-keyword">var</span> file   = {
+        <span class="hljs-attr">file_id</span>: elem.attr(<span class="hljs-string">'data-file-id'</span>),
+        <span class="hljs-attr">action</span> : action
     };
 
-    if (action === 'add') {
-        file.orig_name = elem.find('.js-name').text();
+    <span class="hljs-keyword">if</span> (action === <span class="hljs-string">'add'</span>) {
+        file.orig_name = elem.find(<span class="hljs-string">'.js-name'</span>).text();
     }
 
     files.push(file);
@@ -142,16 +124,19 @@ form.find('.js-files__file').each(function () {
 </code></pre>
 <h1 id="page_---php">Обработка файлов в php</h1>
 <h2 id="page_-">Добавление файла</h2>
-<pre><code class="language-php">use Lemurro\Api\Core\Helpers\File\FileAdd;
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileAdd</span>;
 
 $container_type = CONTAINER_TYPE;
 $container_id = CONTAINER_ID;
 
-$file_add = new FileAdd($this-&gt;dic);
+$file_id = <span class="hljs-number">123</span>;
+$orig_name = <span class="hljs-string">'orig_name.ext'</span>;
+
+$file_add = <span class="hljs-keyword">new</span> FileAdd(<span class="hljs-keyword">$this</span>-&gt;dic);
 
 $result = $file_add-&gt;run(
-    $file['file_id'],
-    $file['orig_name'],
+    $file_id,
+    $orig_name,
     $container_type,
     $container_id
 );
@@ -165,55 +150,56 @@ $result = $file_add-&gt;run(
 </ul>
 <p>* Если вы не хотите выполнять проверку прав доступа, тогда укажите <code>CONTAINER_TYPE = 'Default'</code> и <code>CONTAINER_ID = null</code></p>
 <h2 id="page_--2">Удаление файла</h2>
-<pre><code class="language-php">use Lemurro\Api\Core\Helpers\File\FileRemove;
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileRemove</span>;
 
-$file_remove = new FileRemove($this-&gt;dic);
+$file_id = <span class="hljs-number">123</span>;
 
-$result = $file_remove-&gt;run($file['file_id']);
+$file_remove = <span class="hljs-keyword">new</span> FileRemove(<span class="hljs-keyword">$this</span>-&gt;dic);
+$result = $file_remove-&gt;run($file_id);
 </code></pre>
 <h3 id="page_----">Вот пример возможной реализации обработки</h3>
-<pre><code class="language-php">use Lemurro\Api\Core\Helpers\File\FileAdd;
-use Lemurro\Api\Core\Helpers\File\FileRemove;
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileAdd</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileRemove</span>;
 
 $container_type = CONTAINER_TYPE;
 $container_id = CONTAINER_ID;
 
-$file_add = new FileAdd($this-&gt;dic);
-$file_remove = new FileRemove($this-&gt;dic);
+$file_add = <span class="hljs-keyword">new</span> FileAdd(<span class="hljs-keyword">$this</span>-&gt;dic);
+$file_remove = <span class="hljs-keyword">new</span> FileRemove(<span class="hljs-keyword">$this</span>-&gt;dic);
 
 $files_ids = [];
 $files_errors = [];
 
-if (isset($data['files']) &amp;&amp; is_array($data['files'])) {
-    foreach ($data['files'] as $file) {
-        switch ($file['action']) {
-            case 'add':
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($data[<span class="hljs-string">'files'</span>]) &amp;&amp; is_array($data[<span class="hljs-string">'files'</span>])) {
+    <span class="hljs-keyword">foreach</span> ($data[<span class="hljs-string">'files'</span>] <span class="hljs-keyword">as</span> $file) {
+        <span class="hljs-keyword">switch</span> ($file[<span class="hljs-string">'action'</span>]) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'add'</span>:
                 $result = $file_add-&gt;run(
-                    $file['file_id'],
-                    $file['orig_name'],
+                    $file[<span class="hljs-string">'file_id'</span>],
+                    $file[<span class="hljs-string">'orig_name'</span>],
                     $container_type,
                     $container_id
                 );
 
-                if (isset($result['errors'])) {
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($result[<span class="hljs-string">'errors'</span>])) {
                     $files_errors[] = array_merge($file, $result);
-                } else {
-                    $files_ids[] = $result['data']['id'];
+                } <span class="hljs-keyword">else</span> {
+                    $files_ids[] = $result[<span class="hljs-string">'data'</span>][<span class="hljs-string">'id'</span>];
                 }
-                break;
+                <span class="hljs-keyword">break</span>;
 
-            case 'remove':
-                $result = $file_remove-&gt;run($file['file_id']);
+            <span class="hljs-keyword">case</span> <span class="hljs-string">'remove'</span>:
+                $result = $file_remove-&gt;run($file[<span class="hljs-string">'file_id'</span>]);
 
-                if (isset($result['errors'])) {
-                    $files_ids[] = $file['file_id'];
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">isset</span>($result[<span class="hljs-string">'errors'</span>])) {
+                    $files_ids[] = $file[<span class="hljs-string">'file_id'</span>];
                     $files_errors[] = array_merge($file, $result);
                 }
-                break;
+                <span class="hljs-keyword">break</span>;
 
-            default:
-                $files_ids[] = $file['file_id'];
-                break;
+            <span class="hljs-keyword">default</span>:
+                $files_ids[] = $file[<span class="hljs-string">'file_id'</span>];
+                <span class="hljs-keyword">break</span>;
         }
     }
 }
@@ -226,13 +212,13 @@ if (isset($data['files']) &amp;&amp; is_array($data['files'])) {
 <strong>$files_errors</strong> - Массив ошибок добавления \ удаления файлов</li>
 </ul>
 <h3 id="page_---">Или можно воспользоваться фасадом</h3>
-<pre><code class="language-php">use Lemurro\Api\Core\Helpers\File\FileManipulate;
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileManipulate</span>;
 
 $container_type = CONTAINER_TYPE;
 $container_id = CONTAINER_ID;
 
-$manipulate = (new FileManipulate($this-&gt;dic))-&gt;run(
-    $data['files'],
+$manipulate = (<span class="hljs-keyword">new</span> FileManipulate(<span class="hljs-keyword">$this</span>-&gt;dic))-&gt;run(
+    $data[<span class="hljs-string">'files'</span>],
     $container_type,
     $container_id
 );
@@ -244,43 +230,43 @@ $manipulate = (new FileManipulate($this-&gt;dic))-&gt;run(
 <li>
 <strong>$manipulate['errors']</strong> - Массив ошибок добавления \ удаления файлов</li>
 <li>
-<strong>$manipulate['class_file_add']</strong> - <strong>v1.6</strong> Экземпляр класса <code>FileAdd</code>, для возможности выполнить метод <code>undo</code>
+<strong>$manipulate['class_file_add']</strong> - Экземпляр класса <code>FileAdd</code>, для возможности выполнить метод <code>undo</code>
 </li>
 </ul>
-<h1 id="page_v1-6-----">v1.6 Что-то пошло не так?</h1>
+<h1 id="page_-----2">Что-то пошло не так?</h1>
 <p>Если вы уже загрузили файлы в постоянное хранилище, а дальше в вашем коде произошла ошибка, тогда вам необходимо воспользоваться методом <code>undo</code> класса <code>FileAdd</code>:</p>
-<pre><code class="language-php">use Lemurro\Api\Core\Helpers\File\FileAdd;
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileAdd</span>;
 
-$file_add = new FileAdd($this-&gt;dic);
+$file_add = <span class="hljs-keyword">new</span> FileAdd(<span class="hljs-keyword">$this</span>-&gt;dic);
 
-// Здесь вы загрузили все файлы
+<span class="hljs-comment">// Здесь вы загрузили все файлы</span>
 
-// Здесь в вашем коде случилась ошибка
+<span class="hljs-comment">// Здесь в вашем коде случилась ошибка</span>
 
-// Выполним метод undo, чтобы вернуть файлы обратно
+<span class="hljs-comment">// Выполним метод undo, чтобы вернуть файлы обратно</span>
 $file_add-&gt;undo();
 </code></pre>
 <p>или так, если вы используете фасад <code>FileManipulate</code>:</p>
-<pre><code class="language-php">use Lemurro\Api\Core\Helpers\File\FileAdd;
-use Lemurro\Api\Core\Helpers\File\FileManipulate;
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileAdd</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">File</span>\<span class="hljs-title">FileManipulate</span>;
 
 $container_type = CONTAINER_TYPE;
 $container_id = CONTAINER_ID;
 
-// Здесь вы загрузили все файлы
-$manipulate = (new FileManipulate($this-&gt;dic))-&gt;run(
-    $data['files'],
+<span class="hljs-comment">// Здесь вы загрузили все файлы</span>
+$manipulate = (<span class="hljs-keyword">new</span> FileManipulate(<span class="hljs-keyword">$this</span>-&gt;dic))-&gt;run(
+    $data[<span class="hljs-string">'files'</span>],
     $container_type,
     $container_id
 );
 
-if (!empty($manipulate['ids'])) {
-    // Здесь в вашем коде случилась ошибка
+<span class="hljs-keyword">if</span> (!<span class="hljs-keyword">empty</span>($manipulate[<span class="hljs-string">'ids'</span>])) {
+    <span class="hljs-comment">// Здесь в вашем коде случилась ошибка</span>
 
-    /* @var FileAdd $class_file_add */
-    $class_file_add = $manipulate['class_file_add'];
+    <span class="hljs-comment">/* <span class="hljs-doctag">@var</span> FileAdd $class_file_add */</span>
+    $class_file_add = $manipulate[<span class="hljs-string">'class_file_add'</span>];
 
-    // Выполним метод undo, чтобы вернуть файлы обратно
+    <span class="hljs-comment">// Выполним метод undo, чтобы вернуть файлы обратно</span>
     $class_file_add-&gt;undo();
 }
 </code></pre>
@@ -301,24 +287,19 @@ if (!empty($manipulate['ids'])) {
 
     
     <!-- JS -->
-    <script src="../../../themes/daux/js/jquery-1.11.3.min.js"></script><script src="../../../themes/daux/js/highlight.pack.js"></script><script src="../../../themes/daux/js/daux.js"></script>
-            <script>
-            
-            window.searchLanguage = "";
-            window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
-        </script>
-
-        <!-- Tipue Search -->
-        <script type="text/javascript" src="../../../tipuesearch/tipuesearch.js"></script>
-
+    <script src="../../../themes/daux/js/daux.min.js"></script>
         <script>
-            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
-            $(function() {
-                tipuesearch({
-                    'base_url': '../../../'
-                });
-            });
-        </script>
-    
+        
+        window.searchLanguage = "";
+        window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+    </script>
+
+    <!-- Search -->
+    <script type="text/javascript" src="../../../daux_libraries/search.min.js"></script>
+
+    <script>
+        window.search({'base_url': '../../../'})
+    </script>
+
 </body>
 </html>

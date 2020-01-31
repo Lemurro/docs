@@ -29,17 +29,17 @@
          * @param target
          * @param sources
          *
-         * @return {object}
+         * @return {Object}
          */
         function mergeDeep(target, ...sources) {
             if (!sources.length) {
                 return target;
             }
 
-            const source = sources.shift();
+            var source = sources.shift();
 
             if (isObject(target) && isObject(source)) {
-                for (const key in source) {
+                for (var key in source) {
                     if (source.hasOwnProperty(key)) {
                         if (isObject(source[key])) {
                             if (!target[key]) {
@@ -256,7 +256,7 @@
             "dates"  : [
                 {
                     "from": "2019-06-06",
-                    "to"  : "2019-07-28"
+                    "to"  : "2019-07-27"
                 }, {
                     "from": "2019-07-28",
                     "to"  : "2019-10-28"
@@ -267,23 +267,23 @@
             "dates"  : [
                 {
                     "from": "2019-07-28",
-                    "to"  : "2022-07-28"
+                    "to"  : "2022-07-27"
                 }, {
                     "from": "2022-07-28",
                     "to"  : "2023-01-28"
                 }
             ]
-        //}, {
-        //    "version": "v1.8",
-        //    "dates"  : [
-        //        {
-        //            "from": "2019-11-01",
-        //            "to"  : "2019-12-01"
-        //        }, {
-        //            "from": "2019-12-01",
-        //            "to"  : "2020-02-01"
-        //        }
-        //    ]
+        }, {
+            "version": "v1.8",
+            "dates"  : [
+                {
+                    "from": "2020-02-01",
+                    "to"  : "2020-07-31"
+                }, {
+                    "from": "2020-08-01",
+                    "to"  : "2020-10-31"
+                }
+            ]
         }
     ];
 

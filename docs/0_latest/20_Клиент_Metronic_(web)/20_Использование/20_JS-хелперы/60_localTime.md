@@ -1,5 +1,3 @@
-> **v1.0**
-
 # Возврат времени в локальном формате
 
 Синтаксис: `lemurro.helper.localTime(datetime, format);`

@@ -1,12 +1,3 @@
-> **v1.0, v1.1, v1.3**
-
-**Список изменений**
-
-Версия | Описание
---- | ---
-1.3 | Namespace SMS перенесён в Helpers
-1.1 | Для своего шлюза добавлен интерфейс
-
 # SMS
 Для отправки sms воспользуйтесь кодом:
 ```php
@@ -26,8 +17,6 @@ $sms->send('71234567890', 'Сообщение');
 По умолчанию настроена работа с сервисом [sms.ru](http://sms.ru)
 
 ## Свой шлюз отправки sms
-> **v1.1**
-
 ```php
 <?php
 use Lemurro\Api\Core\Abstracts\GatewaySMS;
@@ -65,8 +54,6 @@ class OtherGatewaySMS implements GatewaySMS
  ];
  ```
 5. Текст из `message` будет помещён в лог
-
-> **v1.0**
 
 ```php
 <?php
