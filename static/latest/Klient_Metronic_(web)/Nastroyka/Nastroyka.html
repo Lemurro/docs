@@ -82,16 +82,16 @@
 <li>Если у вас Apache, то все необходимые заголовки уже настроены в файле <code>/.htaccess</code>, если у вас nginx тогда поместите в директиву <code>server</code> код, указанный ниже:</li>
 </ol>
 <pre><code class="hljs nginx"><span class="hljs-attribute">location</span> / {
-<span class="hljs-attribute">if</span> (!-e <span class="hljs-variable">$request_filename</span>){
-  <span class="hljs-attribute">charset</span> utf-<span class="hljs-number">8</span>;
+  <span class="hljs-attribute">if</span> (!-e <span class="hljs-variable">$request_filename</span>){
+    <span class="hljs-attribute">charset</span> utf-<span class="hljs-number">8</span>;
 
-  <span class="hljs-attribute">add_header</span> X-XSS-Protection <span class="hljs-string">"1; mode=block"</span>;
-  <span class="hljs-attribute">add_header</span> X-Content-Type-Options <span class="hljs-string">"nosniff"</span>;
-  <span class="hljs-attribute">add_header</span> X-Frame-Options <span class="hljs-string">"SAMEORIGIN"</span>;
-  <span class="hljs-attribute">add_header</span> Referrer-Policy <span class="hljs-string">"no-referrer"</span>;
+    <span class="hljs-attribute">add_header</span> X-XSS-Protection <span class="hljs-string">"1; mode=block"</span>;
+    <span class="hljs-attribute">add_header</span> X-Content-Type-Options <span class="hljs-string">"nosniff"</span>;
+    <span class="hljs-attribute">add_header</span> X-Frame-Options <span class="hljs-string">"SAMEORIGIN"</span>;
+    <span class="hljs-attribute">add_header</span> Referrer-Policy <span class="hljs-string">"no-referrer"</span>;
 
-  <span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^(.*)$</span> /index.html <span class="hljs-literal">break</span>;
-}
+    <span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^(.*)$</span> /index.html <span class="hljs-literal">break</span>;
+  }
 }
 </code></pre>
 <ol start="2">
