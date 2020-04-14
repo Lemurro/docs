@@ -136,7 +136,8 @@
 <li>
 <p>Перевод разделов <code>Example</code>, <code>Справочники</code> и <code>Пользователи</code> на использование хелпера <code>lemurro.helper.initBootstrapConfirmation</code>.</p>
 <p>В ядре больше не используются запросы на удаление элементов, теперь вы можете использовать встроенный хелпер <code>lemurro.helper.initBootstrapConfirmation</code> или запрограммировать свой вариант запроса.</p>
-<p>Для перехода на встроенный хелпер необходимо в кнопках, которые требуют подтверждения действия, добавить код: <code>data-toggle=&quot;confirmation&quot;</code>, а также инициировать хелпер при любых изменениях элементов в DOM:</p>
+<p>Для перехода на встроенный хелпер необходимо в кнопках, которые требуют подтверждения действия, добавить код: <code>data-toggle=&quot;confirmation&quot;</code>, инициализация уже находится в ядре</p>
+<p>Если вы какие-то элементы наполняли или меняли самостоятельно тогда необходимо после изменений в DOM запустить инициализацию хелпера для этих элементов:</p>
 <pre><code class="hljs javascript"><span class="hljs-comment">// При генерации большого количества элементов с кнопками, можно передать целиком контейнер в котором внесли изменения</span>
 <span class="hljs-keyword">var</span> container = $(<span class="hljs-string">'#js-example__items'</span>);
 lemurro.helper.initBootstrapConfirmation(container, <span class="hljs-literal">null</span>);
@@ -184,6 +185,22 @@ users.unlock = <span class="hljs-function"><span class="hljs-keyword">function</
 </li>
 <li>И в файле <code>/src/html/pages/users/tpl_item.html</code> перейти на новые методы вместо <code>lemurro.users.lock</code> и <code>lemurro.users.unlock</code> поставить <code>users.lock</code> и <code>users.unlock</code>
 </li>
+</ul>
+</li>
+</ul>
+<h2 id="page_---2">Изменения средней важности</h2>
+<ul>
+<li>
+<strong>[Пользователи]</strong> Добавление фильтра поиска пользователей
+<ul>
+<li>В файле <code>/src/html/pages/users/content.html</code> перед списком пользователей необходимо добавить фильтр
+<pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- include "users/filter.html" --&gt;</span>
+<span class="hljs-comment">&lt;!-- include "users/list.html" --&gt;</span>
+</code></pre>
+</li>
+<li>Сожержимое файла <code>/src/html/pages/users/filter.html</code> можно взять <a href="https://github.com/Lemurro/client-metronic/blob/v1.8.0/src/html/pages/users/filter.html" class="Link--external">здесь</a>
+</li>
+<li>Из файла <code>/src/html/pages/users/list.html</code> необходимо убрать кнопку <code>Добавить</code> и поле старого фильтра</li>
 </ul>
 </li>
 </ul>
