@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Обновление с 1.7 до 1.8 - Lemurro v1.9 - Документация</title>
+    <meta name="description" content="My Stylish Documentation">
+    <meta name="author" content="Dmitrii Shcherbakov">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="../themes/daux/img/favicon-blue.png" type="image/x-icon">
+
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <script>
+        window.base_url = "../";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
+    <!-- Font -->
+    
+    <!-- CSS -->
+    <link href='../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <!-- Search -->
+        <link href="../daux_libraries/search.css" rel="stylesheet">
+    </head>
+<body class="">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger" aria-controls="sidebar_content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+        </button>
+
+        <a class="Brand" href="../index.html">Lemurro v1.9 - Документация</a>
+
+    <div class="Search">
+        <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+            <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+        </svg>
+        <input type="search" id="search_input" class="Search__field" placeholder="Search..." autocomplete="on"
+               results=25 autosave=text_search>
+    </div>
+
+        <div class="Collapsible__content" id="sidebar_content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item '><a href="../Vvedenie.html">Введение</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>API-Сервер (api)</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Nastroyka/Nastroyka.html">Настройка</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Nastroyki_po_umolchaniyu/DIC.html">DIC</a></li><li class='Nav__item '><a href="../API_Server_(api)/Nastroyki_po_umolchaniyu/Response.html">Response</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Расширение функционала</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Rasshirenie_funktsionala/Rasshirenie_DIC.html">Расширение DIC</a></li><li class='Nav__item '><a href="../API_Server_(api)/Rasshirenie_funktsionala/Rasshirenie_Response.html">Расширение Response</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/Marshrutizatsiya.html">Маршрутизация</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/Otvet_servera.html">Ответ сервера</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/Vypolnit_do....html">Выполнить до...</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/Vypolnit_posle....html">Выполнить после...</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/Cron_zadachi.html">Cron-задачи</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/KHelpery/Data_i_vremya.html">Дата и время</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/KHelpery/Logirovanie.html">Логирование</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/KHelpery/Email.html">Email</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/KHelpery/SMS.html">SMS</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/KHelpery/Checker.html">Checker</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispolzovanie/KHelpery/LogException.html">LogException</a></li></ul></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Metronic (web)</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Opisanie.html">Описание</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Logika_zapuska_prilozheniya.html">Логика запуска приложения</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastroyka/Nastroyka.html">Настройка</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastroyka/Marshruty.html">Маршруты</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastroyka/Sborka_proekta.html">Сборка проекта</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastroyka/Sborka_Metronic.html">Сборка Metronic</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/Ssylki.html">Ссылки</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_peremennye.html">JS-переменные</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/clearFields.html">clearFields</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/clearString.html">clearString</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/tabs.html">tabs</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/isRole.html">isRole</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/decimal.html">decimal</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/localTime.html">localTime</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/JS_khelpery/initBootstrapConfirmation.html">initBootstrapConfirmation</a></li></ul></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/CSS_khelpery.html">CSS-хелперы</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/Template7_khelpery.html">Template7-хелперы</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispolzovanie/TipsTricks.html">Tips&Tricks</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Framework7 (mobile)</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Nastroyka/Nastroyka.html">Настройка</a></li><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Nastroyka/Sborka_proekta.html">Сборка проекта</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Nastroyki_po_umolchaniyu/lemurro.settings.html">lemurro.settings</a></li><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Nastroyki_po_umolchaniyu/lemurro.f7settings.html">lemurro.f7settings</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Ispolzovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/showPopup.html">showPopup</a></li><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../Klient_Framework7_(mobile)/Ispolzovanie/JS_khelpery/popover.html">popover</a></li></ul></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Примеры</a><ul class='Nav'><li class='Nav__item '><a href="../Primery/Spravochnik.html">Справочник</a></li><li class='Nav__item '><a href="../Primery/Razdel.html">Раздел</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Модули</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Права доступа</a><ul class='Nav'><li class='Nav__item '><a href="../Moduli/Prava_dostupa/Vvedenie.html">Введение</a></li><li class='Nav__item '><a href="../Moduli/Prava_dostupa/Dobavlenie_novoy.html">Добавление новой</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Загрузка файлов</a><ul class='Nav'><li class='Nav__item '><a href="../Moduli/Zagruzka_faylov/Podklyuchenie.html">Подключение</a></li><li class='Nav__item '><a href="../Moduli/Zagruzka_faylov/Sokhranenie_faylov.html">Сохранение файлов</a></li><li class='Nav__item '><a href="../Moduli/Zagruzka_faylov/Manipulyatsii_s_faylom.html">Манипуляции с файлом</a></li><li class='Nav__item '><a href="../Moduli/Zagruzka_faylov/Proverka_dostupa.html">Проверка доступа</a></li></ul></li></ul></li><li class='Nav__item '><a href="../Biblioteki.html">Библиотеки</a></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Руководство по обновлению</a><ul class='Nav'><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.8_do_1.9.html">Обновление с 1.8 до 1.9</a></li><li class='Nav__item Nav__item--active'><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.7_do_1.8.html">Обновление с 1.7 до 1.8</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.6_do_1.7.html">Обновление с 1.6 до 1.7</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.5_do_1.6.html">Обновление с 1.5 до 1.6</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.4_do_1.5.html">Обновление с 1.4 до 1.5</a></li></ul></li><li class='Nav__item '><a href="../Dorozhnaya_karta.html">Дорожная карта</a></li><li class='Nav__item '><a href="../Drugie_versii.html">Другие версии</a></li></ul>
+
+            <div class="Links">
+                                    <hr/>
+                                            <a href="https://github.com/Lemurro/lemurro" target="_blank">GitHub</a>
+                        <br />
+                                                </div>
+
+                            <div class="CodeToggler">
+                    <hr/>
+                    <label class="Checkbox">Show Code Blocks                        <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
+                        <div class="Checkbox__indicator"></div>
+                    </label>
+                </div>
+            
+                
+                        </div>
+    </aside>
+    <div class="Columns__right">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.8_do_1.9.html">Руководство по обновлению</a> > <a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.7_do_1.8.html">Обновление с 1.7 до 1.8</a></h1>
+                    </div>
+
+    <div class="s-content">
+        <h1 id="page_API-module">API-module</h1>
+<h2 id="page_--">Критически важные изменения</h2>
+<ul>
+<li>
+<code>[Core]</code> Добавлен новый функционал <code>Обслуживание проекта</code>, для его работы необходим конфиг-файл <code>api/app/Configs/SettingsMaintenance.php</code> следующего содержания:
+<pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/**
+ * Параметры обслуживания
+ *
+ * <span class="hljs-doctag">@author</span>  Дмитрий Щербаков &lt;atomcms<span class="hljs-doctag">@ya</span>.ru&gt;
+ * <span class="hljs-doctag">@version</span> 21.11.2019
+ */</span>
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">App</span>\<span class="hljs-title">Configs</span>;
+
+<span class="hljs-comment">/**
+ * Class SettingsMaintenance
+ *
+ * <span class="hljs-doctag">@package</span> Lemurro\Api\App\Configs
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SettingsMaintenance</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Включить \ Выключить обслуживание проекта
+     *
+     * <span class="hljs-doctag">@var</span> boolean
+     */</span>
+    <span class="hljs-keyword">const</span> ACTIVE = <span class="hljs-keyword">false</span>;
+
+    <span class="hljs-comment">/**
+     * Сообщение об обслуживании
+     *
+     * <span class="hljs-doctag">@var</span> string
+     */</span>
+    <span class="hljs-keyword">const</span> MESSAGE = <span class="hljs-string">'Проект "'</span> . SettingsGeneral::APP_NAME . <span class="hljs-string">'" временно остановлен для обслуживания, пожалуйста повторите через 5 минут или обновите страницу'</span>;
+}
+
+</code></pre>
+</li>
+<li>
+<code>[Users]</code> Изменён тип поля <code>roles</code> для поиска пользователей по правам доступа:
+<pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`info_users`</span>
+    <span class="hljs-keyword">CHANGE</span> <span class="hljs-string">`roles`</span> <span class="hljs-string">`roles`</span> <span class="hljs-keyword">JSON</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span>;
+</code></pre>
+</li>
+<li>
+<code>[Users]</code> В таблицу <code>users</code> добавлены новые поля (теперь в таблице <code>users</code> запись физически не удаляется):
+<pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`users`</span>
+    <span class="hljs-keyword">ADD</span> <span class="hljs-string">`updated_at`</span> DATETIME <span class="hljs-literal">NULL</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`created_at`</span>,
+    <span class="hljs-keyword">ADD</span> <span class="hljs-string">`deleted_at`</span> DATETIME <span class="hljs-literal">NULL</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`updated_at`</span>;
+</code></pre>
+</li>
+</ul>
+<h1 id="page_WEB-module">WEB-module</h1>
+<h2 id="page_---2">Критически важные изменения</h2>
+<ul>
+<li>
+<p>Перевод разделов <code>Example</code>, <code>Справочники</code> и <code>Пользователи</code> на использование хелпера <code>lemurro.helper.initBootstrapConfirmation</code>.</p>
+<p>В ядре больше не используются запросы на удаление элементов, теперь вы можете использовать встроенный хелпер <code>lemurro.helper.initBootstrapConfirmation</code> или запрограммировать свой вариант запроса.</p>
+<p>Для перехода на встроенный хелпер необходимо в кнопках, которые требуют подтверждения действия, добавить код: <code>data-toggle=&quot;confirmation&quot;</code>, инициализация уже находится в ядре</p>
+<p>Если вы какие-то элементы наполняли или меняли самостоятельно тогда необходимо после изменений в DOM запустить инициализацию хелпера для этих элементов:</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// При генерации большого количества элементов с кнопками, можно передать целиком контейнер в котором внесли изменения</span>
+<span class="hljs-keyword">var</span> container = $(<span class="hljs-string">'#js-example__items'</span>);
+lemurro.helper.initBootstrapConfirmation(container, <span class="hljs-literal">null</span>);
+
+<span class="hljs-comment">// Либо всего один элемент набора</span>
+<span class="hljs-keyword">var</span> row = $(<span class="hljs-string">'#js-users__items'</span>).find(<span class="hljs-string">'tr[data-item-id="'</span> + result.data.id + <span class="hljs-string">'"]'</span>);
+lemurro.helper.initBootstrapConfirmation(row, <span class="hljs-literal">null</span>);
+</code></pre>
+<p>Подробную информацию о хелпере смотрите в документации.</p>
+</li>
+<li>
+<p>Методы <code>lemurro.users.lock</code> и <code>lemurro.users.unlock</code> необходимо вызывать из собственных методов, чтобы можно было создать callback, для этого необходимо добавить новые методы в каталог <code>/src/js/users/</code></p>
+<ul>
+<li>Файл <code>300-lock.js</code>
+<pre><code class="hljs javascript"><span class="hljs-comment">/**
+ * Заблокировать пользователя
+ *
+ * <span class="hljs-doctag">@param <span class="hljs-type">{string}</span> </span>id ИД записи
+ *
+ * <span class="hljs-doctag">@author  </span>Дмитрий Щербаков &lt;atomcms<span class="hljs-doctag">@ya</span>.ru&gt;
+ * <span class="hljs-doctag">@version </span>21.01.2020
+ */</span>
+users.lock = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>{
+    lemurro.users.lock(id, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span>{
+        <span class="hljs-comment">//</span>
+    });
+};
+</code></pre>
+</li>
+<li>Файл <code>300-unlock.js</code>
+<pre><code class="hljs javascript"><span class="hljs-comment">/**
+ * Разблокировать пользователя
+ *
+ * <span class="hljs-doctag">@param <span class="hljs-type">{string}</span> </span>id ИД записи
+ *
+ * <span class="hljs-doctag">@author  </span>Дмитрий Щербаков &lt;atomcms<span class="hljs-doctag">@ya</span>.ru&gt;
+ * <span class="hljs-doctag">@version </span>21.01.2020
+ */</span>
+users.unlock = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">id</span>) </span>{
+    lemurro.users.unlock(id, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span>{
+        <span class="hljs-comment">//</span>
+    });
+};
+</code></pre>
+</li>
+<li>И в файле <code>/src/html/pages/users/tpl_item.html</code> перейти на новые методы вместо <code>lemurro.users.lock</code> и <code>lemurro.users.unlock</code> поставить <code>users.lock</code> и <code>users.unlock</code>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="page_---2">Изменения средней важности</h2>
+<ul>
+<li>
+<strong>[Пользователи]</strong> Добавление фильтра поиска пользователей
+<ul>
+<li>В файле <code>/src/html/pages/users/content.html</code> перед списком пользователей необходимо добавить фильтр
+<pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- include "users/filter.html" --&gt;</span>
+<span class="hljs-comment">&lt;!-- include "users/list.html" --&gt;</span>
+</code></pre>
+</li>
+<li>Сожержимое файла <code>/src/html/pages/users/filter.html</code> можно взять <a href="https://github.com/Lemurro/client-metronic/blob/v1.8.0/src/html/pages/users/filter.html" class="Link--external">здесь</a>
+</li>
+<li>Из файла <code>/src/html/pages/users/list.html</code> необходимо убрать кнопку <code>Добавить</code> и поле старого фильтра</li>
+</ul>
+</li>
+</ul>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.8_do_1.9.html">Previous</a></li>            <li class=Pager--next><a href="../Rukovodstvo_po_obnovleniyu/Obnovlenie_s_1.6_do_1.7.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS -->
+    <script src="../themes/daux/js/daux.min.js"></script>
+        <script>
+        
+        window.searchLanguage = "";
+        window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+    </script>
+
+    <!-- Search -->
+    <script type="text/javascript" src="../daux_libraries/search.min.js"></script>
+
+    <script>
+        window.search({'base_url': '../'})
+    </script>
+
+</body>
+</html>
