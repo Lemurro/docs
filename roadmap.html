@@ -1,10 +1,27 @@
-<div id="container" style="height: 400px;"></div>
+<style type="text/css">
+    .roadmap__chart {
+        height: 400px;
+    }
+
+    .roadmap__latest-releases {
+        font-weight: bold;
+        padding-bottom: 3px;
+    }
+
+    .roadmap__point {
+        display: inline-block;
+        width: 20px;
+        border-radius: 3px;
+    }
+</style>
+
+<div id="container" class="roadmap__chart"></div>
 
 <script src="highcharts-gantt.js"></script>
 
 <script>
     function versionRoadmap(roadmaps, options) {
-        if (typeof (options) === 'undefined') {
+        if (typeof options === 'undefined') {
             options = {};
         }
 
@@ -18,7 +35,7 @@
          * @return {boolean}
          */
         function isObject(item) {
-            return (item && typeof item === 'object' && !Array.isArray(item));
+            return item && typeof item === 'object' && !Array.isArray(item);
         }
 
         /**
@@ -57,39 +74,131 @@
             return mergeDeep(target, ...sources);
         }
 
+        function strtr(str, from, to) {
+            // http://kevin.vanzonneveld.net
+            // +   original by: Brett Zamir (http://brett-zamir.me)
+            // +      input by: uestla
+            // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+            // +      input by: Alan C
+            // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+            // +      input by: Taras Bogach
+            // +   bugfixed by: Brett Zamir (http://brett-zamir.me)
+            // +      input by: jpfle
+            // +   bugfixed by: Brett Zamir (http://brett-zamir.me)
+            // -   depends on: krsort
+            // -   depends on: ini_set
+            // *     example 1: $trans = {'hello' : 'hi', 'hi' : 'hello'};
+            // *     example 1: strtr('hi all, I said hello', $trans)
+            // *     returns 1: 'hello all, I said hi'
+            // *     example 2: strtr('äaabaåccasdeöoo', 'äåö','aao');
+            // *     returns 2: 'aaabaaccasdeooo'
+            // *     example 3: strtr('ääääääää', 'ä', 'a');
+            // *     returns 3: 'aaaaaaaa'
+            // *     example 4: strtr('http', 'pthxyz','xyzpth');
+            // *     returns 4: 'zyyx'
+            // *     example 5: strtr('zyyx', 'pthxyz','xyzpth');
+            // *     returns 5: 'http'
+            // *     example 6: strtr('aa', {'a':1,'aa':2});
+            // *     returns 6: '2'
+            var fr = '',
+                i = 0,
+                j = 0,
+                lenStr = 0,
+                lenFrom = 0,
+                fromTypeStr = '',
+                toTypeStr = '',
+                istr = '';
+            var tmpFrom = [];
+            var tmpTo = [];
+            var ret = '';
+            var match = false;
+
+            // Received replace_pairs?
+            // Convert to normal from->to chars
+            if (typeof from === 'object') {
+                for (fr in from) {
+                    if (from.hasOwnProperty(fr)) {
+                        tmpFrom.push(fr);
+                        tmpTo.push(from[fr]);
+                    }
+                }
+
+                from = tmpFrom;
+                to = tmpTo;
+            }
+
+            // Walk through subject and replace chars when needed
+            lenStr = str.length;
+            lenFrom = from.length;
+            fromTypeStr = typeof from === 'string';
+            toTypeStr = typeof to === 'string';
+
+            for (i = 0; i < lenStr; i++) {
+                match = false;
+                if (fromTypeStr) {
+                    istr = str.charAt(i);
+                    for (j = 0; j < lenFrom; j++) {
+                        if (istr == from.charAt(j)) {
+                            match = true;
+                            break;
+                        }
+                    }
+                } else {
+                    for (j = 0; j < lenFrom; j++) {
+                        if (str.substr(i, from[j].length) == from[j]) {
+                            match = true;
+                            // Fast forward
+                            i = i + from[j].length - 1;
+                            break;
+                        }
+                    }
+                }
+                if (match) {
+                    ret += toTypeStr ? to.charAt(j) : to[j];
+                } else {
+                    ret += str.charAt(i);
+                }
+            }
+
+            return ret;
+        }
+
         var settings = {
-            containerID  : 'container',
-            colors       : {
-                outdated         : {
-                    bg  : '#e03c31',
-                    text: '#ffffff'
+            containerID: 'container',
+            colors: {
+                outdated: {
+                    bg: '#e03c31',
+                    text: '#ffffff',
                 },
-                maintained       : {
-                    bg  : '#6bb020',
-                    text: '#ffffff'
+                maintained: {
+                    bg: '#6bb020',
+                    text: '#ffffff',
                 },
                 securityFixesOnly: {
-                    bg  : '#ffc734',
-                    text: '#000000'
+                    bg: '#ffc734',
+                    text: '#000000',
                 },
-                future           : {
-                    bg  : '#eeeeee',
-                    text: '#000000'
+                future: {
+                    bg: '#eeeeee',
+                    text: '#000000',
                 },
-                currentDayLine   : '#333333',
-                xAxisGridLine    : '#cccccc',
-                yAxisGridLine    : '#aaaaaa'
+                currentDayLine: '#333333',
+                xAxisGridLine: '#cccccc',
+                yAxisGridLine: '#aaaaaa',
             },
-            titles       : {
-                chart            : 'My Project Roadmap',
-                outdated         : 'Outdated',
-                maintained       : 'Maintained',
+            titles: {
+                chart: 'My Project Roadmap',
+                outdated: 'Outdated',
+                maintained: 'Maintained',
                 securityFixesOnly: 'Security fixes only',
-                future           : 'Future release'
+                future: 'Future release',
+                lastStableRelease: 'Latest Stable Release',
+                lastLtsRelease: 'Latest Long-Term Support Release',
             },
-            formatDate   : '%Y-%m-%d',
-            formatTooltip: '<strong>{point.title}</strong><br/>From: {point.start:%Y-%m-%d}<br/>To: {point.end:%Y-%m-%d}',
-            daysOverdue  : 90
+            formatDate: '%Y-%m-%d',
+            formatTooltip:
+                '<strong>{point.title}</strong><br/>From: {point.start:%Y-%m-%d}<br/>To: {point.end:%Y-%m-%d}',
+            daysOverdue: 90,
         };
 
         settings = mergeDeep(settings, options);
@@ -98,7 +207,7 @@
 
         var actualRoadmaps = roadmaps.filter(function (item) {
             var result = true;
-            var diff   = now - new Date(item.dates[1].to).getTime();
+            var diff = now - new Date(item.dates[1].to).getTime();
 
             if (diff > 0) {
                 var days = diff / 1000 / 60 / 60 / 24;
@@ -110,6 +219,9 @@
 
             return result;
         });
+
+        var lastStableRelease = '---';
+        var lastLtsRelease = '---';
 
         var series = actualRoadmaps.map(function (roadmap, i) {
             var data = roadmap.dates.map(function (item, j) {
@@ -126,11 +238,11 @@
                 }
 
                 return {
-                    title: (settings.titles.hasOwnProperty(type) ? settings.titles[type] : '!unknown!'),
+                    title: settings.titles.hasOwnProperty(type) ? settings.titles[type] : '!unknown!',
                     start: new Date(item.from).getTime(),
-                    end  : new Date(item.to).getTime(),
-                    color: (settings.colors.hasOwnProperty(type) ? settings.colors[type].bg : settings.colors.future.bg),
-                    y    : i
+                    end: new Date(item.to).getTime(),
+                    color: settings.colors.hasOwnProperty(type) ? settings.colors[type].bg : settings.colors.future.bg,
+                    y: i,
                 };
             });
 
@@ -138,175 +250,239 @@
 
             if (now >= new Date(roadmap.dates[0].from).getTime() && now <= new Date(roadmap.dates[0].to).getTime()) {
                 roadmapColors = 'maintained';
-            } else if (now >= new Date(roadmap.dates[1].from).getTime() && now <= new Date(roadmap.dates[1].to).getTime()) {
+            } else if (
+                now >= new Date(roadmap.dates[1].from).getTime() &&
+                now <= new Date(roadmap.dates[1].to).getTime()
+            ) {
                 roadmapColors = 'securityFixesOnly';
             } else if (now >= new Date(roadmap.dates[1].to).getTime()) {
                 roadmapColors = 'outdated';
             }
 
+            if (roadmapColors === 'maintained') {
+                if (roadmap.type === 'lts') {
+                    lastLtsRelease = roadmap.version;
+                } else {
+                    lastStableRelease = roadmap.version;
+                }
+            }
+
             return {
-                data  : data,
-                name  : roadmap.version,
-                colors: (settings.colors.hasOwnProperty(roadmapColors) ? settings.colors[roadmapColors] : settings.colors.future)
+                data: data,
+                name: roadmap.version,
+                colors: settings.colors.hasOwnProperty(roadmapColors)
+                    ? settings.colors[roadmapColors]
+                    : settings.colors.future,
             };
         });
 
-        var subtitlePointStyle = 'display: inline-block;width: 20px;border-radius: 3px;';
-        var subtitle           =
-                '<div style="background-color: ' + settings.colors.outdated.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.outdated + '&nbsp;&nbsp;&nbsp;' +
-                '<div style="background-color: ' + settings.colors.maintained.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.maintained + '&nbsp;&nbsp;&nbsp;' +
-                '<div style="background-color: ' + settings.colors.securityFixesOnly.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.securityFixesOnly + '&nbsp;&nbsp;&nbsp;' +
-                '<div style="background-color: ' + settings.colors.future.bg + ';' + subtitlePointStyle + '">&nbsp;</div> ' + settings.titles.future + '&nbsp;&nbsp;&nbsp;'
-        ;
+        var tplSubtitle =
+            '<div class="roadmap__latest-releases">' +
+            '{title_last_stable_release}: {version_last_stable_release}<br>' +
+            '{title_last_lts_release}: {version_last_lts_release}<br>' +
+            '</div>' +
+            '<div>' +
+            '<div class="roadmap__point" style="background-color: {color_outdated_bg};">&nbsp;</div> {title_outdated}&nbsp;&nbsp;&nbsp;' +
+            '<div class="roadmap__point" style="background-color: {color_maintained_bg};">&nbsp;</div> {title_maintained}&nbsp;&nbsp;&nbsp;' +
+            '<div class="roadmap__point" style="background-color: {color_fixesonly_bg};">&nbsp;</div> {title_fixesonly}&nbsp;&nbsp;&nbsp;' +
+            '<div class="roadmap__point" style="background-color: {color_future_bg};">&nbsp;</div> {title_future}&nbsp;&nbsp;&nbsp;' +
+            '</div>';
+        var subtitle = strtr(tplSubtitle, {
+            '{title_last_stable_release}': settings.titles.lastStableRelease,
+            '{version_last_stable_release}': lastStableRelease,
+            '{title_last_lts_release}': settings.titles.lastLtsRelease,
+            '{version_last_lts_release}': lastLtsRelease,
+            '{color_outdated_bg}': settings.colors.outdated.bg,
+            '{title_outdated}': settings.titles.outdated,
+            '{color_maintained_bg}': settings.colors.maintained.bg,
+            '{title_maintained}': settings.titles.maintained,
+            '{color_fixesonly_bg}': settings.colors.securityFixesOnly.bg,
+            '{title_fixesonly}': settings.titles.securityFixesOnly,
+            '{color_future_bg}': settings.colors.future.bg,
+            '{title_future}': settings.titles.future,
+        });
 
         Highcharts.ganttChart(settings.containerID, {
-            series  : series,
-            title   : {
-                text: settings.titles.chart
+            series: series,
+            title: {
+                text: settings.titles.chart,
             },
             subtitle: {
-                text   : subtitle,
-                align  : 'left',
+                text: subtitle,
+                align: 'left',
                 useHTML: true,
-                x      : 70
+                x: 70,
             },
-            tooltip : {
-                pointFormat: settings.formatTooltip
+            tooltip: {
+                pointFormat: settings.formatTooltip,
             },
-            xAxis   : [{
-                tickInterval        : 365 * 24 * 3600 * 1000, // one year
-                type                : 'category',
-                lineColor           : 'transparent',
-                tickColor           : settings.colors.yAxisGridLine,
-                gridLineColor       : settings.colors.yAxisGridLine,
-                gridLineWidth       : 1,
-                labels              : {
-                    style: {
-                        fontWeight: 'bold'
-                    }
+            xAxis: [
+                {
+                    tickInterval: 365 * 24 * 3600 * 1000, // one year
+                    type: 'category',
+                    lineColor: 'transparent',
+                    tickColor: settings.colors.yAxisGridLine,
+                    gridLineColor: settings.colors.yAxisGridLine,
+                    gridLineWidth: 1,
+                    labels: {
+                        style: {
+                            fontWeight: 'bold',
+                        },
+                    },
+                    currentDateIndicator: {
+                        color: settings.colors.currentDayLine,
+                        dashStyle: 'dash',
+                        width: 1,
+                        label: {
+                            format: settings.formatDate,
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            y: 15,
+                        },
+                    },
                 },
-                currentDateIndicator: {
-                    color    : settings.colors.currentDayLine,
-                    dashStyle: 'dash',
-                    width    : 1,
-                    label    : {
-                        format       : settings.formatDate,
-                        align        : 'center',
-                        verticalAlign: 'bottom',
-                        y            : 15
-                    }
-                }
-            }, {
-                visible : false,
-                opposite: false
-            }],
-            yAxis   : {
-                type             : 'category',
-                labels           : {
-                    useHTML  : true,
+                {
+                    visible: false,
+                    opposite: false,
+                },
+            ],
+            yAxis: {
+                type: 'category',
+                labels: {
+                    useHTML: true,
                     formatter: function () {
-                        var arr       = this.value.split('||');
-                        var name      = arr[0];
-                        var colorBg   = arr[1];
+                        var arr = this.value.split('||');
+                        var name = arr[0];
+                        var colorBg = arr[1];
                         var colorText = arr[2];
 
-                        return '<div style="background-color: ' + colorBg + ';color: ' + colorText + ';padding: 2px 6px;font-size: 13px;border-radius: 3px;">' + name + '</div>';
-                    }
+                        return (
+                            '<div style="background-color: ' +
+                            colorBg +
+                            ';color: ' +
+                            colorText +
+                            ';padding: 2px 6px;font-size: 13px;border-radius: 3px;">' +
+                            name +
+                            '</div>'
+                        );
+                    },
                 },
-                lineColor        : 'transparent',
-                tickColor        : 'transparent',
-                gridLineColor    : settings.colors.xAxisGridLine,
+                lineColor: 'transparent',
+                tickColor: 'transparent',
+                gridLineColor: settings.colors.xAxisGridLine,
                 gridLineDashStyle: 'longdash',
-                grid             : {
-                    columns: [{
-                        categories: Highcharts.map(series, function (s) {
-                            return s.name + '||' + s.colors.bg + '||' + s.colors.text;
-                        })
-                    }]
-                }
-            }
+                grid: {
+                    columns: [
+                        {
+                            categories: Highcharts.map(series, function (s) {
+                                return s.name + '||' + s.colors.bg + '||' + s.colors.text;
+                            }),
+                        },
+                    ],
+                },
+            },
         });
     }
 
     var data = [
         {
-            "version": "v1.4",
-            "dates"  : [
+            version: 'v1.4',
+            type: 'general',
+            dates: [
                 {
-                    "from": "2019-04-22",
-                    "to"  : "2019-05-15"
-                }, {
-                    "from": "2019-05-15",
-                    "to"  : "2019-06-15"
-                }
-            ]
-        }, {
-            "version": "v1.5",
-            "dates"  : [
+                    from: '2019-04-22',
+                    to: '2019-05-15',
+                },
                 {
-                    "from": "2019-05-15",
-                    "to"  : "2019-06-06"
-                }, {
-                    "from": "2019-06-06",
-                    "to"  : "2019-09-06"
-                }
-            ]
-        }, {
-            "version": "v1.6",
-            "dates"  : [
+                    from: '2019-05-15',
+                    to: '2019-06-15',
+                },
+            ],
+        },
+        {
+            version: 'v1.5',
+            type: 'general',
+            dates: [
                 {
-                    "from": "2019-06-06",
-                    "to"  : "2019-07-27"
-                }, {
-                    "from": "2019-07-28",
-                    "to"  : "2019-10-28"
-                }
-            ]
-        }, {
-            "version": "v1.7",
-            "dates"  : [
+                    from: '2019-05-15',
+                    to: '2019-06-06',
+                },
                 {
-                    "from": "2019-07-28",
-                    "to"  : "2022-07-27"
-                }, {
-                    "from": "2022-07-28",
-                    "to"  : "2023-01-28"
-                }
-            ]
-        }, {
-            "version": "v1.8",
-            "dates"  : [
+                    from: '2019-06-06',
+                    to: '2019-09-06',
+                },
+            ],
+        },
+        {
+            version: 'v1.6',
+            type: 'general',
+            dates: [
                 {
-                    "from": "2020-02-01",
-                    "to"  : "2020-07-31"
-                }, {
-                    "from": "2020-08-01",
-                    "to"  : "2020-10-31"
-                }
-            ]
-        }, {
-            "version": "v1.9",
-            "dates"  : [
+                    from: '2019-06-06',
+                    to: '2019-07-27',
+                },
                 {
-                    "from": "2020-08-01",
-                    "to"  : "2021-01-31"
-                }, {
-                    "from": "2021-02-01",
-                    "to"  : "2021-04-31"
-                }
-            ]
-        }
+                    from: '2019-07-28',
+                    to: '2019-10-28',
+                },
+            ],
+        },
+        {
+            version: 'v1.7',
+            type: 'lts',
+            dates: [
+                {
+                    from: '2019-07-28',
+                    to: '2022-07-27',
+                },
+                {
+                    from: '2022-07-28',
+                    to: '2023-01-28',
+                },
+            ],
+        },
+        {
+            version: 'v1.8',
+            type: 'general',
+            dates: [
+                {
+                    from: '2020-02-01',
+                    to: '2020-07-31',
+                },
+                {
+                    from: '2020-08-01',
+                    to: '2020-10-31',
+                },
+            ],
+        },
+        {
+            version: 'v1.9',
+            type: 'general',
+            dates: [
+                {
+                    from: '2020-08-01',
+                    to: '2021-01-31',
+                },
+                {
+                    from: '2021-02-01',
+                    to: '2021-04-31',
+                },
+            ],
+        },
     ];
 
     versionRoadmap(data, {
-        titles       : {
-            chart            : 'Lemurro Roadmap',
-            outdated         : 'Устарел',
-            maintained       : 'Поддерживается',
+        titles: {
+            chart: 'Lemurro Roadmap',
+            outdated: 'Устарел',
+            maintained: 'Поддерживается',
             securityFixesOnly: 'Только исправления безопасности',
-            future           : 'Будущий релиз'
+            future: 'Будущий релиз',
+            lastStableRelease: 'Последняя стабильная версия',
+            lastLtsRelease: 'Последняя LTS-версия',
         },
-        formatDate   : '%d.%m.%Y',
-        formatTooltip: '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}'
+        formatDate: '%d.%m.%Y',
+        formatTooltip:
+            '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}',
     });
 </script>
