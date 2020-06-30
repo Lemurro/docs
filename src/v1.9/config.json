@@ -1,0 +1,20 @@
+{
+  "title": "Lemurro v1.9 - Документация",
+  "author": "Dmitrii Shcherbakov",
+  "format": "html",
+  "html": {
+    "breadcrumbs": true,
+    "breadcrumb_separator": " > ",
+    "float": false,
+    "repo": "Lemurro/lemurro",
+    "auto_toc": false,
+    "links": {
+<<<<<<< HEAD:docs/config.json
+      "v1.8 docs": "https://lemurro.github.io/docs/v1.8",
+      "v1.7 docs": "https://lemurro.github.io/docs/v1.7",
+=======
+>>>>>>> develop:src/v1.9/config.json
+      "GitHub": "https://github.com/Lemurro/lemurro"
+    }
+  }
+}
