@@ -91,22 +91,8 @@
 ) <span class="hljs-keyword">ENGINE</span> = <span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span> = utf8 <span class="hljs-keyword">COLLATE</span> = utf8_unicode_ci;
 </code></pre>
 </li>
-<li>Добавьте новые константы в конфиг <code>api\app\Configs\SettingsAuth.php</code>:
+<li>Добавьте новую константу в конфиг <code>api\app\Configs\SettingsAuth.php</code>:
 <pre><code class="hljs php"><span class="hljs-comment">/**
- * Количество генераций новых кодов в минуту
- *
- * <span class="hljs-doctag">@var</span> int
- */</span>
-<span class="hljs-keyword">const</span> ATTEMPTS_PER_MINUTE = <span class="hljs-number">1</span>;
-
-<span class="hljs-comment">/**
- * Количество генераций новых кодов в час
- *
- * <span class="hljs-doctag">@var</span> int
- */</span>
-<span class="hljs-keyword">const</span> ATTEMPTS_PER_HOUR = <span class="hljs-number">5</span>;
-
-<span class="hljs-comment">/**
  * Количество генераций новых кодов в день
  *
  * <span class="hljs-doctag">@var</span> int
@@ -124,6 +110,11 @@
     <span class="hljs-keyword">ADD</span> <span class="hljs-string">`admin_entered`</span> <span class="hljs-built_in">TINYINT</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'0'</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`geoip`</span>;
 </code></pre>
 </li>
+</ul>
+<h2 id="page_-">Необязательные изменения</h2>
+<ul>
+<li>
+<strong>[Response]</strong> В массиве ответа добавлен ключ <code>success</code> типа <code>bool</code>, рекомендуется использовать для проверки на наличие ошибок его вместо <code>isset($result['errors'])</code>, т.к. в версии 2.0 ключ <code>errors</code> будет переименован в ключ <code>error</code>.</li>
 </ul>
 <h1 id="page_WEB-module">WEB-module</h1>
 <h2 id="page_---2">Критически важные изменения</h2>
@@ -183,6 +174,8 @@
 <h2 id="page_---2">Изменения средней важности</h2>
 <ul>
 <li>
+<strong>[JS]</strong> Вместо кода <code>result.hasOwnProperty('errors')</code> необходимо использовать код <code>lemurro.hasErrors(result)</code>.</li>
+<li>
 <strong>[JS-библиотки]</strong> Если вы использовали создание нового экземпляра через <code>new LightAjax</code> тогда вам необходимо знать об изменениях:
 <ul>
 <li>Вместо параметра <code>settings.color</code> теперь необязательный параметр <code>settings.classColor</code>, чтобы избежать проблем с Content Security Policy, можно не указывать, тогда будет использоваться класс по умолчанию.</li>
@@ -227,7 +220,7 @@ users.afterShowData = <span class="hljs-function"><span class="hljs-keyword">fun
 </ul>
 </li>
 </ul>
-<h2 id="page_-">Необязательные изменения</h2>
+<h2 id="page_--2">Необязательные изменения</h2>
 <ul>
 <li>
 <strong>[Пользователи]</strong> В форме добавления\изменения пользователя можно визуально разбить блоки с основной системной информацией и правами доступа, изменения вы можете найти в файле <a href="https://github.com/Lemurro/client-metronic/blob/v1.9.0/src/html/pages/users/form.html" class="Link--external">form.html</a>.</li>
