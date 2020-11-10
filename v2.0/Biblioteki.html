@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Библиотеки - Lemurro v2.0 - Документация</title>
+    <meta name="description" content="My Stylish Documentation">
+    <meta name="author" content="Dmitrii Shcherbakov">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="themes/daux/img/favicon-blue.png" type="image/x-icon">
+
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <script>
+        window.base_url = "";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
+    <!-- Font -->
+    
+    <!-- CSS -->
+            <link href='themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <link href='daux_libraries/search.css' rel='stylesheet' type='text/css'>
+    </head>
+<body class="">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger" aria-controls="sidebar_content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+        </button>
+
+        <a class="Brand" href="Vvedenie.html">Lemurro v2.0 - Документация</a>
+
+    <form role='search' action="/" method="get" class="Search" id="search_form">
+        <label for="search_input">
+            <span class='u-visuallyHidden'>Search</span>
+        </label>
+        <input
+            type="search"
+            id="search_input"
+            class="Search__field"
+            placeholder="Search..."
+            aria-label="Search..."
+            autocomplete="on"
+            results=25
+            autosave=text_search
+        >
+        <label>
+            <input type="submit" class='u-visuallyHidden' />
+            <span class='u-visuallyHidden'>Search...</span>
+            <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+                <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+            </svg>
+        </label>
+    </form>
+
+        <div class="Collapsible__content" id="sidebar_content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item '><a href="Vvedenie.html">Введение</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>API-Сервер (api)</a><ul class='Nav'><li class='Nav__item '><a href="API_Server_(api)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="API_Server_(api)/Nastrojka/Nastrojka.html">Настройка</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="API_Server_(api)/Nastrojki_po_umolcaniu/DIC.html">DIC</a></li><li class='Nav__item '><a href="API_Server_(api)/Nastrojki_po_umolcaniu/Response.html">Response</a></li><li class='Nav__item '><a href="API_Server_(api)/Nastrojki_po_umolcaniu/Config.html">Config</a></li><li class='Nav__item '><a href="API_Server_(api)/Nastrojki_po_umolcaniu/Templates.html">Templates</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Расширение функционала</a><ul class='Nav'><li class='Nav__item '><a href="API_Server_(api)/Rassirenie_funkcionala/Rassirenie_DIC.html">Расширение DIC</a></li><li class='Nav__item '><a href="API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Response.html">Расширение Response</a></li><li class='Nav__item '><a href="API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Config.html">Расширение Config</a></li><li class='Nav__item '><a href="API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Templates.html">Расширение Templates</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Marsrutizacia.html">Маршрутизация</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Otvet_servera.html">Ответ сервера</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Vypolnit'_do....html">Выполнить до...</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Vypolnit'_posle....html">Выполнить после...</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Cron_zadaci.html">Cron-задачи</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Хелперы</a><ul class='Nav'><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Helpery/Data_i_vrema.html">Дата и время</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Helpery/Logirovanie.html">Логирование</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Helpery/Email.html">Email</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Helpery/SMS.html">SMS</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Helpery/Checker.html">Checker</a></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Helpery/LogException.html">LogException</a></li></ul></li><li class='Nav__item '><a href="API_Server_(api)/Ispol'zovanie/Opredelenie_vida_servera.html">Определение вида сервера</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Metronic (web)</a><ul class='Nav'><li class='Nav__item '><a href="Klient_Metronic_(web)/Opisanie.html">Описание</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Logika_zapuska_prilozenia.html">Логика запуска приложения</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="Klient_Metronic_(web)/Nastrojka/Nastrojka.html">Настройка</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Nastrojka/Marsruty.html">Маршруты</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Nastrojka/Sborka_proekta.html">Сборка проекта</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Nastrojka/Sborka_Metronic.html">Сборка Metronic</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/Ssylki.html">Ссылки</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_peremennye.html">JS-переменные</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearFields.html">clearFields</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearString.html">clearString</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/decimal.html">decimal</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/initBootstrapConfirmation.html">initBootstrapConfirmation</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/isRole.html">isRole</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/localTime.html">localTime</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/tabs.html">tabs</a></li></ul></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/CSS_helpery.html">CSS-хелперы</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/Template7_helpery.html">Template7-хелперы</a></li><li class='Nav__item '><a href="Klient_Metronic_(web)/Ispol'zovanie/TipsTricks.html">Tips&Tricks</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Примеры</a><ul class='Nav'><li class='Nav__item '><a href="Primery/Spravocnik.html">Справочник</a></li><li class='Nav__item '><a href="Primery/Razdel.html">Раздел</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Модули</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Права доступа</a><ul class='Nav'><li class='Nav__item '><a href="Moduli/Prava_dostupa/Vvedenie.html">Введение</a></li><li class='Nav__item '><a href="Moduli/Prava_dostupa/Dobavlenie_novoj.html">Добавление новой</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Загрузка файлов</a><ul class='Nav'><li class='Nav__item '><a href="Moduli/Zagruzka_fajlov/Podklucenie.html">Подключение</a></li><li class='Nav__item '><a href="Moduli/Zagruzka_fajlov/Sohranenie_fajlov.html">Сохранение файлов</a></li><li class='Nav__item '><a href="Moduli/Zagruzka_fajlov/Manipulacii_s_fajlom.html">Манипуляции с файлом</a></li><li class='Nav__item '><a href="Moduli/Zagruzka_fajlov/Proverka_dostupa.html">Проверка доступа</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Разработка ядра</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>api-core</a><ul class='Nav'><li class='Nav__item '><a href="Razrabotka_adra/api_core/Vvedenie.html">Введение</a></li></ul></li></ul></li><li class='Nav__item Nav__item--active'><a href="Biblioteki.html">Библиотеки</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Руководство по обновлению</a><ul class='Nav'><li class='Nav__item '><a href="Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.9_do_2.0.html">Обновление с 1.9 до 2.0</a></li><li class='Nav__item '><a href="Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.8_do_1.9.html">Обновление с 1.8 до 1.9</a></li><li class='Nav__item '><a href="Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.7_do_1.8.html">Обновление с 1.7 до 1.8</a></li><li class='Nav__item '><a href="Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.6_do_1.7.html">Обновление с 1.6 до 1.7</a></li><li class='Nav__item '><a href="Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.5_do_1.6.html">Обновление с 1.5 до 1.6</a></li><li class='Nav__item '><a href="Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.4_do_1.5.html">Обновление с 1.4 до 1.5</a></li></ul></li><li class='Nav__item '><a href="Doroznaa_karta.html">Дорожная карта</a></li><li class='Nav__item '><a href="Drugie_versii.html">Другие версии</a></li></ul>
+            <div class="Links">
+                                    <hr/>
+                                            <a href="https://github.com/Lemurro/lemurro" target="_blank"  rel="noopener noreferrer">GitHub</a>
+                        <br />
+                                                </div>
+
+                            <div class="CodeToggler">
+                    <hr/>
+                    <label class="Checkbox">Show Code Blocks                        <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
+                        <div class="Checkbox__indicator"></div>
+                    </label>
+                </div>
+            
+                
+                        </div>
+    </aside>
+    <div class="Columns__right">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="Biblioteki.html">Библиотеки</a></h1>
+                    </div>
+
+    <div class="s-content">
+        <h1 id="page_Otdel'nye_biblioteki_dla_dopolnitel'nogo_funkcionala">Отдельные библиотеки для дополнительного функционала</h1>
+<h2 id="page_PHP_biblioteki">PHP-библиотеки</h2>
+<ul>
+<li>
+<a href="https://github.com/Lemurro/lib-sorter" class="Link--external" rel="noopener noreferrer">Sorter</a> - сортировка ассоциативного массива по определённому ключу</li>
+<li>
+<a href="https://github.com/Lemurro/lib-diskspace" class="Link--external" rel="noopener noreferrer">DiskSpace</a> - проверка свободного места на диске</li>
+</ul>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="Razrabotka_adra/api_core/Vvedenie.html">Previous</a></li>            <li class=Pager--next><a href="Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.9_do_2.0.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS -->
+            <script src="themes/daux/js/daux.min.js"></script>
+    
+        <script>
+        
+        window.searchLanguage = "";
+        window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+    </script>
+
+    <!-- Search -->
+    <script type="text/javascript" src="daux_libraries/search.min.js"></script>
+
+    <script>
+        window.search({'base_url': ''})
+    </script>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Обновление с 1.9 до 2.0 - Lemurro v2.0 - Документация</title>
+    <meta name="description" content="My Stylish Documentation">
+    <meta name="author" content="Dmitrii Shcherbakov">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="../themes/daux/img/favicon-blue.png" type="image/x-icon">
+
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <script>
+        window.base_url = "../";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
+    <!-- Font -->
+    
+    <!-- CSS -->
+            <link href='../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <link href='../daux_libraries/search.css' rel='stylesheet' type='text/css'>
+    </head>
+<body class="">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger" aria-controls="sidebar_content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+        </button>
+
+        <a class="Brand" href="../Vvedenie.html">Lemurro v2.0 - Документация</a>
+
+    <form role='search' action="/" method="get" class="Search" id="search_form">
+        <label for="search_input">
+            <span class='u-visuallyHidden'>Search</span>
+        </label>
+        <input
+            type="search"
+            id="search_input"
+            class="Search__field"
+            placeholder="Search..."
+            aria-label="Search..."
+            autocomplete="on"
+            results=25
+            autosave=text_search
+        >
+        <label>
+            <input type="submit" class='u-visuallyHidden' />
+            <span class='u-visuallyHidden'>Search...</span>
+            <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+                <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+            </svg>
+        </label>
+    </form>
+
+        <div class="Collapsible__content" id="sidebar_content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item '><a href="../Vvedenie.html">Введение</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>API-Сервер (api)</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Opisanie.html">Описание</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Nastrojka/Nastrojka.html">Настройка</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Nastrojki_po_umolcaniu/DIC.html">DIC</a></li><li class='Nav__item '><a href="../API_Server_(api)/Nastrojki_po_umolcaniu/Response.html">Response</a></li><li class='Nav__item '><a href="../API_Server_(api)/Nastrojki_po_umolcaniu/Config.html">Config</a></li><li class='Nav__item '><a href="../API_Server_(api)/Nastrojki_po_umolcaniu/Templates.html">Templates</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Расширение функционала</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_DIC.html">Расширение DIC</a></li><li class='Nav__item '><a href="../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Response.html">Расширение Response</a></li><li class='Nav__item '><a href="../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Config.html">Расширение Config</a></li><li class='Nav__item '><a href="../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Templates.html">Расширение Templates</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Marsrutizacia.html">Маршрутизация</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Otvet_servera.html">Ответ сервера</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Vypolnit'_do....html">Выполнить до...</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Vypolnit'_posle....html">Выполнить после...</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Cron_zadaci.html">Cron-задачи</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Helpery/Data_i_vrema.html">Дата и время</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Helpery/Logirovanie.html">Логирование</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Helpery/Email.html">Email</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Helpery/SMS.html">SMS</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Helpery/Checker.html">Checker</a></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Helpery/LogException.html">LogException</a></li></ul></li><li class='Nav__item '><a href="../API_Server_(api)/Ispol'zovanie/Opredelenie_vida_servera.html">Определение вида сервера</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Metronic (web)</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Opisanie.html">Описание</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Logika_zapuska_prilozenia.html">Логика запуска приложения</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastrojka/Nastrojka.html">Настройка</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastrojka/Marsruty.html">Маршруты</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastrojka/Sborka_proekta.html">Сборка проекта</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Nastrojka/Sborka_Metronic.html">Сборка Metronic</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/Ssylki.html">Ссылки</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_peremennye.html">JS-переменные</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearFields.html">clearFields</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearString.html">clearString</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/decimal.html">decimal</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/initBootstrapConfirmation.html">initBootstrapConfirmation</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/isRole.html">isRole</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/localTime.html">localTime</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/tabs.html">tabs</a></li></ul></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/CSS_helpery.html">CSS-хелперы</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/Template7_helpery.html">Template7-хелперы</a></li><li class='Nav__item '><a href="../Klient_Metronic_(web)/Ispol'zovanie/TipsTricks.html">Tips&Tricks</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Примеры</a><ul class='Nav'><li class='Nav__item '><a href="../Primery/Spravocnik.html">Справочник</a></li><li class='Nav__item '><a href="../Primery/Razdel.html">Раздел</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Модули</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Права доступа</a><ul class='Nav'><li class='Nav__item '><a href="../Moduli/Prava_dostupa/Vvedenie.html">Введение</a></li><li class='Nav__item '><a href="../Moduli/Prava_dostupa/Dobavlenie_novoj.html">Добавление новой</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Загрузка файлов</a><ul class='Nav'><li class='Nav__item '><a href="../Moduli/Zagruzka_fajlov/Podklucenie.html">Подключение</a></li><li class='Nav__item '><a href="../Moduli/Zagruzka_fajlov/Sohranenie_fajlov.html">Сохранение файлов</a></li><li class='Nav__item '><a href="../Moduli/Zagruzka_fajlov/Manipulacii_s_fajlom.html">Манипуляции с файлом</a></li><li class='Nav__item '><a href="../Moduli/Zagruzka_fajlov/Proverka_dostupa.html">Проверка доступа</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Разработка ядра</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>api-core</a><ul class='Nav'><li class='Nav__item '><a href="../Razrabotka_adra/api_core/Vvedenie.html">Введение</a></li></ul></li></ul></li><li class='Nav__item '><a href="../Biblioteki.html">Библиотеки</a></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Руководство по обновлению</a><ul class='Nav'><li class='Nav__item Nav__item--active'><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.9_do_2.0.html">Обновление с 1.9 до 2.0</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.8_do_1.9.html">Обновление с 1.8 до 1.9</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.7_do_1.8.html">Обновление с 1.7 до 1.8</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.6_do_1.7.html">Обновление с 1.6 до 1.7</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.5_do_1.6.html">Обновление с 1.5 до 1.6</a></li><li class='Nav__item '><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.4_do_1.5.html">Обновление с 1.4 до 1.5</a></li></ul></li><li class='Nav__item '><a href="../Doroznaa_karta.html">Дорожная карта</a></li><li class='Nav__item '><a href="../Drugie_versii.html">Другие версии</a></li></ul>
+            <div class="Links">
+                                    <hr/>
+                                            <a href="https://github.com/Lemurro/lemurro" target="_blank"  rel="noopener noreferrer">GitHub</a>
+                        <br />
+                                                </div>
+
+                            <div class="CodeToggler">
+                    <hr/>
+                    <label class="Checkbox">Show Code Blocks                        <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
+                        <div class="Checkbox__indicator"></div>
+                    </label>
+                </div>
+            
+                
+                        </div>
+    </aside>
+    <div class="Columns__right">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.9_do_2.0.html">Руководство по обновлению</a> > <a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.9_do_2.0.html">Обновление с 1.9 до 2.0</a></h1>
+                    </div>
+
+    <div class="s-content">
+        <h1 id="page_API_module">API-module</h1>
+<h2 id="page_Kriticeski_vaznye_izmenenia">Критически важные изменения</h2>
+<ul>
+<li>
+<strong>[Auth]</strong> В таблицу <code>auth_codes</code> добавить новое поле <code>ip</code>:
+<pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span>
+    <span class="hljs-string">`auth_codes`</span>
+<span class="hljs-keyword">ADD</span>
+    <span class="hljs-keyword">COLUMN</span> <span class="hljs-string">`ip`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">''</span>
+<span class="hljs-keyword">AFTER</span>
+    <span class="hljs-string">`code`</span>;
+</code></pre>
+</li>
+<li>
+<strong>[Checker]</strong> Проверка на права доступа теперь бросает исключение <code>ResponseException</code> при ошибке, его можно отловить если вам необходимо при ошибке выполнить что-то своё, если исключение не поймать оно уйдёт в ядро и там превратится в обычный json-ответ с ошибкой в виде сообщения исключения:
+<pre><code class="hljs php"><span class="hljs-comment">// Самостоятельно ловим исключение</span>
+<span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">$this</span>-&gt;checker-&gt;run([
+        <span class="hljs-string">'role'</span> =&gt; [
+            <span class="hljs-string">'page'</span>   =&gt; <span class="hljs-string">'example'</span>,
+            <span class="hljs-string">'access'</span> =&gt; <span class="hljs-string">'read'</span>,
+        ],
+    ]);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+} <span class="hljs-keyword">catch</span> (ResponseException $e) {
+    LogException::write(<span class="hljs-keyword">$this</span>-&gt;log, $e);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+}
+
+<span class="hljs-comment">// Пропускаем исключение</span>
+<span class="hljs-keyword">$this</span>-&gt;checker-&gt;run([
+    <span class="hljs-string">'auth'</span> =&gt; <span class="hljs-string">''</span>,
+    <span class="hljs-string">'role'</span> =&gt; [
+        <span class="hljs-string">'page'</span>   =&gt; <span class="hljs-string">'example'</span>,
+        <span class="hljs-string">'access'</span> =&gt; <span class="hljs-string">'delete'</span>,
+    ],
+]);
+
+<span class="hljs-keyword">$this</span>-&gt;response-&gt;setData((<span class="hljs-keyword">new</span> ActionRemove(<span class="hljs-keyword">$this</span>-&gt;dic))-&gt;run(
+    <span class="hljs-keyword">$this</span>-&gt;request-&gt;attributes-&gt;get(<span class="hljs-string">'id'</span>)
+));
+
+<span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;response;
+
+<span class="hljs-comment">// Исключение поймано ядром</span>
+<span class="hljs-keyword">catch</span> (ResponseException $e)
+    <span class="hljs-keyword">$this</span>-&gt;response-&gt;setData(Response::exception($e));
+    <span class="hljs-keyword">$this</span>-&gt;response-&gt;send();
+</code></pre>
+</li>
+<li>
+<strong>[Configs]</strong> Переопределение настроек выполняется в каталоге <code>/app/Overrides/Configs</code> при помощи yaml-файлов, подробности смотрите <a href="../API_Server_(api)/Nastrojki_po_umolcaniu/Config.html">здесь</a>.</li>
+<li>
+<strong>[Console]</strong> В метод <code>getDIC</code> необходимо передать параметр <code>string $path_root</code>.</li>
+<li>
+<strong>[Console]</strong> БД не инициализируется в конструкторе, необходимо отдельно стартовать при необходимости: <code>(new Database())-&gt;addConnection($dic['config']['database']['mysql'])-&gt;connect();</code>.</li>
+<li>
+<strong>[Controller]</strong> В классах расширяющихся от класса <code>Lemurro\Api\Core\Abstracts\Controller</code> метод <code>start</code> вместо вызова <code>$this-&gt;response-&gt;send();</code> должен возвращать <code>return $this-&gt;response;</code>.</li>
+<li>
+<strong>[Core]</strong> Необходимо в файле <code>/public/index.php</code> передать параметр <code>string $path_root</code> в ядро <code>new Core(__DIR__ . '/../')</code>.</li>
+<li>
+<strong>[Database]</strong> Библиотека <code>j4mie/idiorm</code> заменена на <code>illuminate/database</code>, необходимо пройти по коду и заменить <code>ORM::</code> на <code>DB::</code> (фасад для класса Capsule), основной список методов “было\стало”:
+<ul>
+<li>
+<code>for_table()</code> &gt;&gt;&gt; <code>table()</code>
+</li>
+<li>
+<code>select_many()</code> &gt;&gt;&gt; <code>select()</code>
+</li>
+<li>
+<code>where_null()</code> &gt;&gt;&gt; <code>whereNull()</code>
+</li>
+<li>
+<code>order_by_asc()</code> &gt;&gt;&gt; <code>orderBy()</code>
+</li>
+<li>
+<code>find_one()</code> &gt;&gt;&gt; <code>first()</code>, если ничего не найдено вернёт <code>null</code>
+</li>
+<li>
+<code>find_many()</code> &gt;&gt;&gt; <code>get()</code>, для проверки на данные можно вызвать метод <code>count()</code>
+</li>
+<li>
+<code>find_array()</code> &gt;&gt;&gt; используйте <code>get()</code> и преобразуйте каждый элемент в цикле с использованием type cast <code>(array) $item</code>, но посмотрите может вам это и не нужно вовсе, можно и в таком виде отдать в ответ</li>
+<li>
+<code>as_array()</code> &gt;&gt;&gt; <code>(array) $record</code>, используем магию type cast</li>
+<li>
+<code>create()</code> &gt;&gt;&gt; <code>insert()</code> или <code>insertGetId()</code>
+</li>
+<li>
+<code>save()</code> &gt;&gt;&gt; необходимо отдельно строить запрос с методом <code>update()</code>
+</li>
+<li>
+<code>ORM::get_db()-&gt;beginTransaction()</code> &gt;&gt;&gt; <code>DB::beginTransaction()</code>
+</li>
+<li>
+<code>ORM::get_db()-&gt;commit()</code> &gt;&gt;&gt; <code>DB::commit()</code>
+</li>
+<li>
+<code>ORM::get_db()-&gt;rollBack()</code> &gt;&gt;&gt; <code>DB::rollBack()</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>[DIC]</strong> В связи с удалением DIC-элемента <code>$this-&gt;dic['checker']</code> необходимо в классах расширяющихся от классов <code>Lemurro\Api\Core\Abstracts\Controller</code> и <code>Lemurro\Api\Core\Helpers\File\FileChecker</code> использовать вместо него свойство <code>$this-&gt;checker</code>.</li>
+<li>
+<strong>[EmailTemplates]</strong> Переопределение шаблонов для писем выполняется в каталоге <code>/app/Overrides/Configs/templates</code> при помощи html-файлов, подробности смотрите <a href="../API_Server_(api)/Nastrojki_po_umolcaniu/Templates.html">здесь</a>.</li>
+<li>
+<strong>[Jobby]</strong> В конструкторе указать параметр <code>string $path_root</code>.</li>
+<li>
+<strong>[LoggerFactory]</strong> <code>LoggerFactory::create()</code> заменить на:
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">LoggerFactory</span>;
+
+<span class="hljs-comment">/** <span class="hljs-doctag">@var</span> LoggerFactory $logfactory */</span>
+$logfactory = <span class="hljs-keyword">$this</span>-&gt;dic[<span class="hljs-string">'logfactory'</span>];
+$log = $logfactory-&gt;create(<span class="hljs-string">'LogName'</span>);
+</code></pre>
+либо упрощённый вариант
+<pre><code class="hljs php"><span class="hljs-keyword">use</span> <span class="hljs-title">Monolog</span>\<span class="hljs-title">Logger</span>;
+
+<span class="hljs-comment">/** <span class="hljs-doctag">@var</span> Logger $log */</span>
+$log = <span class="hljs-keyword">$this</span>-&gt;dic[<span class="hljs-string">'logfactory'</span>]-&gt;create(<span class="hljs-string">'LogName'</span>);
+</code></pre>
+</li>
+<li>
+<strong>[Mailer]</strong> Конструктор вместо переменных <code>string $header</code> и <code>string $footer</code> теперь принимает переменную <code>string $template</code> в которой находится полный шаблон письма: шапка, подвал и переменная <code>__BODY__</code>, если вы использовали переопределение шапки и подвала, пожалуйста посмотрите новый <a href="../API_Server_(api)/Nastrojki_po_umolcaniu/Templates.html">формат шаблона</a>.</li>
+</ul>
+<h2 id="page_Neobazatel'nye_izmenenia">Необязательные изменения</h2>
+<ul>
+<li>
+<strong>[]</strong> .</li>
+</ul>
+<h1 id="page_WEB_module">WEB-module</h1>
+<h2 id="page_Kriticeski_vaznye_izmenenia-2">Критически важные изменения</h2>
+<ul>
+<li>
+<strong>[Style]</strong> Цвета серии <code>-brand</code> удалены, необходимо заменить на что-то другое.</li>
+<li>
+<strong>[Style]</strong> Классы серии <code>m-badge</code> удалены, необходимо заменить их на <code>label</code>.</li>
+<li>
+<strong>[Style]</strong> Классы серии <code>m--</code> удалены, необходимо заменить их на соответствующие классы.</li>
+<li>
+<strong>[Style]</strong> Классы серии <code>m-checkbox</code> удалены, необходимо убрать из классов префикс <code>m-</code>.</li>
+<li>
+<strong>[Style]</strong> Классы серии <code>m-radio</code> удалены, необходимо убрать из классов префикс <code>m-</code>.</li>
+<li>
+<strong>[Style]</strong> У элементов <code>button</code> с классом <code>m-btn--icon</code> можно убрать этот класс и изменить вёрстку внутри:</li>
+</ul>
+<pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- Было --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary m-btn--icon"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"myfunc()"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fas fa-plus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Добавить<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Стало --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-primary"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"myfunc()"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fas fa-plus"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    Добавить
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<ul>
+<li>
+<strong>[SweetAlert2]</strong> Вместо вызова <code>swal()</code> необходимо использовать вызов <code>Swal.fire()</code>.</li>
+<li>
+<strong>[Users]</strong> На вкладке <code>Ключи доступа</code> изменена вёрстка и добавлено сообщение об отсутствии ключей, новую вёрстку можно взять в файле <a href="https://github.com/Lemurro/client-metronic/blob/v2.0.0/src/html/pages/users/auth_keys.html" class="Link--external" rel="noopener noreferrer">auth_keys.html</a>.</li>
+<li>
+<strong>[Users]</strong> Добавлено новое системное поле <code>email</code>
+<ul>
+<li>Добавить поле в схему таблицы <code>info_users</code>:
+<pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`info_users`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-string">`email`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`roles`</span>;
+</code></pre>
+</li>
+<li>В файле <code>/src/html/pages/users/form.html</code> необходимо добавить поле:
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Email"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control js-user-id-1"</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="page_Neobazatel'nye_izmenenia-2">Необязательные изменения</h2>
+<ul>
+<li>
+<strong>[Style]</strong> Теперь кнопки с классом <code>btn-secondary</code> слишком тёмные и имеет смысл поменять их на <code>btn-light</code>.</li>
+<li>
+<strong>[Style]</strong> Для кнопок с выпадающим меню и классом <code>btn-secondary</code> можно поменять этот класс на <code>btn-outline-light</code>.</li>
+<li>
+<strong>[Style]</strong> В выпадающих меню, где есть элементы с иконками можно увеличить отступ справа от иконки добавив новый класс <code>mr-3</code> в элемент иконки <code>&lt;i&gt;</code>.</li>
+</ul>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="../Biblioteki.html">Previous</a></li>            <li class=Pager--next><a href="../Rukovodstvo_po_obnovleniu/Obnovlenie_s_1.8_do_1.9.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS -->
+            <script src="../themes/daux/js/daux.min.js"></script>
+    
+        <script>
+        
+        window.searchLanguage = "";
+        window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+    </script>
+
+    <!-- Search -->
+    <script type="text/javascript" src="../daux_libraries/search.min.js"></script>
+
+    <script>
+        window.search({'base_url': '../'})
+    </script>
+</body>
+</html>
