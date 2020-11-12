@@ -159,7 +159,7 @@
 </li>
 </ul>
 <h2 id="page_Polnyj_sintaksis_komandy">Полный синтаксис команды</h2>
-<pre><code class="hljs bash">lemurro new mycrm --lv=latest --api --web --skip --silent
+<pre><code class="hljs bash">lemurro new mycrm --lv=X.Y --api --web --skip --silent
 </code></pre>
 <p>Обязательные аргументы и опции:</p>
 <ul>
@@ -168,7 +168,8 @@
 <li>
 <code>mycrm</code> - имя (каталог) проекта</li>
 <li>
-<code>--lv=latest</code> - номер версии Lemurro для установки, <a href="https://github.com/Lemurro/api/tags" class="Link--external" rel="noopener noreferrer">полный список версий</a> или слово <code>latest</code>, для установки последней стабильной версии</li>
+<code>--lv=X.Y</code> - номер версии Lemurro для установки, <a href="https://github.com/Lemurro/api/tags" class="Link--external" rel="noopener noreferrer">полный список версий</a>
+</li>
 </ul>
 <p>Опции установки отдельных модулей, если опцию не указать модуль не будет установлен:</p>
 <ul>
@@ -184,11 +185,11 @@
 <li>
 <code>--silent</code> - отключает вопрос <code>Continue installation (y|n)</code>, который показывается после отображения списка определённых параметров установки (имени проекта, версии Lemurro, списке устанавливаемых модулей)</li>
 </ul>
-<h3 id="page_Naprimer">Например: <code>lemurro new mycrm --lv=latest --api --web --skip --silent</code></h3>
+<h3 id="page_Naprimer">Например: <code>lemurro new mycrm --lv=2.0 --api --web --skip --silent</code></h3>
 <ul>
 <li>создаст каталог с именем проекта <code>mycrm</code>
 </li>
-<li>последней стабильной версией Lemurro</li>
+<li>Lemurro v2.0</li>
 <li>модулями <code>api-сервер</code> и <code>web-клиент</code>
 </li>
 <li>не станет останавливаться для подтверждения указанных параметров</li>
