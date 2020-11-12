@@ -90,12 +90,14 @@
     <div class="s-content">
         <h1 id="page_Nastrojka">Настройка</h1>
 <ol>
-<li>Создаём новую БД для проекта со сравнением <code>utf8_unicode_ci</code>
+<li>
+<p>Создаём новую БД для проекта со сравнением <code>utf8_unicode_ci</code></p>
 </li>
-<li>Импортируем в БД файл <code>/database.sql</code>
+<li>
+<p>Импортируем в БД файл <code>/database.sql</code></p>
 </li>
-<li>Добавляем первого <em>живого</em> пользователя с правами администратора:</li>
-</ol>
+<li>
+<p>Добавляем первого <em>живого</em> пользователя с правами администратора:</p>
 <pre><code class="hljs sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-string">`users`</span>
 <span class="hljs-keyword">SET</span>
   <span class="hljs-string">`id`</span>         = <span class="hljs-number">2</span>,
@@ -112,14 +114,24 @@
   <span class="hljs-string">`last_name`</span>   = <span class="hljs-string">'Иванов'</span>,
   <span class="hljs-string">`created_at`</span>  = <span class="hljs-string">'2018-04-24 00:00:00'</span>;
 </code></pre>
-<p>* Обратите внимание, пользователь идёт под номером 2, т.к. в системе уже есть один пользователь с правами администратора (используемый для cli-скриптов)
-4. Настройки по умолчанию можно посмотреть <a href="../Nastrojki_po_umolcaniu/Config.html">здесь</a>, как переопределить настройки можно прочитать <a href="../Rassirenie_funkcionala/Rassirenie_Config.html">здесь</a>
-5. Шаблоны по умолчанию для писем можно посмотреть <a href="../Nastrojki_po_umolcaniu/Templates.html">здесь</a>, как переопределить настройки можно прочитать <a href="../Rassirenie_funkcionala/Rassirenie_Templates.html">здесь</a>
-6. Cron-задачи: вам необходимо добавить всего лишь одну задачу в <code>crontab</code></p>
+<p>* Обратите внимание, пользователь идёт под номером 2, т.к. в системе уже есть один пользователь с правами администратора (используемый для cli-скриптов)</p>
+</li>
+<li>
+<p>Настройки по умолчанию можно посмотреть <a href="../Nastrojki_po_umolcaniu/Config.html">здесь</a>, как переопределить настройки можно прочитать <a href="../Rassirenie_funkcionala/Rassirenie_Config.html">здесь</a></p>
+</li>
+<li>
+<p>Шаблоны по умолчанию для писем можно посмотреть <a href="../Nastrojki_po_umolcaniu/Templates.html">здесь</a>, как переопределить настройки можно прочитать <a href="../Rassirenie_funkcionala/Rassirenie_Templates.html">здесь</a></p>
+</li>
+<li>
+<p>Cron-задачи: вам необходимо добавить всего лишь одну задачу в <code>crontab</code></p>
 <pre><code class="hljs bash">* * * * * /path/to/php /path/to/cron.php &gt; /dev/null
 </code></pre>
-<p>Каждую минуту будет выполняться файл <code>cron.php</code>, в нём используется библиотека <a href="https://github.com/jobbyphp/jobby" class="Link--external" rel="noopener noreferrer">Jobby</a>, которая определяет какую задачу необходимо выполнить, подробнее прочитать можно <a href="../Ispol'zovanie/Cron_zadaci.html">здесь</a>
-7. Переходим в браузере по адресу <code>https://ваш-путь-до-api</code> вы должны увидеть json-ответ: <code>{&quot;data&quot;:{&quot;version&quot;:{&quot;android&quot;:1,&quot;ios&quot;:1}}}</code> это значит всё настроено правильно</p>
+<p>Каждую минуту будет выполняться файл <code>cron.php</code>, в нём используется библиотека <a href="https://github.com/jobbyphp/jobby" class="Link--external" rel="noopener noreferrer">Jobby</a>, которая определяет какую задачу необходимо выполнить, подробнее прочитать можно <a href="../Ispol'zovanie/Cron_zadaci.html">здесь</a></p>
+</li>
+<li>
+<p>Переходим в браузере по адресу <code>https://ваш-путь-до-api</code> вы должны увидеть json-ответ: <code>{&quot;data&quot;:{&quot;version&quot;:{&quot;android&quot;:1,&quot;ios&quot;:1}}}</code> это значит всё настроено правильно</p>
+</li>
+</ol>
     </div>
 
         <nav>
