@@ -128,24 +128,21 @@ $sms-&gt;send(<span class="hljs-string">'71234567890'</span>, <span class="hljs-
 </li>
 <li>Метод <code>send</code> принимает 2 параметра <code>$phone</code> и <code>$message</code>
 </li>
-<li>В случае успешной отправки возвращается массив</li>
-</ol>
+<li>В случае успешной отправки возвращается массив
 <pre><code class="hljs php"><span class="hljs-keyword">return</span> [
     <span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">true</span>,
     <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'Сообщение об успешной отправке со служебной информацией (не обязательно)'</span>,
 ];
 </code></pre>
-<ol start="4">
-<li>В случае ошибки отправки возвращается массив</li>
-</ol>
+</li>
+<li>В случае ошибки отправки возвращается массив
 <pre><code class="hljs php"><span class="hljs-keyword">return</span> [
     <span class="hljs-string">'success'</span> =&gt; <span class="hljs-keyword">false</span>,
     <span class="hljs-string">'message'</span> =&gt; <span class="hljs-string">'Текст ошибки'</span>,
 ];
 </code></pre>
-<ol start="5">
-<li>Текст из <code>message</code> будет помещён в лог</li>
-</ol>
+</li>
+<li>Текст из <code>message</code> будет помещён в лог
 <pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
 <span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Abstracts</span>\<span class="hljs-title">GatewaySMS</span>;
 
@@ -165,6 +162,8 @@ $sms-&gt;send(<span class="hljs-string">'71234567890'</span>, <span class="hljs-
     }
 }
 </code></pre>
+</li>
+</ol>
     </div>
 
         <nav>

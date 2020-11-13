@@ -91,17 +91,17 @@
         <h1 id="page_AJAX_zaprosy_k_API">AJAX-запросы к API</h1>
 <p>Для AJAX-запросов используется jQuery-плагин <a href="https://github.com/DimNS/jQuery.LightAjax" class="Link--external" rel="noopener noreferrer">LightAjax</a></p>
 <p>Для GET-запросов используйте</p>
-<pre><code>lemurro.lightajax.get(true, pathServerAPI + 'path/to/server', {
-    'param1': 'value1',
-    'param2': 'value2'
-}, function(result) {
-    lemurro.lightajax.preloader('hide');
+<pre><code class="hljs javascript">lemurro.lightajax.get(<span class="hljs-literal">true</span>, pathServerAPI + <span class="hljs-string">'path/to/server'</span>, {
+    <span class="hljs-string">'param1'</span>: <span class="hljs-string">'value1'</span>,
+    <span class="hljs-string">'param2'</span>: <span class="hljs-string">'value2'</span>
+}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">result</span>) </span>{
+    lemurro.lightajax.preloader(<span class="hljs-string">'hide'</span>);
 
-    if (result.hasOwnProperty('errors')) {
+    <span class="hljs-keyword">if</span> (result.hasOwnProperty(<span class="hljs-string">'errors'</span>)) {
         lemurro.showErrors(result.errors);
-    } else {
-        // Обработка данных полученных с сервера
-        console.log(result);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">// Обработка данных полученных с сервера</span>
+        <span class="hljs-built_in">console</span>.log(result);
     }
 });
 </code></pre>

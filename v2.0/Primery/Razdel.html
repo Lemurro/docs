@@ -118,59 +118,56 @@
   <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span> = utf8
   <span class="hljs-keyword">COLLATE</span> = utf8_unicode_ci;
 </code></pre>
-<h2 id="page_client_metronic">client-metronic</h2>
+<h2 id="page_web_(client_metronic)">web (client-metronic)</h2>
 <ol>
-<li>Добавим в файл <code>/src/js/0-app/200-routes.js</code> новый маршрут</li>
-</ol>
+<li>Добавим в файл <code>/src/js/0-app/200-routes.js</code> новый маршрут
 <pre><code class="hljs javascript"><span class="hljs-string">'/example'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">params, query</span>) </span>{
-  app.page = {
-      <span class="hljs-attr">name</span>  : <span class="hljs-string">'example'</span>,
-      <span class="hljs-attr">title</span> : <span class="hljs-string">'Пример'</span>,
-      <span class="hljs-attr">onLoad</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
-          example.init();
-      },
-      <span class="hljs-attr">params</span>: params,
-      <span class="hljs-attr">query</span> : query
-  };
+    app.page = {
+        <span class="hljs-attr">name</span>  : <span class="hljs-string">'example'</span>,
+        <span class="hljs-attr">title</span> : <span class="hljs-string">'Пример'</span>,
+        <span class="hljs-attr">onLoad</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            example.init();
+        },
+        <span class="hljs-attr">params</span>: params,
+        <span class="hljs-attr">query</span> : query
+    };
 },
 </code></pre>
-<ol start="2">
-<li>Добавим в файл <code>/src/html/include/menu_horizontal.html</code> новый пункт меню</li>
-</ol>
+</li>
+<li>Добавим в файл <code>/src/html/include/menu_horizontal.html</code> новый пункт меню
 <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-menu__item js-link js-link__example d-none js-role js-role__example--read"</span> <span class="hljs-attr">data-active-class</span>=<span class="hljs-string">"m-menu__item--active"</span> <span class="hljs-attr">aria-haspopup</span>=<span class="hljs-string">"true"</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/example"</span> <span class="hljs-attr">data-navigo</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-menu__link "</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-menu__item-here"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-menu__link-text"</span>&gt;</span>
-          Example
-      <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/example"</span> <span class="hljs-attr">data-navigo</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-menu__link "</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-menu__item-here"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-menu__link-text"</span>&gt;</span>
+            Example
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-<ol start="3">
-<li>Добавим в файл <code>/src/js/0-app/100-config.js</code> права доступа для раздела</li>
-</ol>
+</li>
+<li>Добавим в файл <code>/src/js/0-app/100-config.js</code> права доступа для раздела
 <pre><code class="hljs javascript"><span class="hljs-comment">// Роли пользователей</span>
 <span class="hljs-attr">userRoles</span>: {
-  <span class="hljs-comment">// Список ролей с правами доступа</span>
-  <span class="hljs-attr">list</span>: [
-      {
-          <span class="hljs-attr">name</span>  : <span class="hljs-string">'example'</span>,
-          <span class="hljs-attr">title</span> : <span class="hljs-string">'Example'</span>,
-          <span class="hljs-attr">access</span>: [
-              <span class="hljs-string">'read'</span>,
-              <span class="hljs-string">'create-update'</span>,
-              <span class="hljs-string">'delete'</span>
-          ]
-      }
-  ],
+    <span class="hljs-comment">// Список ролей с правами доступа</span>
+    <span class="hljs-attr">list</span>: [
+        {
+            <span class="hljs-attr">name</span>  : <span class="hljs-string">'example'</span>,
+            <span class="hljs-attr">title</span> : <span class="hljs-string">'Example'</span>,
+            <span class="hljs-attr">access</span>: [
+                <span class="hljs-string">'read'</span>,
+                <span class="hljs-string">'create-update'</span>,
+                <span class="hljs-string">'delete'</span>
+            ]
+        }
+    ],
 },
 </code></pre>
-<h2 id="page_api">api</h2>
-<ol>
-<li>Добавим в файл <code>api/app/routes.yaml</code> новый маршрут</li>
+</li>
 </ol>
+<h2 id="page_api">api</h2>
+<p>Добавим в файл <code>api/app/routes.yaml</code> новый маршрут</p>
 <pre><code class="hljs yaml"><span class="hljs-attr">app_route_example:</span>
-<span class="hljs-attr">resource:</span> <span class="hljs-string">'app/Routes/example.yaml'</span>
+  <span class="hljs-attr">resource:</span> <span class="hljs-string">'app/Routes/example.yaml'</span>
 </code></pre>
 <h2 id="page_Sborka_proekta">Сборка проекта</h2>
 <p>Перезапускаем gulp-задачу <code>build-dev</code></p>
