@@ -90,22 +90,21 @@
     <div class="s-content">
         <h1 id="page_Nastrojka">Настройка</h1>
 <ol>
-<li>Если у вас Apache, то все необходимые заголовки уже настроены в файле <code>/.htaccess</code>, если у вас nginx тогда поместите в директиву <code>server</code> код, указанный ниже:</li>
-</ol>
+<li>Если у вас Apache, то все необходимые заголовки уже настроены в файле <code>/.htaccess</code>, если у вас nginx тогда поместите в директиву <code>server</code> код, указанный ниже:
 <pre><code class="hljs nginx"><span class="hljs-attribute">location</span> / {
-  <span class="hljs-attribute">if</span> (!-e <span class="hljs-variable">$request_filename</span>){
-    <span class="hljs-attribute">charset</span> utf-<span class="hljs-number">8</span>;
+    <span class="hljs-attribute">if</span> (!-e <span class="hljs-variable">$request_filename</span>){
+        <span class="hljs-attribute">charset</span> utf-<span class="hljs-number">8</span>;
 
-    <span class="hljs-attribute">add_header</span> X-XSS-Protection <span class="hljs-string">"1; mode=block"</span>;
-    <span class="hljs-attribute">add_header</span> X-Content-Type-Options <span class="hljs-string">"nosniff"</span>;
-    <span class="hljs-attribute">add_header</span> X-Frame-Options <span class="hljs-string">"SAMEORIGIN"</span>;
-    <span class="hljs-attribute">add_header</span> Referrer-Policy <span class="hljs-string">"no-referrer"</span>;
+        <span class="hljs-attribute">add_header</span> X-XSS-Protection <span class="hljs-string">"1; mode=block"</span>;
+        <span class="hljs-attribute">add_header</span> X-Content-Type-Options <span class="hljs-string">"nosniff"</span>;
+        <span class="hljs-attribute">add_header</span> X-Frame-Options <span class="hljs-string">"SAMEORIGIN"</span>;
+        <span class="hljs-attribute">add_header</span> Referrer-Policy <span class="hljs-string">"no-referrer"</span>;
 
-    <span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^(.*)$</span> /index.html <span class="hljs-literal">break</span>;
-  }
+        <span class="hljs-attribute">rewrite</span><span class="hljs-regexp"> ^(.*)$</span> /index.html <span class="hljs-literal">break</span>;
+    }
 }
 </code></pre>
-<ol start="2">
+</li>
 <li>Определяем переменные окружения: <code>/src/env</code>
 <ul>
 <li>Создайте копию файла <code>dev.example.js</code> с именем <code>dev.js</code>
@@ -117,8 +116,7 @@
 </li>
 <li>Определяем параметры проекта: <code>/src/js/0-app/100-config.js</code>
 </li>
-<li>Подключаем Metronic (по умолчанию подключен шаблон <code>Demo5</code>)</li>
-</ol>
+<li>Подключаем Metronic (по умолчанию подключен шаблон <code>Demo5</code>)
 <ul>
 <li>
 <p>В файле <code>/src/html/include/css.html</code></p>
@@ -129,7 +127,7 @@
 <p><code>&lt;!-- Metronic 5: JS Here --&gt;</code></p>
 </li>
 </ul>
-<ol start="5">
+</li>
 <li>Запускаем сборку и слежку за изменениями исходников: <code>gulp watcher</code>
 </li>
 <li>Запускаем в браузере url-путь до файла: <code>/build/index.html</code>

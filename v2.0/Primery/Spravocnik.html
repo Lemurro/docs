@@ -114,10 +114,9 @@
   <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span> = utf8
   <span class="hljs-keyword">COLLATE</span> = utf8_unicode_ci;
 </code></pre>
-<h2 id="page_client_metronic">client-metronic</h2>
+<h2 id="page_web_(client_metronic)">web (client-metronic)</h2>
 <ol>
-<li>Добавим в файл <code>/src/js/0-app/200-routes.js</code> новый маршрут:</li>
-</ol>
+<li>Добавим в файл <code>/src/js/0-app/200-routes.js</code> новый маршрут:
 <pre><code class="hljs javascript"><span class="hljs-string">'/guide/example'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">params, query</span>) </span>{
     app.page = {
         <span class="hljs-attr">name</span>  : <span class="hljs-string">'guide'</span>, <span class="hljs-comment">// Всегда guide для всех справочников</span>
@@ -130,9 +129,8 @@
     };
 },
 </code></pre>
-<ol start="2">
-<li>Добавим в файл <code>/src/html/pages/guide/menu.html</code> новый пункт меню:</li>
-</ol>
+</li>
+<li>Добавим в файл <code>/src/html/pages/guide/menu.html</code> новый пункт меню:
 <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__item js-guide-link js-guide-link__example"</span> <span class="hljs-attr">data-active-class</span>=<span class="hljs-string">"m-nav__item--active"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__link"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/guide/example"</span> <span class="hljs-attr">data-navigo</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__link-text"</span>&gt;</span>
@@ -141,10 +139,10 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
 </code></pre>
-<h2 id="page_api">api</h2>
-<ol>
-<li>Добавим в файл <code>/app/Configs/SettingsGuides.php</code> новый маршрут в свойстве <code>$classes</code>:</li>
+</li>
 </ol>
+<h2 id="page_api">api</h2>
+<p>Добавим в файл <code>/app/Configs/SettingsGuides.php</code> новый маршрут в свойстве <code>$classes</code>:</p>
 <pre><code class="hljs php"><span class="hljs-string">'example'</span> =&gt; <span class="hljs-string">'Example'</span>,
 </code></pre>
 <h2 id="page_Sborka_proekta">Сборка проекта</h2>

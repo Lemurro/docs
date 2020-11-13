@@ -101,42 +101,38 @@
 <code>npm install --global yarn</code>
 </li>
 <li>
+<code>gulp --version</code> - если выполнив эту команду вы видите не версию CLI, тогда необходимо удалить обычную версию Gulp командой <code>npm rm --global gulp</code>
+</li>
+<li>
 <code>npm install --global gulp-cli</code>
 </li>
-</ol>
-<ul>
-<li>
-<code>gulp --version</code> если выполнив эту команду вы видите не версию CLI, тогда необходимо удалить обычную версию Gulp командой <code>npm rm --global gulp</code>
-</li>
-</ul>
-<ol start="4">
 <li>
 <code>yarn install</code>
 </li>
 </ol>
 <h2 id="page_Izmenenie_nastroek_CSS">Изменение настроек CSS</h2>
 <ul>
-<li>В файле <code>{metronic_root}/theme/html/demo12/src/sass/components/_variables.bootstrap.scss</code> меняем основные настройки Metronic:</li>
-</ul>
+<li>В файле <code>{metronic_root}/theme/html/demo12/src/sass/components/_variables.bootstrap.scss</code> меняем основные настройки Metronic:
 <pre><code class="hljs scss"><span class="hljs-variable">$font-family-base</span>: Roboto, Helvetica, <span class="hljs-string">"sans-serif"</span> !default;
 </code></pre>
-<ul>
-<li>В файле <code>{metronic_root}/theme/html/demo12/src/sass/layout/_variables.scss</code> меняем настройки темы:</li>
-</ul>
+</li>
+<li>В файле <code>{metronic_root}/theme/html/demo12/src/sass/layout/_variables.scss</code> меняем настройки темы:
 <pre><code class="hljs scss"><span class="hljs-variable">$header-config</span>: (
-  // Desktop Mode
-  desktop: (
+// Desktop Mode
+desktop: (
     bg-color: <span class="hljs-number">#FFF</span>,
     ...
-  ),
+),
 
-  // Tablet &amp; Mobile Modes
-  tablet-and-mobile: (
+// Tablet &amp; Mobile Modes
+tablet-and-mobile: (
     bg-color: <span class="hljs-number">#FFF</span>,
     ...
-  )
+)
 ) !default;
 </code></pre>
+</li>
+</ul>
 <h2 id="page_Nastrojka_konfiga_sborsika">Настройка конфига сборщика</h2>
 <p>В файле <code>{metronic_root}/theme/html/tools/gulp.config.json</code>, для сокращения собранного пакета рекомендуются следующие настройки:</p>
 <ul>
@@ -191,9 +187,7 @@
 </ol>
 <p>Копирование выполняем в каталог проекта <code>/src/copy-to-build/assets/metronic-vx.x.x</code></p>
 <h2 id="page_Config.js">Config.js</h2>
-<ol>
-<li>В каталоге <code>/src/copy-to-build/assets/metronic-vx.x.x</code> создаём файл <code>config.js</code> со следующим содержимым:</li>
-</ol>
+<p>В каталоге <code>/src/copy-to-build/assets/metronic-vx.x.x</code> создаём файл <code>config.js</code> со следующим содержимым:</p>
 <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> KTAppSettings = {
     <span class="hljs-string">'breakpoints'</span>: {
         <span class="hljs-attr">sm</span>: <span class="hljs-number">576</span>,
@@ -256,20 +250,18 @@
 <h2 id="page_Podklucenie_Metronic">Подключение Metronic</h2>
 <ul>
 <li>Подключаем CSS в файле <code>/src/html/include/css.html</code>
-</li>
-</ul>
 <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{your_metronic_root}/plugins.bundle.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{your_metronic_root}/style.bundle.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"{your_metronic_root}/fonts/keenthemes-icons/ki.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span>
 </code></pre>
-<ul>
-<li>Подключаем JS в файле <code>/src/html/include/js.html</code>
 </li>
-</ul>
+<li>Подключаем JS в файле <code>/src/html/include/js.html</code>
 <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"{your_metronic_root}/config.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"{your_metronic_root}/plugins.bundle.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"{your_metronic_root}/scripts.bundle.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
+</li>
+</ul>
     </div>
 
         <nav>

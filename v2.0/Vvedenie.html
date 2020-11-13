@@ -120,36 +120,42 @@
 </li>
 </ul>
 <h2 id="page_Sozdanie_novogo_proekta">Создание нового проекта</h2>
-<p>Lemurro использует Composer и NPM для управления зависимостями. Перед использованием Lemurro, убедитесь, что у вас установлен Composer и NPM.</p>
-<ol>
-<li>Скачайте установщик Lemurro через Composer:</li>
-</ol>
-<pre><code class="hljs bash">composer global require lemurro/installer
-</code></pre>
-<ol start="2">
-<li>Поместите в ваши переменные среды путь до каталога с установленными глобально пакетами (если не делали этого ранее), это необходимо для получения доступа к команде <code>lemurro</code> отовсюду в командной строке, этот каталог расположен в разных местах в зависимости от вашей операционной системы:</li>
-</ol>
+<p>Lemurro использует пакетные менеджеры для управления зависимостями:</p>
 <ul>
 <li>
-<strong>Linux</strong>: $HOME/.config/composer/vendor/bin</li>
+<strong>Composer</strong> для модуля <code>api</code> и <code>lemurro/installer</code>
+</li>
 <li>
-<strong>macOS</strong>: $HOME/.composer/vendor/bin</li>
-<li>
-<strong>Windows</strong>: %USERPROFILE%\AppData\Roaming\Composer\vendor\bin</li>
+<strong>NPM</strong> для модуля <code>web</code>
+</li>
 </ul>
-<ol start="3">
-<li>Перейдите в каталог с вашими проектами</li>
-</ol>
+<ol>
+<li>Скачайте установщик Lemurro через Composer:
+<pre><code class="hljs bash">composer global require lemurro/installer
+</code></pre>
+</li>
+<li>Поместите в ваши переменные среды путь до каталога с установленными глобально пакетами (если не делали этого ранее), это необходимо для получения доступа к команде <code>lemurro</code> отовсюду в командной строке, этот каталог расположен в разных местах в зависимости от вашей операционной системы:
+<ul>
+<li>
+<strong>Linux</strong>: <code>export PATH=$HOME/.config/composer/vendor/bin:$PATH</code>
+</li>
+<li>
+<strong>macOS</strong>: <code>export PATH=$HOME/.composer/vendor/bin:$PATH</code>
+</li>
+<li>
+<strong>Windows</strong>: <code>%USERPROFILE%\AppData\Roaming\Composer\vendor\bin</code>
+</li>
+</ul>
+</li>
+<li>Перейдите в каталог с вашими проектами
 <pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /etc/www
 </code></pre>
-<ol start="4">
-<li>Следующая команда создаст новый каталог с именем <code>mycrm</code> (в каталоге где мы сейчас находимся) и установит модули, выбранные в процессе интерактивного опроса:</li>
-</ol>
+</li>
+<li>Следующая команда создаст новый каталог с именем <code>mycrm</code> (в каталоге где мы сейчас находимся) и установит модули, выбранные в процессе интерактивного опроса:
 <pre><code class="hljs bash">lemurro new mycrm
 </code></pre>
-<ol start="5">
-<li>После успешного создания проекта можно переходить к настройке:</li>
-</ol>
+</li>
+<li>После успешного создания проекта можно переходить к настройке:
 <ul>
 <li>
 <a href="API_Server_(api)/Nastrojka/Nastrojka.html">Настройка API-модуля</a>
@@ -158,6 +164,8 @@
 <a href="Klient_Metronic_(web)/Nastrojka/Nastrojka.html">Настройка WEB-модуля</a>
 </li>
 </ul>
+</li>
+</ol>
 <h2 id="page_Polnyj_sintaksis_komandy">Полный синтаксис команды</h2>
 <pre><code class="hljs bash">lemurro new mycrm --lv=X.Y --api --web --skip --silent
 </code></pre>
