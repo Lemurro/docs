@@ -3,7 +3,7 @@
 Для AJAX-запросов используется jQuery-плагин [LightAjax](https://github.com/DimNS/jQuery.LightAjax)
 
 Для GET-запросов используйте
-```
+```javascript
 lemurro.lightajax.get(true, pathServerAPI + 'path/to/server', {
     'param1': 'value1',
     'param2': 'value2'

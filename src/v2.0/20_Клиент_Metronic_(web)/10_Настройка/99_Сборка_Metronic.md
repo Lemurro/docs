@@ -7,31 +7,31 @@
 ## Установка инструментов
 1. `npm install --global npm@latest`
 2. `npm install --global yarn`
-3. `npm install --global gulp-cli`
-  - `gulp --version` если выполнив эту команду вы видите не версию CLI, тогда необходимо удалить обычную версию Gulp командой `npm rm --global gulp`
-4. `yarn install`
+3. `gulp --version` - если выполнив эту команду вы видите не версию CLI, тогда необходимо удалить обычную версию Gulp командой `npm rm --global gulp`
+4. `npm install --global gulp-cli`
+5. `yarn install`
 
 ## Изменение настроек CSS
 - В файле `{metronic_root}/theme/html/demo12/src/sass/components/_variables.bootstrap.scss` меняем основные настройки Metronic:
-```scss
-$font-family-base: Roboto, Helvetica, "sans-serif" !default;
-```
+    ```scss
+    $font-family-base: Roboto, Helvetica, "sans-serif" !default;
+    ```
 - В файле `{metronic_root}/theme/html/demo12/src/sass/layout/_variables.scss` меняем настройки темы:
-```scss
-$header-config: (
-  // Desktop Mode
-  desktop: (
-    bg-color: #FFF,
-    ...
-  ),
+    ```scss
+    $header-config: (
+    // Desktop Mode
+    desktop: (
+        bg-color: #FFF,
+        ...
+    ),
 
-  // Tablet & Mobile Modes
-  tablet-and-mobile: (
-    bg-color: #FFF,
-    ...
-  )
-) !default;
-```
+    // Tablet & Mobile Modes
+    tablet-and-mobile: (
+        bg-color: #FFF,
+        ...
+    )
+    ) !default;
+    ```
 
 ## Настройка конфига сборщика
 В файле `{metronic_root}/theme/html/tools/gulp.config.json`, для сокращения собранного пакета рекомендуются следующие настройки:
@@ -57,7 +57,7 @@ $header-config: (
 Копирование выполняем в каталог проекта `/src/copy-to-build/assets/metronic-vx.x.x`
 
 ## Config.js
-1. В каталоге `/src/copy-to-build/assets/metronic-vx.x.x` создаём файл `config.js` со следующим содержимым:
+В каталоге `/src/copy-to-build/assets/metronic-vx.x.x` создаём файл `config.js` со следующим содержимым:
 ```javascript
 var KTAppSettings = {
     'breakpoints': {
@@ -121,14 +121,14 @@ var KTAppSettings = {
 
 ## Подключение Metronic
 - Подключаем CSS в файле `/src/html/include/css.html`
-```html
-<link href="{your_metronic_root}/plugins.bundle.css" rel="stylesheet" type="text/css">
-<link href="{your_metronic_root}/style.bundle.css" rel="stylesheet" type="text/css">
-<link href="{your_metronic_root}/fonts/keenthemes-icons/ki.css" rel="stylesheet" type="text/css">
-```
+    ```html
+    <link href="{your_metronic_root}/plugins.bundle.css" rel="stylesheet" type="text/css">
+    <link href="{your_metronic_root}/style.bundle.css" rel="stylesheet" type="text/css">
+    <link href="{your_metronic_root}/fonts/keenthemes-icons/ki.css" rel="stylesheet" type="text/css">
+    ```
 - Подключаем JS в файле `/src/html/include/js.html`
-```html
-<script src="{your_metronic_root}/config.js" type="text/javascript"></script>
-<script src="{your_metronic_root}/plugins.bundle.js" type="text/javascript"></script>
-<script src="{your_metronic_root}/scripts.bundle.js" type="text/javascript"></script>
-```
+    ```html
+    <script src="{your_metronic_root}/config.js" type="text/javascript"></script>
+    <script src="{your_metronic_root}/plugins.bundle.js" type="text/javascript"></script>
+    <script src="{your_metronic_root}/scripts.bundle.js" type="text/javascript"></script>
+    ```

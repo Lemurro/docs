@@ -40,38 +40,37 @@ class OtherGatewaySMS implements GatewaySMS
 1. Обязательно наличие публичного метода `send`
 2. Метод `send` принимает 2 параметра `$phone` и `$message`
 3. В случае успешной отправки возвращается массив
- ```php
- return [
-     'success' => true,
-     'message' => 'Сообщение об успешной отправке со служебной информацией (не обязательно)',
- ];
- ```
+    ```php
+    return [
+        'success' => true,
+        'message' => 'Сообщение об успешной отправке со служебной информацией (не обязательно)',
+    ];
+    ```
 4. В случае ошибки отправки возвращается массив
- ```php
- return [
-     'success' => false,
-     'message' => 'Текст ошибки',
- ];
- ```
+    ```php
+    return [
+        'success' => false,
+        'message' => 'Текст ошибки',
+    ];
+    ```
 5. Текст из `message` будет помещён в лог
+    ```php
+    <?php
+    use Lemurro\Api\Core\Abstracts\GatewaySMS;
 
-```php
-<?php
-use Lemurro\Api\Core\Abstracts\GatewaySMS;
-
-class OtherGatewaySMS
-{
-    /**
-     * Отправка sms
-     *
-     * @param string $phone   Номер телефона получателя
-     * @param string $message Сообщение
-     *
-     * @return array
-     */
-    public function send($phone, $message)
+    class OtherGatewaySMS
     {
-        // Код отправки sms, обработки ответа и возврата результата
+        /**
+         * Отправка sms
+         *
+         * @param string $phone   Номер телефона получателя
+         * @param string $message Сообщение
+         *
+         * @return array
+         */
+        public function send($phone, $message)
+        {
+            // Код отправки sms, обработки ответа и возврата результата
+        }
     }
-}
-```
+    ```
