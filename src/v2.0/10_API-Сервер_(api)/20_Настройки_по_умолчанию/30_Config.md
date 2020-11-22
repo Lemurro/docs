@@ -91,20 +91,6 @@ database:
   #   schema: "public"
   #   sslmode: "prefer"
 
-  # sqlite:
-  #   driver: "sqlite"
-  #   database: "/path/to/database.sqlite"
-  #   foreign_key_constraints: true
-
-  # sqlsrv:
-  #   driver: "sqlsrv"
-  #   host: "localhost"
-  #   port: "1433"
-  #   database: "lemurro"
-  #   username: "root"
-  #   password: ""
-  #   charset: "utf8"
-
 file:
   # Каталог для логов (полный путь, без конечной "/")
   path_logs: "/path/to/project/var/logs"
