@@ -1,0 +1,15 @@
+{
+  "title": "Lemurro v2.1 - Документация",
+  "author": "Dmitrii Shcherbakov",
+  "format": "html",
+  "html": {
+    "breadcrumbs": true,
+    "breadcrumb_separator": " > ",
+    "float": false,
+    "repo": "Lemurro/lemurro",
+    "auto_toc": false,
+    "links": {
+      "GitHub": "https://github.com/Lemurro/lemurro"
+    }
+  }
+}
