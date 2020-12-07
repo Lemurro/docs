@@ -8,6 +8,7 @@
     "float": false,
     "repo": "Lemurro/lemurro",
     "auto_toc": false,
+    "jump_buttons": false,
     "links": {
       "GitHub": "https://github.com/Lemurro/lemurro"
     }
