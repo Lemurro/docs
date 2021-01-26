@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Config - Lemurro v2.1 - Документация</title>
+    <meta name="description" content="My Stylish Documentation">
+    <meta name="author" content="Dmitrii Shcherbakov">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="../../themes/daux/img/favicon-blue.png" type="image/x-icon">
+
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <script>
+        window.base_url = "../../";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
+    <!-- Font -->
+    
+    <!-- CSS -->
+            <link href='../../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <link href='../../daux_libraries/search.css' rel='stylesheet' type='text/css'>
+    </head>
+<body class="">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger" aria-controls="sidebar_content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+        </button>
+
+        <a class="Brand" href="../../Komponenty.html">Lemurro v2.1 - Документация</a>
+
+    <form role='search' action="/" method="get" class="Search" id="search_form">
+        <label for="search_input">
+            <span class='u-visuallyHidden'>Search</span>
+        </label>
+        <input
+            type="search"
+            id="search_input"
+            class="Search__field"
+            placeholder="Search..."
+            aria-label="Search..."
+            autocomplete="on"
+            results=25
+            autosave=text_search
+        >
+        <label>
+            <input type="submit" class='u-visuallyHidden' />
+            <span class='u-visuallyHidden'>Search...</span>
+            <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+                <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+            </svg>
+        </label>
+    </form>
+
+        <div class="Collapsible__content" id="sidebar_content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Введение</a><ul class='Nav'><li class='Nav__item '><a href="../../Vvedenie/Ustanovka.html">Установка</a></li><li class='Nav__item '><a href="../../Vvedenie/Rukovodstvo_po_obnovleniu.html">Руководство по обновлению</a></li><li class='Nav__item '><a href="../../Vvedenie/Doroznaa_karta.html">Дорожная карта</a></li><li class='Nav__item '><a href="../../Vvedenie/Spisok_storonnih_bibliotek.html">Список сторонних библиотек</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>API-Сервер (api)</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../API_Server_(api)/Nastrojka/Nastrojka.html">Настройка</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../../API_Server_(api)/Nastrojki_po_umolcaniu/DIC.html">DIC</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Nastrojki_po_umolcaniu/Response.html">Response</a></li><li class='Nav__item Nav__item--active'><a href="../../API_Server_(api)/Nastrojki_po_umolcaniu/Config.html">Config</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Nastrojki_po_umolcaniu/Templates.html">Templates</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Расширение функционала</a><ul class='Nav'><li class='Nav__item '><a href="../../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_DIC.html">Расширение DIC</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Response.html">Расширение Response</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Config.html">Расширение Config</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Templates.html">Расширение Templates</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Marsrutizacia.html">Маршрутизация</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Otvet_servera.html">Ответ сервера</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Vypolnit'_do....html">Выполнить до...</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Vypolnit'_posle....html">Выполнить после...</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Cron_zadaci.html">Cron-задачи</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/Data_i_vrema.html">Дата и время</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/Logirovanie.html">Логирование</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/Checker.html">Checker</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/Console.html">Console</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/Email.html">Email</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/Phone.html">Phone</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/SMS.html">SMS</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Helpery/Strings.html">Strings</a></li></ul></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Opredelenie_vida_servera.html">Определение вида сервера</a></li><li class='Nav__item '><a href="../../API_Server_(api)/Ispol'zovanie/Dobavlenie_prava_dostupa.html">Добавление права доступа</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Metronic (web)</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Nastrojka/Nastrojka.html">Настройка</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Nastrojka/Marsruty.html">Маршруты</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Nastrojka/Sborka_proekta.html">Сборка проекта</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Nastrojka/Logika_zapuska_prilozenia.html">Логика запуска приложения</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Nastrojka/Sborka_Metronic.html">Сборка Metronic</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/Ssylki.html">Ссылки</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_peremennye.html">JS-переменные</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearFields.html">clearFields</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearString.html">clearString</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/decimal.html">decimal</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/initBootstrapConfirmation.html">initBootstrapConfirmation</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/isRole.html">isRole</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/localTime.html">localTime</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/tabs.html">tabs</a></li></ul></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/CSS_helpery.html">CSS-хелперы</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/Template7_helpery.html">Template7-хелперы</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/Proverka_prav_na_elementah_stranicy.html">Проверка прав на элементах страницы</a></li><li class='Nav__item '><a href="../../Klient_Metronic_(web)/Ispol'zovanie/TipsTricks.html">Tips&Tricks</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Загрузка файлов</a><ul class='Nav'><li class='Nav__item '><a href="../../Zagruzka_fajlov/Podklucenie.html">Подключение</a></li><li class='Nav__item '><a href="../../Zagruzka_fajlov/Sohranenie_fajlov.html">Сохранение файлов</a></li><li class='Nav__item '><a href="../../Zagruzka_fajlov/Manipulacii_s_fajlom.html">Манипуляции с файлом</a></li><li class='Nav__item '><a href="../../Zagruzka_fajlov/Proverka_dostupa.html">Проверка доступа</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Примеры</a><ul class='Nav'><li class='Nav__item '><a href="../../Primery/Spravocnik.html">Справочник</a></li><li class='Nav__item '><a href="../../Primery/Razdel.html">Раздел</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Тестирование</a><ul class='Nav'><li class='Nav__item '><a href="../../Testirovanie/Vvedenie.html">Введение</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Разработка ядра</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>api-core</a><ul class='Nav'><li class='Nav__item '><a href="../../Razrabotka_adra/api_core/Vvedenie.html">Введение</a></li></ul></li></ul></li><li class='Nav__item '><a href="../../Komponenty.html">Компоненты</a></li><li class='Nav__item '><a href="../../Dokumentacia_drugih_versij.html">Документация других версий</a></li></ul>
+            <div class="Links">
+                                    <hr/>
+                                            <a href="https://github.com/Lemurro/lemurro" target="_blank"  rel="noopener noreferrer">GitHub</a>
+                        <br />
+                                                </div>
+
+                            <div class="CodeToggler">
+                    <hr/>
+                    <label class="Checkbox">Show Code Blocks                        <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
+                        <div class="Checkbox__indicator"></div>
+                    </label>
+                </div>
+            
+                
+                        </div>
+    </aside>
+    <div class="Columns__right">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="../../API_Server_(api)/Nastrojka/Nastrojka.html">API-Сервер (api)</a> > <a href="../../API_Server_(api)/Nastrojki_po_umolcaniu/DIC.html">Настройки по умолчанию</a> > <a href="../../API_Server_(api)/Nastrojki_po_umolcaniu/Config.html">Config</a></h1>
+                    </div>
+
+    <div class="s-content">
+        <h1 id="page_Config">Config</h1>
+<p>Про переопределение настроек читайте <a href="../Rassirenie_funkcionala/Rassirenie_Config.html">здесь</a></p>
+<p>Вам обязательно понадобится переопределить следующие блоки настроек:</p>
+<ul>
+<li>cors</li>
+<li>database</li>
+<li>file</li>
+<li>guides</li>
+<li>mail</li>
+</ul>
+<p>Полный список настроек по умолчанию</p>
+<pre><code class="hljs yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-comment"># Вид аутентификации</span>
+  <span class="hljs-comment">#   email: по электронной почте (код через email)</span>
+  <span class="hljs-comment">#   phone: по номеру телефона (код через смс)</span>
+  <span class="hljs-comment">#   mixed: смешанная аутентификация (в поле auth_id может быть email или номер телефона)</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">"email"</span>
+
+  <span class="hljs-comment"># Можно ли регистрировать новых пользователей (если при получении кода окажется что такого пользователя нет он будет создан)</span>
+  <span class="hljs-attr">can_registration_users:</span> <span class="hljs-literal">false</span>
+
+  <span class="hljs-comment"># Количество генераций новых кодов в день</span>
+  <span class="hljs-attr">attempts_per_day:</span> <span class="hljs-number">50</span>
+
+  <span class="hljs-comment"># Время устаревания кодов аутентификации (в часах)</span>
+  <span class="hljs-attr">auth_codes_older_than_hours:</span> <span class="hljs-number">2</span>
+
+  <span class="hljs-comment"># Время устаревания сессий (в днях), сессии которыми не пользовались</span>
+  <span class="hljs-attr">sessions_older_than_days:</span> <span class="hljs-number">30</span>
+
+  <span class="hljs-comment"># Привязка сессии к IP-адресу</span>
+  <span class="hljs-attr">sessions_binding_to_ip:</span> <span class="hljs-literal">false</span>
+
+<span class="hljs-attr">cors:</span>
+  <span class="hljs-comment"># Белый список доменов клиентов</span>
+  <span class="hljs-comment">#   не рекомендуется использовать "*" и отключать access_control_allow_credentials</span>
+  <span class="hljs-attr">access_control_allow_origin:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"http://lemurro-web.localhost"</span>
+
+  <span class="hljs-comment"># Использовать Access-Control-Allow-Origin</span>
+  <span class="hljs-attr">access_control_allow_credentials:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-attr">cron:</span>
+  <span class="hljs-comment"># Префикс для имён заданий</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment"># В случае, когда у вас на одном сервере несколько проектов, имена задач обязательно должны отличаться,</span>
+  <span class="hljs-comment"># иначе это приводит к конфликтам при запуске задач</span>
+  <span class="hljs-attr">name_prefix:</span> <span class="hljs-string">"MyApp1"</span>
+
+  <span class="hljs-comment"># Путь до лог-файла</span>
+  <span class="hljs-attr">log_file:</span> <span class="hljs-string">"/var/logs/cron.log"</span>
+
+  <span class="hljs-comment"># Массив email-адресов, куда отправлять письма с ошибками</span>
+  <span class="hljs-attr">errors_emails:</span> <span class="hljs-string">[]</span>
+
+  <span class="hljs-comment"># Выполнять (true) или нет (false) cron-задачу: Очистка устаревших токенов для скачивания файлов</span>
+  <span class="hljs-attr">file_older_tokens_enabled:</span> <span class="hljs-literal">true</span>
+
+  <span class="hljs-comment"># Выполнять (true) или нет (false) cron-задачу: Очистка устаревших файлов во временном каталоге</span>
+  <span class="hljs-attr">file_older_files_enabled:</span> <span class="hljs-literal">true</span>
+
+  <span class="hljs-comment"># Выполнять (true) или нет (false) cron-задачу: Ротация таблицы data_change_logs</span>
+  <span class="hljs-attr">data_change_logs_rotator_enabled:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-attr">database:</span>
+  <span class="hljs-attr">mysql:</span>
+    <span class="hljs-attr">driver:</span> <span class="hljs-string">"mysql"</span>
+    <span class="hljs-attr">host:</span> <span class="hljs-string">"127.0.0.1"</span>
+    <span class="hljs-attr">port:</span> <span class="hljs-string">"3306"</span>
+    <span class="hljs-attr">database:</span> <span class="hljs-string">"lemurro"</span>
+    <span class="hljs-attr">username:</span> <span class="hljs-string">"root"</span>
+    <span class="hljs-attr">password:</span> <span class="hljs-string">""</span>
+    <span class="hljs-attr">charset:</span> <span class="hljs-string">"utf8mb4"</span>
+    <span class="hljs-attr">collation:</span> <span class="hljs-string">"utf8mb4_unicode_ci"</span>
+    <span class="hljs-comment"># Опции драйвера</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># 3: 2 =&gt; \PDO::ATTR_ERRMODE: \PDO::ERRMODE_EXCEPTION</span>
+    <span class="hljs-comment"># 19: 2 =&gt; \PDO::ATTR_DEFAULT_FETCH_MODE: \PDO::FETCH_ASSOC</span>
+    <span class="hljs-comment"># 1002: \PDO::MYSQL_ATTR_INIT_COMMAND</span>
+    <span class="hljs-attr">options:</span> <span class="hljs-string">{</span> <span class="hljs-attr">3:</span> <span class="hljs-number">2</span><span class="hljs-string">,</span> <span class="hljs-attr">19:</span> <span class="hljs-number">2</span><span class="hljs-string">,</span> <span class="hljs-attr">1002:</span> <span class="hljs-string">"SET NAMES utf8"</span> <span class="hljs-string">}</span>
+
+  <span class="hljs-comment"># pgsql:</span>
+  <span class="hljs-comment">#   driver: "pgsql"</span>
+  <span class="hljs-comment">#   host: "127.0.0.1"</span>
+  <span class="hljs-comment">#   port: "5432"</span>
+  <span class="hljs-comment">#   database: "lemurro"</span>
+  <span class="hljs-comment">#   username: "root"</span>
+  <span class="hljs-comment">#   password: ""</span>
+  <span class="hljs-comment">#   charset: "utf8"</span>
+  <span class="hljs-comment">#   schema: "public"</span>
+  <span class="hljs-comment">#   sslmode: "prefer"</span>
+
+<span class="hljs-attr">file:</span>
+  <span class="hljs-comment"># Каталог для логов (полный путь, без конечной "/")</span>
+  <span class="hljs-attr">path_logs:</span> <span class="hljs-string">"/path/to/project/var/logs"</span>
+
+  <span class="hljs-comment"># Путь до временного хранилища (полный путь, без конечной "/")</span>
+  <span class="hljs-attr">path_temp:</span> <span class="hljs-string">"/path/to/project/var/temp"</span>
+
+  <span class="hljs-comment"># Путь до постоянного хранилища (полный путь, без конечной "/")</span>
+  <span class="hljs-attr">path_upload:</span> <span class="hljs-string">"/path/to/project/var/documents"</span>
+
+  <span class="hljs-comment"># Полное удаление файлов</span>
+  <span class="hljs-comment">#   true - файл удаляется физически, а также удаляется запись в БД</span>
+  <span class="hljs-comment">#   false - файл физически не удаляется, а в БД помечается как удалённый</span>
+  <span class="hljs-attr">full_remove:</span> <span class="hljs-literal">false</span>
+
+  <span class="hljs-comment"># Через сколько дней временный файл считать устаревшим</span>
+  <span class="hljs-attr">outdated_file_days:</span> <span class="hljs-number">5</span>
+
+  <span class="hljs-comment"># Через сколько часов токен на скачивание файла считать устаревшим</span>
+  <span class="hljs-attr">tokens_older_than_hours:</span> <span class="hljs-number">12</span>
+
+  <span class="hljs-comment"># Максимальный размер загружаемого файла (в байтах)</span>
+  <span class="hljs-attr">allowed_size_bytes:</span> <span class="hljs-number">2097152</span> <span class="hljs-comment"># 2 MB</span>
+
+  <span class="hljs-comment"># Формат сообщения о превышении лимита размера загружаемого файла</span>
+  <span class="hljs-attr">allowed_size_formated:</span> <span class="hljs-string">"2 MB"</span>
+
+  <span class="hljs-comment"># Режим проверки файла: по типу содержимого (type) или по расширению (ext)</span>
+  <span class="hljs-attr">check_file_by:</span> <span class="hljs-string">"type"</span>
+
+  <span class="hljs-comment"># Массив разрешенных типов</span>
+  <span class="hljs-attr">allowed_types:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"application/pdf"</span> <span class="hljs-comment"># pdf</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"application/msword"</span> <span class="hljs-comment"># doc</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"application/vnd.openxmlformats-officedocument.wordprocessingml.document"</span> <span class="hljs-comment"># docx</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"application/vnd.ms-excel"</span> <span class="hljs-comment"># xls</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"</span> <span class="hljs-comment"># xlsx</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"application/zip"</span> <span class="hljs-comment"># zip</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">"application/x-rar"</span> <span class="hljs-comment"># rar</span>
+
+  <span class="hljs-comment"># Массив разрешенных расширений</span>
+  <span class="hljs-attr">allowed_extensions:</span> <span class="hljs-string">["pdf",</span> <span class="hljs-string">"doc"</span><span class="hljs-string">,</span> <span class="hljs-string">"docx"</span><span class="hljs-string">,</span> <span class="hljs-string">"xls"</span><span class="hljs-string">,</span> <span class="hljs-string">"xlsx"</span><span class="hljs-string">,</span> <span class="hljs-string">"zip"</span><span class="hljs-string">,</span> <span class="hljs-string">"rar"</span><span class="hljs-string">]</span>
+
+<span class="hljs-attr">general:</span>
+  <span class="hljs-comment"># Вид сервера: разработчика</span>
+  <span class="hljs-attr">const_server_type_dev:</span> <span class="hljs-string">&amp;dev</span> <span class="hljs-string">"dev"</span>
+
+  <span class="hljs-comment"># Вид сервера: тестовый</span>
+  <span class="hljs-attr">const_server_type_test:</span> <span class="hljs-string">"test"</span>
+
+  <span class="hljs-comment"># Вид сервера: боевой</span>
+  <span class="hljs-attr">const_server_type_prod:</span> <span class="hljs-string">"prod"</span>
+
+  <span class="hljs-comment"># Имя проекта</span>
+  <span class="hljs-attr">app_name:</span> <span class="hljs-string">"Lemurro"</span>
+
+  <span class="hljs-comment"># Вид сервера</span>
+  <span class="hljs-attr">server_type:</span> <span class="hljs-meta">*dev</span>
+
+<span class="hljs-attr">guides:</span>
+  <span class="hljs-comment"># Связка конечных точек маршрута справочников и их namespaces для запуска</span>
+  <span class="hljs-comment">#</span>
+  <span class="hljs-comment"># конечная точка: example (используется в пути: /guide/example)</span>
+  <span class="hljs-comment">#      namespace: Example (полный путь до каталога классов: /app/Guide/Example/)</span>
+  <span class="hljs-attr">classes:</span>
+    <span class="hljs-comment"># example: "Example"</span>
+
+<span class="hljs-comment"># Список разрешённых заголовков</span>
+<span class="hljs-attr">headers:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">"X-SESSION-ID"</span> <span class="hljs-comment"># Идентификатор сессии</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">"X-UTC-OFFSET"</span> <span class="hljs-comment"># Смещение временной зоны пользователя относительно UTC</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">"X-Requested-With"</span> <span class="hljs-comment"># Необходим для CORS</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">"X-File-Name"</span> <span class="hljs-comment"># Необходим для загрузки файлов</span>
+
+<span class="hljs-attr">mail:</span>
+  <span class="hljs-comment"># ОСНОВНОЙ КАНАЛ</span>
+
+  <span class="hljs-comment"># Почтовый адрес</span>
+  <span class="hljs-attr">app_email:</span> <span class="hljs-string">"no-reply@domain.tld"</span>
+
+  <span class="hljs-comment"># Отправка через SMTP с авторизацией</span>
+  <span class="hljs-attr">smtp:</span> <span class="hljs-literal">true</span>
+
+  <span class="hljs-comment"># Тип протокола (ssl|tls)</span>
+  <span class="hljs-attr">smtp_security:</span> <span class="hljs-string">"ssl"</span>
+
+  <span class="hljs-comment"># Сервер</span>
+  <span class="hljs-attr">smtp_host:</span> <span class="hljs-string">"HOST"</span>
+
+  <span class="hljs-comment"># Порт</span>
+  <span class="hljs-attr">smtp_port:</span> <span class="hljs-number">0</span>
+
+  <span class="hljs-comment"># Адрес почты</span>
+  <span class="hljs-attr">smtp_username:</span> <span class="hljs-string">"no-reply@domain.tld"</span>
+
+  <span class="hljs-comment"># Пароль от почтового ящика</span>
+  <span class="hljs-attr">smtp_password:</span> <span class="hljs-string">"PASSWORD"</span>
+
+  <span class="hljs-comment"># РЕЗЕРВНЫЙ КАНАЛ (ВСЕГДА SMTP)</span>
+
+  <span class="hljs-comment"># Включить (true) или выключить (false) отправку через резервный канал, в случае сбоя отправки через основной</span>
+  <span class="hljs-attr">reserve:</span> <span class="hljs-literal">false</span>
+
+  <span class="hljs-comment"># Почтовый адрес</span>
+  <span class="hljs-attr">reserve_app_email:</span> <span class="hljs-string">"no-reply@domain.tld"</span>
+
+  <span class="hljs-comment"># Тип протокола (ssl|tls)</span>
+  <span class="hljs-attr">reserve_smtp_security:</span> <span class="hljs-string">"ssl"</span>
+
+  <span class="hljs-comment"># Сервер</span>
+  <span class="hljs-attr">reserve_smtp_host:</span> <span class="hljs-string">"HOST"</span>
+
+  <span class="hljs-comment"># Порт</span>
+  <span class="hljs-attr">reserve_smtp_port:</span> <span class="hljs-number">0</span>
+
+  <span class="hljs-comment"># Адрес почты</span>
+  <span class="hljs-attr">reserve_smtp_username:</span> <span class="hljs-string">"no-reply@domain.tld"</span>
+
+  <span class="hljs-comment"># Пароль от почтового ящика</span>
+  <span class="hljs-attr">reserve_smtp_password:</span> <span class="hljs-string">"PASSWORD"</span>
+
+<span class="hljs-attr">maintenance:</span>
+  <span class="hljs-comment"># Включить \ Выключить обслуживание проекта</span>
+  <span class="hljs-attr">active:</span> <span class="hljs-literal">false</span>
+
+  <span class="hljs-comment"># Сообщение об обслуживании</span>
+  <span class="hljs-attr">message:</span> <span class="hljs-string">"Проект временно остановлен на обслуживание, пожалуйста повторите свой запрос через 5 минут или обновите страницу"</span>
+
+<span class="hljs-attr">sms:</span>
+  <span class="hljs-comment"># API-ключ от аккаунта в sms.ru</span>
+  <span class="hljs-attr">smsru_api_id:</span> <span class="hljs-string">"api_id"</span>
+
+  <span class="hljs-comment"># Отправитель (можно оставить пустым, если не нужен)</span>
+  <span class="hljs-attr">smsru_sender:</span> <span class="hljs-string">"SenderName"</span>
+</code></pre>
+    </div>
+
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS -->
+            <script src="../../themes/daux/js/daux.min.js"></script>
+    
+        <script>
+        
+        window.searchLanguage = "";
+        window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+    </script>
+
+    <!-- Search -->
+    <script type="text/javascript" src="../../daux_libraries/search.min.js"></script>
+
+    <script>
+        window.search({'base_url': '../../'})
+    </script>
+</body>
+</html>
