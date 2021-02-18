@@ -136,32 +136,17 @@
 <h1 id="page_Svoa_unikal'naa_proverka">Своя уникальная проверка</h1>
 <p>Для создания собственной проверки необходимо создать класс в каталоге серверной части <code>/app/Checker</code></p>
 <pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span>
-<span class="hljs-comment">/**
- * Проверяем что это определенный пользователь
- *
- * <span class="hljs-doctag">@author</span>  Дмитрий Щербаков &lt;atomcms<span class="hljs-doctag">@ya</span>.ru&gt;
- *
- * <span class="hljs-doctag">@version</span> 13.04.2018
- */</span>
 
 <span class="hljs-keyword">namespace</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">App</span>\<span class="hljs-title">Checker</span>;
 
 <span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Abstracts</span>\<span class="hljs-title">Action</span>;
 <span class="hljs-keyword">use</span> <span class="hljs-title">Lemurro</span>\<span class="hljs-title">Api</span>\<span class="hljs-title">Core</span>\<span class="hljs-title">Helpers</span>\<span class="hljs-title">Response</span>;
 
-<span class="hljs-comment">/**
- * <span class="hljs-doctag">@package</span> Lemurro\Api\App\Checker
- */</span>
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Simple</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Action</span>
 </span>{
-    <span class="hljs-comment">/**
-     * <span class="hljs-doctag">@author</span>  Дмитрий Щербаков &lt;atomcms<span class="hljs-doctag">@ya</span>.ru&gt;
-     *
-     * <span class="hljs-doctag">@version</span> 13.04.2018
-     */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span><span class="hljs-params">(array $data)</span>: <span class="hljs-title">array</span>
     </span>{
-        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;dic[<span class="hljs-string">'user'</span>][<span class="hljs-string">'auth_id'</span>] == $data[<span class="hljs-string">'auth_id'</span>]) {
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">$this</span>-&gt;dic[<span class="hljs-string">'user'</span>][<span class="hljs-string">'auth_id'</span>] === $data[<span class="hljs-string">'auth_id'</span>]) {
             <span class="hljs-keyword">return</span> [];
         } <span class="hljs-keyword">else</span> {
             <span class="hljs-keyword">return</span> Response::error403(<span class="hljs-string">'Доступ ограничен'</span>, <span class="hljs-keyword">true</span>);
