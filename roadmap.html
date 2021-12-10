@@ -1,4 +1,4 @@
-<style type="text/css">
+<style>
     .roadmap__chart {
         height: 400px;
     }
@@ -25,20 +25,9 @@
         // version: 'v1.5', from: '2019-05-15', to: '2019-06-06', from: '2019-06-06', to: '2019-09-06'
         // version: 'v1.6', from: '2019-06-06', to: '2019-07-27', from: '2019-07-28', to: '2019-10-28'
         // version: 'v1.7', from: '2019-07-28', to: '2020-02-29', from: '2020-03-01', to: '2020-05-31'
-        {
-            version: 'v1.8',
-            type: 'general',
-            dates: [
-                {
-                    from: '2020-02-01',
-                    to: '2020-07-31',
-                },
-                {
-                    from: '2020-08-01',
-                    to: '2020-10-31',
-                },
-            ],
-        },
+        // version: 'v1.8', from: '2020-02-01', to: '2020-07-31', from: '2020-08-01', to: '2020-10-31'
+        // version: 'v2.0', from: '2020-11-10', to: '2021-02-10', from: '2021-02-10', to: '2021-02-10'
+        // version: 'v2.1', from: '2021-01-26', to: '2021-06-01', from: '2021-06-01', to: '2021-06-01'
         {
             version: 'v1.9',
             type: 'lts',
@@ -54,34 +43,36 @@
             ],
         },
         {
-            version: 'v2.0',
-            type: 'general',
+            version: 'v1.10',
+            type: 'lts',
             dates: [
                 {
-                    from: '2020-11-10',
-                    to: '2021-02-10',
+                    from: '2021-12-10',
+                    to: '2022-12-10',
                 },
                 {
-                    from: '2021-02-10',
-                    to: '2021-02-10',
-                },
-            ],
-        },
-        {
-            version: 'v2.1',
-            type: 'general',
-            dates: [
-                {
-                    from: '2021-01-26',
-                    to: '2021-06-01',
-                },
-                {
-                    from: '2021-06-01',
-                    to: '2021-06-01',
+                    from: '2022-12-11',
+                    to: '2023-03-11',
                 },
             ],
         },
     ];
+
+    versionRoadmap(data, {
+        titles: {
+            chart: 'Lemurro Roadmap',
+            outdated: 'Устарел',
+            maintained: 'Поддерживается',
+            securityFixesOnly: 'Только исправления безопасности',
+            future: 'Будущий релиз',
+            lastStableRelease: 'Последний стабильный релиз',
+            lastLtsRelease: 'Последний LTS-релиз',
+        },
+        formatDate: '%d.%m.%Y',
+        formatTooltip:
+            '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}',
+        daysOverdue: 180,
+    });
 
     function versionRoadmap(roadmaps, options) {
         if (typeof options === 'undefined') {
@@ -283,8 +274,8 @@
             return result;
         });
 
-        var lastStableRelease = '---';
-        var lastLtsRelease = '---';
+        var lastStableRelease = '';
+        var lastLtsRelease = '';
 
         var series = actualRoadmaps.map(function (roadmap, i) {
             var data = roadmap.dates.map(function (item, j) {
@@ -338,6 +329,18 @@
                     : settings.colors.future,
             };
         });
+
+        if (lastLtsRelease === '') {
+            lastLtsRelease = '---';
+        }
+
+        if (lastStableRelease === '') {
+            if (lastLtsRelease !== '---') {
+                lastStableRelease = lastLtsRelease;
+            } else {
+                lastStableRelease = '---';
+            }
+        }
 
         var tplSubtitle =
             '<div class="roadmap__latest-releases">' +
@@ -446,20 +449,4 @@
             },
         });
     }
-
-    versionRoadmap(data, {
-        titles: {
-            chart: 'Lemurro Roadmap',
-            outdated: 'Устарел',
-            maintained: 'Поддерживается',
-            securityFixesOnly: 'Только исправления безопасности',
-            future: 'Будущий релиз',
-            lastStableRelease: 'Последний стабильный релиз',
-            lastLtsRelease: 'Последний LTS-релиз',
-        },
-        formatDate: '%d.%m.%Y',
-        formatTooltip:
-            '<strong>{point.title}</strong><br/>Начало: {point.start:%d.%m.%Y}<br/>Конец: {point.end:%d.%m.%Y}',
-        daysOverdue: 180,
-    });
 </script>
