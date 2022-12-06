@@ -134,6 +134,12 @@
 <h2 id="page_Kriticeski_vaznye_izmenenia-2">Критически важные изменения</h2>
 <ul>
 <li>
+<strong>[Index]</strong> В файле <code>src/html/index.html</code> необходимо добавить подключение нового файла <a href="https://raw.githubusercontent.com/Lemurro/client-metronic/v1.10/src/html/include/tpl_tab_title.html" class="Link--external" rel="noopener noreferrer">tpl_tab_title.html</a>:
+<pre><code class="hljs xml">    <span class="hljs-comment">&lt;!-- include('include/tpl_tab_title.html') --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+</li>
+<li>
 <strong>[Menu]</strong> В файле <code>src/html/include/menu_topbar.html</code>:
 <ul>
 <li>Для li-элемента с шестеренкой добавить новый класс <code>js-role__guide--read</code>
@@ -145,22 +151,68 @@
 </ul>
 </li>
 <li>
+<strong>[Version]</strong> В файле <code>src/js/0-app/0-start.js</code> необходимо добавить новую переменную:
+<pre><code class="hljs javascript"><span class="hljs-comment">/**
+ * Актуальный номер версии программы (X.Y.Z)
+  *
+  * <span class="hljs-doctag">@type <span class="hljs-type">{string}</span></span>
+  */</span>
+app.version = <span class="hljs-string">'1.10.0'</span>;
+</code></pre>
+</li>
+<li>
 <strong>[Users]</strong> На вкладке <code>Ключи доступа</code> изменена вёрстка и добавлено сообщение об отсутствии ключей, новую вёрстку можно взять в файле <a href="https://github.com/Lemurro/client-metronic/blob/v1.10.0/src/html/pages/users/auth_keys.html" class="Link--external" rel="noopener noreferrer">auth_keys.html</a>.</li>
 <li>
 <strong>[Users]</strong> Добавлено новое системное поле <code>email</code>
 <ul>
-<li>Добавить поле в схему таблицы <code>info_users</code>:
+<li>Добавить в схему таблицы <code>info_users</code>:
 <pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`info_users`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-string">`email`</span> <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`roles`</span>;
 </code></pre>
 </li>
-<li>В файле <code>/src/html/pages/users/form.html</code> необходимо добавить поле:
+<li>В файле <code>/src/html/pages/users/form.html</code> необходимо добавить:
 <pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-group"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Email<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"email"</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"Email"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control js-user-id-1"</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 </li>
+<li>В файле <code>src/js/users/200-_collectData.js</code> необходимо добавить:
+<pre><code class="hljs javascript">email: form.find(<span class="hljs-string">'input[name="email"]'</span>).val()
+</code></pre>
+</li>
+<li>В файле <code>src/js/users/300-edit.js</code> необходимо добавить:
+<pre><code class="hljs javascript">form.find(<span class="hljs-string">'input[name="email"]'</span>).val(result.data.email);
+</code></pre>
+</li>
 </ul>
+</li>
+<li>
+<strong>[Users]</strong> В файле <code>src/html/pages/users/filter.html</code>:
+<ul>
+<li>Удалить код:
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-inline-block w10"</span>&gt;</span>
+    <span class="hljs-symbol">&amp;nbsp;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"d-inline-block"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn btn-brand m-btn--icon"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"lemurro.users.toggleFilter()"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fas fa-filter"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Фильтр<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fas fa-angle-down js-filter__angle"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li>У элемента <code>div.js-filter</code> удалить класс <code>hidden</code> и атрибут <code>data-visible</code>
+</li>
+<li>Удалить элемент <code>div.js-message__default</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>[Users]</strong> В файле <code>src/js/users/100-init.js</code> удалить <code>lemurro.users.getData();</code>
 </li>
 </ul>
     </div>
