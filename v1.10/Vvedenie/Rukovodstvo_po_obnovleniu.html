@@ -112,7 +112,7 @@
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span>
     <span class="hljs-keyword">users</span> <span class="hljs-keyword">CHANGE</span> <span class="hljs-keyword">COLUMN</span> auth_id auth_id <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
 <span class="hljs-keyword">ADD</span>
-    <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">INDEX</span> (auth_id);
+    <span class="hljs-keyword">UNIQUE</span> <span class="hljs-keyword">INDEX</span> (auth_id, deleted_at);
 </code></pre>
 </li>
 <li>
