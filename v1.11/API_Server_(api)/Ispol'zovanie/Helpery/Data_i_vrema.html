@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Дата и время - Lemurro v1.11 - Документация</title>
+    <meta name="description" content="Lemurro - Документация">
+    <meta name="author" content="Dmitrii Shcherbakov">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="../../../themes/daux/img/favicon-blue.png" type="image/x-icon">
+
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <script>
+        window.base_url = "../../../";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
+    <!-- Font -->
+    
+    <!-- CSS -->
+            <link href='../../../themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <link href='../../../daux_libraries/search.css' rel='stylesheet' type='text/css'>
+    </head>
+<body class="">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger" aria-controls="sidebar_content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+        </button>
+
+        <a class="Brand" href="../../../Komponenty.html">Lemurro v1.11 - Документация</a>
+
+    <form role='search' action="/" method="get" class="Search" id="search_form">
+        <label for="search_input">
+            <span class='u-visuallyHidden'>Search</span>
+        </label>
+        <input
+            type="search"
+            id="search_input"
+            class="Search__field"
+            placeholder="Search..."
+            aria-label="Search..."
+            autocomplete="on"
+            results=25
+            autosave=text_search
+        >
+        <label>
+            <input type="submit" class='u-visuallyHidden' />
+            <span class='u-visuallyHidden'>Search...</span>
+            <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+                <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+            </svg>
+        </label>
+    </form>
+
+        <div class="Collapsible__content" id="sidebar_content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Введение</a><ul class='Nav'><li class='Nav__item '><a href="../../../Vvedenie/Ustanovka.html">Установка</a></li><li class='Nav__item '><a href="../../../Vvedenie/Rukovodstvo_po_obnovleniu.html">Руководство по обновлению</a></li><li class='Nav__item '><a href="../../../Vvedenie/Spisok_storonnih_bibliotek.html">Список сторонних библиотек</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>API-Сервер (api)</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../API_Server_(api)/Nastrojka/Nastrojka.html">Настройка</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройки по умолчанию</a><ul class='Nav'><li class='Nav__item '><a href="../../../API_Server_(api)/Nastrojki_po_umolcaniu/DIC.html">DIC</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Nastrojki_po_umolcaniu/Response.html">Response</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Расширение функционала</a><ul class='Nav'><li class='Nav__item '><a href="../../../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_DIC.html">Расширение DIC</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Rassirenie_funkcionala/Rassirenie_Response.html">Расширение Response</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Marsrutizacia.html">Маршрутизация</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Otvet_servera.html">Ответ сервера</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Vypolnit'_do....html">Выполнить до...</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Vypolnit'_posle....html">Выполнить после...</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Cron_zadaci.html">Cron-задачи</a></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Database.html">Database</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Checker.html">Checker</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Console.html">Console</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Email.html">Email</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/LogException.html">LogException</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Phone.html">Phone</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/SMS.html">SMS</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Strings.html">Strings</a></li><li class='Nav__item Nav__item--active'><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Data_i_vrema.html">Дата и время</a></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Logirovanie.html">Логирование</a></li></ul></li><li class='Nav__item '><a href="../../../API_Server_(api)/Ispol'zovanie/Dobavlenie_prava_dostupa.html">Добавление права доступа</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Клиент Metronic (web)</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Настройка</a><ul class='Nav'><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Nastrojka/Nastrojka.html">Настройка</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Nastrojka/Marsruty.html">Маршруты</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Nastrojka/Sborka_proekta.html">Сборка проекта</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Nastrojka/Logika_zapuska_prilozenia.html">Логика запуска приложения</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Nastrojka/Sborka_Metronic.html">Сборка Metronic</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Использование</a><ul class='Nav'><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/Ssylki.html">Ссылки</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/AJAX_zaprosy_k_API.html">AJAX-запросы к API</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_peremennye.html">JS-переменные</a></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>JS-хелперы</a><ul class='Nav'><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/showConfirm.html">showConfirm</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearFields.html">clearFields</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/clearString.html">clearString</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/tabs.html">tabs</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/isRole.html">isRole</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/decimal.html">decimal</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/digitGroups.html">digitGroups</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/integer.html">integer</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/localTime.html">localTime</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/JS_helpery/initBootstrapConfirmation.html">initBootstrapConfirmation</a></li></ul></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/CSS_helpery.html">CSS-хелперы</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/Template7_helpery.html">Template7-хелперы</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/Proverka_prav_na_elementah_stranicy.html">Проверка прав на элементах страницы</a></li><li class='Nav__item '><a href="../../../Klient_Metronic_(web)/Ispol'zovanie/TipsTricks.html">Tips&Tricks</a></li></ul></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Загрузка файлов</a><ul class='Nav'><li class='Nav__item '><a href="../../../Zagruzka_fajlov/Podklucenie.html">Подключение</a></li><li class='Nav__item '><a href="../../../Zagruzka_fajlov/Sohranenie_fajlov.html">Сохранение файлов</a></li><li class='Nav__item '><a href="../../../Zagruzka_fajlov/Manipulacii_s_fajlom.html">Манипуляции с файлом</a></li><li class='Nav__item '><a href="../../../Zagruzka_fajlov/Proverka_dostupa.html">Проверка доступа</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Примеры</a><ul class='Nav'><li class='Nav__item '><a href="../../../Primery/Spravocnik.html">Справочник</a></li><li class='Nav__item '><a href="../../../Primery/Razdel.html">Раздел</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Тестирование</a><ul class='Nav'><li class='Nav__item '><a href="../../../Testirovanie/Vvedenie.html">Введение</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>Разработка ядра</a><ul class='Nav'><li class='Nav__item  has-children'><a href="#" class="Nav__item__link Nav__item__link--nopage"><i class="Nav__arrow">&nbsp;</i>api-core</a><ul class='Nav'><li class='Nav__item '><a href="../../../Razrabotka_adra/api_core/Vvedenie.html">Введение</a></li></ul></li></ul></li><li class='Nav__item '><a href="../../../Komponenty.html">Компоненты</a></li></ul>
+            <div class="Links">
+                                    <hr/>
+                                            <a href="https://github.com/Lemurro/lemurro" target="_blank"  rel="noopener noreferrer">GitHub</a>
+                        <br />
+                                            <a href="https://lemurro.github.io/docs/roadmap.html" target="_blank"  rel="noopener noreferrer">Дорожная карта</a>
+                        <br />
+                                            <a href="https://lemurro.github.io/docs/versions.html" target="_blank"  rel="noopener noreferrer">Документация других версий</a>
+                        <br />
+                                            <a href="https://lemurro.github.io/docs/upgrade" target="_blank"  rel="noopener noreferrer">Обновление до версии 1.9</a>
+                        <br />
+                                                </div>
+
+                            <div class="CodeToggler">
+                    <hr/>
+                    <label class="Checkbox">Show Code Blocks                        <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
+                        <div class="Checkbox__indicator"></div>
+                    </label>
+                </div>
+            
+                
+                        </div>
+    </aside>
+    <div class="Columns__right">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="../../../API_Server_(api)/Nastrojka/Nastrojka.html">API-Сервер (api)</a> > <a href="../../../API_Server_(api)/Ispol'zovanie/Marsrutizacia.html">Использование</a> > <a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Database.html">Хелперы</a> > <a href="../../../API_Server_(api)/Ispol'zovanie/Helpery/Data_i_vrema.html">Дата и время</a></h1>
+                    </div>
+
+    <div class="s-content">
+        <h1 id="page_Data_i_vrema">Дата и время</h1>
+<p>Для работы с датой\временем используется библиотека <a href="http://carbon.nesbot.com" class="Link--external" rel="noopener noreferrer">Carbon</a></p>
+<p>Ядром используется временная зона <code>UTC</code></p>
+<pre><code class="hljs php">$now = \Carbon\Carbon::now(<span class="hljs-string">'UTC'</span>);
+</code></pre>
+<p>Если просто нужна строка с текущей датой и временем (например для записи в БД), тогда можно воспользоваться этим кодом</p>
+<pre><code class="hljs php"><span class="hljs-comment">// 2018-01-01 12:45:32</span>
+$string = <span class="hljs-keyword">$this</span>-&gt;dic[<span class="hljs-string">'datetimenow'</span>];
+</code></pre>
+<h1 id="page_Rabota_s_datoj">Работа с датой</h1>
+<p>В DIC можно найти смещение (в минутах) относительно UTC и часового пояса устройства пользователя <code>$this-&gt;dic['utc_offset']</code></p>
+<ul>
+<li>Чтобы получить серверное <code>UTC</code> время из данных, которые передал пользователь, надо выполнить следующий код:
+<pre><code class="hljs php"><span class="hljs-comment">//utc_offset = 300</span>
+$sdt = <span class="hljs-keyword">new</span> \Lemurro\Api\Core\Helpers\ServerDateTime(<span class="hljs-keyword">$this</span>-&gt;dic);
+$sdt-&gt;get(<span class="hljs-string">'12:00'</span>, <span class="hljs-string">'H:i'</span>, <span class="hljs-string">'H:i'</span>); <span class="hljs-comment">// 07:00</span>
+$sdt-&gt;get(<span class="hljs-string">'12:00'</span>, <span class="hljs-string">'H:i'</span>); <span class="hljs-comment">// 2018-12-13 07:00:00</span>
+</code></pre>
+</li>
+<li>Чтобы получить локальное (пользовательское) время из <code>UTC</code>, надо выполнить следующий код:
+<pre><code class="hljs php"><span class="hljs-comment">//utc_offset = 300</span>
+$sdt = <span class="hljs-keyword">new</span> \Lemurro\Api\Core\Helpers\LocalDateTime(<span class="hljs-keyword">$this</span>-&gt;dic);
+$sdt-&gt;get(<span class="hljs-string">'07:00'</span>, <span class="hljs-string">'H:i'</span>, <span class="hljs-string">'H:i'</span>); <span class="hljs-comment">// 12:00</span>
+$sdt-&gt;get(<span class="hljs-string">'07:00'</span>, <span class="hljs-string">'H:i'</span>); <span class="hljs-comment">// 2018-12-13 12:00:00</span>
+</code></pre>
+</li>
+</ul>
+    </div>
+
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS -->
+            <script src="../../../themes/daux/js/daux.min.js"></script>
+    
+        <script>
+        
+        window.searchLanguage = "";
+        window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+    </script>
+
+    <!-- Search -->
+    <script type="text/javascript" src="../../../daux_libraries/search.min.js"></script>
+
+    <script>
+        window.search({'base_url': '../../../'})
+    </script>
+</body>
+</html>
