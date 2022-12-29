@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <title>Обновление с 1.8 до 1.9 - Lemurro Документация</title>
+    <meta name="description" content="Lemurro - Документация">
+    <meta name="author" content="Dmitrii Shcherbakov">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="themes/daux/img/favicon-blue.png" type="image/x-icon">
+
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JS -->
+    <script>
+        window.base_url = "";
+        document.documentElement.classList.remove('no-js');
+    </script>
+
+    <!-- Font -->
+    
+    <!-- CSS -->
+            <link href='themes/daux/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <link href='daux_libraries/search.css' rel='stylesheet' type='text/css'>
+    </head>
+<body class="">
+    <div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger" aria-controls="sidebar_content" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+        </button>
+
+        <a class="Brand" href="Obnovlenie_s_1.8_do_1.9.html">Lemurro Документация</a>
+
+    <form role='search' action="/" method="get" class="Search" id="search_form">
+        <label for="search_input">
+            <span class='u-visuallyHidden'>Search</span>
+        </label>
+        <input
+            type="search"
+            id="search_input"
+            class="Search__field"
+            placeholder="Search..."
+            aria-label="Search..."
+            autocomplete="on"
+            results=25
+            autosave=text_search
+        >
+        <label>
+            <input type="submit" class='u-visuallyHidden' />
+            <span class='u-visuallyHidden'>Search...</span>
+            <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+                <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+            </svg>
+        </label>
+    </form>
+
+        <div class="Collapsible__content" id="sidebar_content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item Nav__item--active'><a href="Obnovlenie_s_1.8_do_1.9.html">Обновление с 1.8 до 1.9</a></li><li class='Nav__item '><a href="Obnovlenie_s_1.7_do_1.8.html">Обновление с 1.7 до 1.8</a></li></ul>
+            <div class="Links">
+                                    <hr/>
+                                            <a href="https://github.com/Lemurro/lemurro" target="_blank"  rel="noopener noreferrer">GitHub</a>
+                        <br />
+                                                </div>
+
+                            <div class="CodeToggler">
+                    <hr/>
+                    <label class="Checkbox">Show Code Blocks                        <input type="checkbox" class="CodeToggler__button--main" checked="checked"/>
+                        <div class="Checkbox__indicator"></div>
+                    </label>
+                </div>
+            
+                
+                        </div>
+    </aside>
+    <div class="Columns__right">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="Obnovlenie_s_1.8_do_1.9.html">Обновление с 1.8 до 1.9</a></h1>
+                    </div>
+
+    <div class="s-content">
+        <h1 id="page_API_module">API-module</h1>
+<h2 id="page_Kriticeski_vaznye_izmenenia">Критически важные изменения</h2>
+<ul>
+<li>
+<strong>[Auth]</strong> Добавлена защита от брутфорса генерации новых кодов для входа:
+<ul>
+<li>Создайте новую таблицу:
+<pre><code class="hljs sql"><span class="hljs-comment">-- Дата последнего запроса кода аутентификации</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> <span class="hljs-string">`auth_codes_lasts`</span> (
+    <span class="hljs-string">`id`</span> <span class="hljs-built_in">BIGINT</span>(<span class="hljs-number">22</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+    <span class="hljs-string">`user_id`</span> <span class="hljs-built_in">INT</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    <span class="hljs-string">`created_at`</span> DATETIME <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>)
+) <span class="hljs-keyword">ENGINE</span> = <span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span> = utf8 <span class="hljs-keyword">COLLATE</span> = utf8_unicode_ci;
+</code></pre>
+</li>
+<li>Добавьте новую константу в конфиг <code>api\app\Configs\SettingsAuth.php</code>:
+<pre><code class="hljs php"><span class="hljs-comment">/**
+ * Количество генераций новых кодов в день
+ *
+ * <span class="hljs-doctag">@var</span> int
+ */</span>
+<span class="hljs-keyword">const</span> ATTEMPTS_PER_DAY = <span class="hljs-number">50</span>;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<strong>[Пользователи]</strong> В таблицу <code>sessions</code> необходимо добавить новые поля:
+<pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`sessions`</span>
+    <span class="hljs-keyword">ADD</span> <span class="hljs-string">`device_info`</span>   <span class="hljs-keyword">JSON</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`user_id`</span>,
+    <span class="hljs-keyword">ADD</span> <span class="hljs-string">`geoip`</span>         <span class="hljs-keyword">JSON</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`device_info`</span>,
+    <span class="hljs-keyword">ADD</span> <span class="hljs-string">`admin_entered`</span> <span class="hljs-built_in">TINYINT</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">'0'</span> <span class="hljs-keyword">AFTER</span> <span class="hljs-string">`geoip`</span>;
+</code></pre>
+</li>
+</ul>
+<h2 id="page_Neobazatel'nye_izmenenia">Необязательные изменения</h2>
+<ul>
+<li>
+<strong>[Response]</strong> В массиве ответа добавлен ключ <code>success</code> типа <code>bool</code>, рекомендуется использовать для проверки на наличие ошибок его вместо <code>isset($result['errors'])</code>, т.к. в версии 2.0 ключ <code>errors</code> будет переименован в ключ <code>error</code>.</li>
+</ul>
+<h1 id="page_WEB_module">WEB-module</h1>
+<h2 id="page_Kriticeski_vaznye_izmenenia-2">Критически важные изменения</h2>
+<ul>
+<li>
+<strong>[Gulp-плагин]</strong> Переход на плагин <code>gulp-file-include</code>:
+<ul>
+<li>старый комментарий: <code>&lt;!-- include &quot;path/to/xxx.html&quot; --&gt;</code>
+</li>
+<li>новый комментарий: <code>&lt;!-- include('path/to/xxx.html') --&gt;</code>
+</li>
+<li>путь до файла указывается от корня, корнем является каталог <code>/src/html</code>.</li>
+</ul>
+</li>
+<li>
+<strong>[Мой профиль]</strong> Новый раздел <code>Мой профиль</code>:
+<ul>
+<li>скачать архив <a href="https://github.com/Lemurro/resources/raw/master/1.9.0_profile.zip" class="Link--external" rel="noopener noreferrer">1.9.0_profile.zip</a> и распаковать содержимое в каталог <code>/src</code>.</li>
+<li>в файле <code>/src/html/include/menu_topbar.html</code> перед пунктом <code>Выход</code> добавить новый элемент:</li>
+</ul>
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/profile"</span> <span class="hljs-attr">data-navigo</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__link"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__link-icon fas fa-fw fa-user-circle"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__link-title"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__link-wrap"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"m-nav__link-text"</span>&gt;</span>
+                    Мой профиль
+                <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</code></pre>
+<ul>
+<li>в файле <code>/src/js/0-app/200-routes.js</code> в блоке <code>Системные маршруты</code> добавить новый элемент:</li>
+</ul>
+<pre><code class="hljs javascript"><span class="hljs-string">'/profile'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">params, query</span>) </span>{
+    app.page = {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'profile'</span>,
+        <span class="hljs-attr">title</span>: <span class="hljs-string">'Мой профиль'</span>,
+        <span class="hljs-attr">onLoad</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            lemurro.profile.init();
+        },
+        <span class="hljs-attr">params</span>: params,
+        <span class="hljs-attr">query</span>: query,
+    };
+},
+</code></pre>
+</li>
+<li>
+<strong>[Пользователи]</strong> В методе <code>lemurro.users.remove</code> необходимо удалить неиспользуемый параметр <code>name</code>.</li>
+<li>
+<strong>[Пользователи]</strong> В методе <code>lemurro.users.showData</code> необходимо удалить неиспользуемый параметр <code>callback</code>.</li>
+<li>
+<strong>[Справочники]</strong> В методе <code>lemurro.guide.remove</code> необходимо удалить неиспользуемый параметр <code>name</code>.</li>
+</ul>
+<h2 id="page_Izmenenia_srednej_vaznosti">Изменения средней важности</h2>
+<ul>
+<li>
+<strong>[JS]</strong> Вместо кода <code>result.hasOwnProperty('errors')</code> необходимо использовать код <code>lemurro.hasErrors(result)</code>.</li>
+<li>
+<strong>[JS-библиотки]</strong> Если вы использовали создание нового экземпляра через <code>new LightAjax</code> тогда вам необходимо знать об изменениях:
+<ul>
+<li>Вместо параметра <code>settings.color</code> теперь необязательный параметр <code>settings.classColor</code>, чтобы избежать проблем с Content Security Policy, можно не указывать, тогда будет использоваться класс по умолчанию.</li>
+<li>Параметр <code>callbackAlert</code> помещён внутрь <code>settings</code>: <code>settings.callbackAlert</code>.</li>
+<li>Исправлена ошибка когда жёстко менялись настройки в jQuery.ajaxSetup, теперь настройки по умолчанию работают только внутри LightAjax.</li>
+</ul>
+</li>
+<li>
+<strong>[Пользователи]</strong> В каталоге <code>/src/js/users/</code> необходимо добавить js-файл с методом <code>users.afterShowData</code>:
+<pre><code class="hljs javascript"><span class="hljs-comment">/**
+ * Функция обратного вызова после отображения списка пользователей
+ *
+ * <span class="hljs-doctag">@param <span class="hljs-type">{Object}</span> <span class="hljs-variable">data</span></span>
+ *
+ * <span class="hljs-doctag">@author  </span>Дмитрий Щербаков &lt;atomcms<span class="hljs-doctag">@ya</span>.ru&gt;
+ *
+ * <span class="hljs-doctag">@version </span>17.04.2020
+ */</span>
+users.afterShowData = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+
+};
+</code></pre>
+</li>
+<li>
+<strong>[Пользователи]</strong> В файле <code>/src/html/pages/users/content.html</code>:
+<ul>
+<li>добавить в блок <code>ul#js-tabs__links</code> новый элемент:
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-item"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#tab-auth-keys"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span> <span class="hljs-attr">data-toggle</span>=<span class="hljs-string">"tab"</span> <span class="hljs-attr">data-target</span>=<span class="hljs-string">"#tab-auth-keys"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fas fa-key"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span> Ключи доступа
+    <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+</code></pre>
+</li>
+<li>добавить в блок <code>div#js-tabs__contents</code> новый элемент:
+<pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"tab-pane"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"tab-auth-keys"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"tabpanel"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- include('pages/users/auth_keys.html') --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+</li>
+<li>Скачать файлы <a href="https://github.com/Lemurro/client-metronic/blob/v1.9.0/src/html/pages/users/auth_keys.html" class="Link--external" rel="noopener noreferrer">auth_keys.html</a> и  <a href="https://github.com/Lemurro/client-metronic/blob/v1.9.0/src/html/pages/users/tpl_auth_keys__items.html" class="Link--external" rel="noopener noreferrer">tpl_auth_keys__items.html</a> и поместить в каталог <code>/src/html/pages/users</code>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="page_Neobazatel'nye_izmenenia-2">Необязательные изменения</h2>
+<ul>
+<li>
+<strong>[Пользователи]</strong> В форме добавления\изменения пользователя можно визуально разбить блоки с основной системной информацией и правами доступа, изменения вы можете найти в файле <a href="https://github.com/Lemurro/client-metronic/blob/v1.9.0/src/html/pages/users/form.html" class="Link--external" rel="noopener noreferrer">form.html</a>.</li>
+</ul>
+    </div>
+
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- JS -->
+            <script src="themes/daux/js/daux.min.js"></script>
+    
+        <script>
+        
+        window.searchLanguage = "";
+        window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+    </script>
+
+    <!-- Search -->
+    <script type="text/javascript" src="daux_libraries/search.min.js"></script>
+
+    <script>
+        window.search({'base_url': ''})
+    </script>
+</body>
+</html>
