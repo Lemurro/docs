@@ -1,0 +1,20 @@
+{
+  "title": "Lemurro v3.0 - Документация",
+  "tagline": "Lemurro - Документация",
+  "author": "Dmitrii Shcherbakov",
+  "format": "html",
+  "html": {
+    "breadcrumbs": true,
+    "breadcrumb_separator": " > ",
+    "float": false,
+    "repo": "Lemurro/lemurro",
+    "auto_toc": false,
+    "jump_buttons": false,
+    "links": {
+      "GitHub": "https://github.com/Lemurro/lemurro",
+      "Дорожная карта": "https://lemurro.github.io/docs/roadmap.html",
+      "Документация других версий": "https://lemurro.github.io/docs/versions.html",
+      "Обновление до версии 1.9": "https://lemurro.github.io/docs/upgrade"
+    }
+  }
+}
