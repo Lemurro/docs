@@ -129,7 +129,7 @@
 <li>
 <strong>[Database]</strong> Добавлена библиотека <code>doctrine/dbal</code> потому что библиотека <code>j4mie/idiorm</code> больше не развивается и не будет поддерживать PHP v8+: для плавного отказа от idiorm используется один pdo-коннект в обоих библиотеках, для использования <code>doctrine/dbal</code> есть элемент <code>$this-&gt;dic['dbal']</code>, подробная документация по методам <a href="https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#api" class="Link--external" rel="noopener noreferrer">здесь</a>.</li>
 <li>
-<strong>[Users]</strong> Если вы у себя использовали класс <code>\Lemurro\Api\Core\Users\Find.php</code>, тогда обратите внимание на изменение метода <code>run</code>: теперь он называется <code>getByAuthId</code> и возвращает <code>?array</code> вместо <code>array</code>.</li>
+<strong>[Users]</strong> Если вы у себя использовали класс <code>\Lemurro\Api\Core\Users\Find</code>, тогда обратите внимание на изменение метода <code>run</code>: теперь он называется <code>getByAuthId</code> и возвращает <code>?array</code> вместо <code>array</code>.</li>
 <li>
 <strong>[Helpers - File]</strong> Если вы у себя использовали класс <code>\Lemurro\Api\Core\Helpers\File\FileInfo</code>, тогда обратите внимание на изменение метода <code>getOneORM</code>: теперь он называется <code>getById</code> и возвращает <code>?array</code> вместо <code>ORM|array</code>.</li>
 <li>
